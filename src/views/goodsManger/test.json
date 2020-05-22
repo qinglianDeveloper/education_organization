@@ -1,0 +1,105 @@
+{
+    "productUpdateVO": {
+        "id": 22,
+        "categoryId": 17,
+        "categoryName": "云服务",
+        "productName": "说长道短的",
+        "subTitle": "a",
+        "productCode": "SP202003101155209666",
+        "attributesLists": "",
+        "mainImageUrl": "https://test.yundejia.com/static/group1/M00/00/09/wKgKrl5nD0yAAQfSAAF1aeK4wrw74.jpeg",
+        "subImageUrl": null,
+        "bannerUrls": "https://test.yundejia.com/static/group1/M00/00/09/wKgKrl5nD1CALNGuAAF1aeK4wrw59.jpeg",
+        "salesVolume": 0,
+        "stock": 1,
+        "creditRakebackRatio": 1,
+        "isExchange": null,
+        "creditExchangeRatio": null,
+        "productDetail": "",
+        "sort": 1,
+        "formulaName": "陈 + 旭 - 东",
+        "formula": "A+B-C",
+        "status": "DISENABLE",
+        "remark": null,
+        "isDel": 0,
+        "isShowHome": "1",
+        "creator": "admin",
+        "creatorId": 1,
+        "createdTime": "2020-03-10T03:55:20.000+0000",
+        "lastOperator": "admin",
+        "lastOperatorId": 1,
+        "updateTime": "2020-03-10T06:02:44.000+0000"
+    },
+    "productAttributeSaveVOList": [
+        {
+            "id": 194,
+            "productId": 22,
+            "attributeName": "陈",
+            "attributeCode": "A",
+            "type": "SELECT",
+            "price": 10,
+            "nameSort": 0,
+            "creator": "admin",
+            "creatorId": 1,
+            "createdTime": "2020-03-10T06:02:44.000+0000",
+            "lastOperator": "admin",
+            "lastOperatorId": 1,
+            "updateTime": "2020-03-10T06:02:44.000+0000",
+            "productAttributeValueSaveVOList": [
+                {
+                    "id": 457,
+                    "attributeId": 194,
+                    "attributeValue": "a",
+                    "attributeValueCode": "a",
+                    "valueSort": null,
+                    "ratio": 1,
+                    "creator": "admin",
+                    "creatorId": 1,
+                    "createdTime": "2020-03-10T06:02:44.000+0000",
+                    "lastOperator": "admin",
+                    "lastOperatorId": 1,
+                    "updateTime": "2020-03-10T06:02:44.000+0000"
+                }
+            ]
+        },
+        {
+            "attributeCode": "B",
+            "nameSort": 1,
+            "status": 1,
+            "type": "SELECT",
+            "show": true,
+            "price": 20,
+            "productAttributeValueSaveVOList": [
+                {
+                    "small": 98,
+                    "attributeValueCode": "a",
+                    "ratio": 2,
+                    "nameSort": 0,
+                    "status": 1,
+                    "attributeValue": "b"
+                }
+            ],
+            "attributeName": "旭"
+        },
+        {
+            "attributeCode": "C",
+            "nameSort": 2,
+            "status": 1,
+            "type": "SELECT",
+            "show": true,
+            "price": 30,
+            "productAttributeValueSaveVOList": [
+                {
+                    "small": 98,
+                    "attributeValueCode": "a",
+                    "ratio": 3,
+                    "nameSort": 0,
+                    "status": 1,
+                    "attributeValue": "c"
+                }
+            ],
+            "attributeName": "东"
+        }
+    ],
+    "productDetail": "<p>ddd打发的</p>"
+}

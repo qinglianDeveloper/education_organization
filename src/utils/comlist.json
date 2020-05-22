@@ -1,0 +1,5272 @@
+[
+    {
+        "company": "韵达快递",
+        "code": "yunda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "圆通速递",
+        "code": "yuantong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中通快递",
+        "code": "zhongtong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "邮政快递包裹",
+        "code": "youzhengguonei",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "百世快递",
+        "code": "huitongkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "申通快递",
+        "code": "shentong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "顺丰速运",
+        "code": "shunfeng",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "天天快递",
+        "code": "tiantian",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "京东物流",
+        "code": "jd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "EMS",
+        "code": "ems",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "德邦",
+        "code": "debangwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宅急送",
+        "code": "zhaijisong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "邮政标准快递",
+        "code": "youzhengbk",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "优速快递",
+        "code": "youshuwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "德邦快递",
+        "code": "debangkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "百世快运",
+        "code": "baishiwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "苏宁物流",
+        "code": "suning",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "京广速递",
+        "code": "jinguangsudikuaijian",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速尔快递",
+        "code": "suer",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "TransRush",
+        "code": "transrush",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中通快运",
+        "code": "zhongtongkuaiyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "韵达快运",
+        "code": "yundakuaiyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "安能快运",
+        "code": "annengwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "丹鸟",
+        "code": "danniao",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "品骏快递",
+        "code": "pjbest",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "全峰快递",
+        "code": "quanfengkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "EMS-国际件",
+        "code": "emsguoji",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "淘布斯国际物流",
+        "code": "taoplus",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "EWE全球快递",
+        "code": "ewe",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "圆通快运",
+        "code": "yuantongkuaiyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "UPS-全球件",
+        "code": "upsen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "DHL-中国件",
+        "code": "dhl",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "TNT",
+        "code": "tnt",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "澳邮中国快运",
+        "code": "auexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "USPS",
+        "code": "usps",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "方舟速递",
+        "code": "arkexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "联合快递",
+        "code": "gslhkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中通国际",
+        "code": "zhongtongguoji",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "速必达",
+        "code": "subida",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中粮鲜到家物流",
+        "code": "zlxdjwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "国际包裹",
+        "code": "youzhengguoji",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "FedEx-国际件",
+        "code": "fedex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "皇家物流",
+        "code": "pfcexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "转运四方",
+        "code": "zhuanyunsifang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "安达速递",
+        "code": "adapost",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "国通快递",
+        "code": "guotongkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "九曳供应链",
+        "code": "jiuyescm",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "安得物流",
+        "code": "annto",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "同城快寄",
+        "code": "shpost",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "跨越速运",
+        "code": "kuayue",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DHL-全球件",
+        "code": "dhlen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "日本（Japan Post）",
+        "code": "japanposten",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "日日顺物流",
+        "code": "rrs",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "联邦快递",
+        "code": "lianbangkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "泛远国际物流",
+        "code": "farlogistis",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "圆通国际",
+        "code": "yuantongguoji",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "盛丰物流",
+        "code": "sfwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "壹米滴答",
+        "code": "yimidida",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "EMS包裹",
+        "code": "emsbg",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "宇鑫物流",
+        "code": "yuxinwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "邦泰快运",
+        "code": "btexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "万家康物流",
+        "code": "wjkwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "斑马物流",
+        "code": "banma",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "美快国际物流",
+        "code": "meiquick",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "程光快递",
+        "code": "flyway",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中翼国际物流",
+        "code": "chnexp",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "洋包裹",
+        "code": "yangbaoguo",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "联昊通",
+        "code": "lianhaowuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "富腾达国际货运",
+        "code": "ftd",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Superb Grace",
+        "code": "superb",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "UPS",
+        "code": "ups",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "天地华宇",
+        "code": "tiandihuayu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "澳大利亚(Australia Post)",
+        "code": "auspost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "中速快递",
+        "code": "zhongsukuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "卓志速运",
+        "code": "chinaicip",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "COE",
+        "code": "coe",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "微特派",
+        "code": "weitepai",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "SYNSHIP快递",
+        "code": "synship",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Xlobo贝海国际",
+        "code": "xlobo",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "美通",
+        "code": "valueway",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "芝麻开门",
+        "code": "zhimakaimen",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "蓝天快递",
+        "code": "blueskyexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "信丰物流",
+        "code": "xinfengwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "龙邦速递",
+        "code": "longbanwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "安世通快递",
+        "code": "astexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "澳洲飞跃物流",
+        "code": "rlgaus",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "OnTrac",
+        "code": "ontrac",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "优邦速运",
+        "code": "ubonex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "百通物流",
+        "code": "buytong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "威盛快递",
+        "code": "wherexpess",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速达通",
+        "code": "sdto",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "D速快递",
+        "code": "dsukuaidi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中骅物流",
+        "code": "chunghwa56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "加拿大(Canada Post)",
+        "code": "canpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "比利时（Bpost）",
+        "code": "bpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "长江国际速递",
+        "code": "changjiang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中环快递",
+        "code": "zhonghuan",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "泰国中通CTO",
+        "code": "ctoexp",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "特急送",
+        "code": "lntjs",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "光线速递",
+        "code": "gxwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "亚风速递",
+        "code": "yafengsudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中铁快运",
+        "code": "ztky",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "迅达速递",
+        "code": "xdexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "疯狂快递",
+        "code": "crazyexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DHL-德国件（DHL Deutschland）",
+        "code": "dhlde",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "DPD",
+        "code": "dpd",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "宅急便",
+        "code": "zhaijibian",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "UEQ快递",
+        "code": "ueq",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "广东邮政",
+        "code": "guangdongyouzhengwuliu",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "极地快递",
+        "code": "polarexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "远成快运",
+        "code": "ycgky",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "日日顺智慧物联",
+        "code": "gooday365",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Newgistics",
+        "code": "newgistics",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "易达通快递",
+        "code": "qexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "顺心捷达",
+        "code": "sxjdfreight",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中远e环球",
+        "code": "cosco",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "OCS",
+        "code": "ocs",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "欧亚专线",
+        "code": "euasia",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "FedEx-美国件",
+        "code": "fedexus",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "邮邦国际",
+        "code": "youban",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "环球速运",
+        "code": "huanqiu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "恒路物流",
+        "code": "hengluwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "加运美",
+        "code": "jiayunmeiwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Aramex",
+        "code": "aramex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "佳吉快运",
+        "code": "jiajiwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "易境达国际物流",
+        "code": "uscbexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中国香港环球快运",
+        "code": "huanqiuabc",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "TNT-全球件",
+        "code": "tnten",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "YUN TRACK",
+        "code": "yuntrack",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "景顺物流",
+        "code": "jingshun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新杰物流",
+        "code": "sunjex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中外运",
+        "code": "esinotrans",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "优联吉运",
+        "code": "uluckex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "泛捷国际速递",
+        "code": "epanex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "威时沛运货运",
+        "code": "wtdchina",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "安迅物流",
+        "code": "anxl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "EMS物流",
+        "code": "emswuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "皮牙子快递",
+        "code": "bazirim",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "盛辉物流",
+        "code": "shenghuiwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "EMS-国际件-英文",
+        "code": "emsinten",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "一速递",
+        "code": "oneexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "dhl小包",
+        "code": "dhlecommerce",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "明达国际速递",
+        "code": "tmwexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "新顺丰（NSF）",
+        "code": "nsf",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "TST速运通",
+        "code": "tstexp",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "黄马甲",
+        "code": "huangmajia",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中邮物流",
+        "code": "zhongyouwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华夏国际速递",
+        "code": "uschuaxia",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "EMS-英文",
+        "code": "emsen",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "加拿大邮政",
+        "code": "canpostfr",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "澳天速运",
+        "code": "aotsd",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "西翼物流",
+        "code": "westwing",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "美西快递",
+        "code": "meixi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "成都立即送",
+        "code": "lijisong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "龙邦物流",
+        "code": "lbex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "大马鹿",
+        "code": "idamalu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "如风达",
+        "code": "rufengda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "合众速递(UCS）",
+        "code": "ucs",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "安能快递",
+        "code": "ane66",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "百世云配",
+        "code": "baishiyp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "联邦快递-英文",
+        "code": "lianbangkuaidien",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鸿泰物流",
+        "code": "hnht56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "保加利亚（Bulgarian Posts）",
+        "code": "bulgarian",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "安鲜达",
+        "code": "exfresh",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "飞洋快递",
+        "code": "shipgce",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中国香港(HongKong Post)",
+        "code": "hkpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "快捷速递",
+        "code": "kuaijiesudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DPEX",
+        "code": "dpex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "晟邦物流",
+        "code": "nanjingshengbang",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "英国小包（Royal Mail）",
+        "code": "royalmail",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "迅速快递",
+        "code": "xunsuexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "瑞士邮政",
+        "code": "swisspostcn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "大田物流",
+        "code": "datianwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "苏通快运",
+        "code": "zjstky",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "澳德物流",
+        "code": "auod",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中铁物流",
+        "code": "zhongtiewuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "运通中港",
+        "code": "yuntongkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "联合速运",
+        "code": "unitedex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "佳怡物流",
+        "code": "jiayiwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "商桥物流",
+        "code": "shangqiao56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "易客满",
+        "code": "ecmscn",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "英国邮政小包",
+        "code": "royalmailcn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "速通物流",
+        "code": "sut56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "全时速运",
+        "code": "runhengfeng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "万象物流",
+        "code": "wanxiangwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速派快递(FastGo)",
+        "code": "fastgo",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "偌亚奥国际快递",
+        "code": "nuoyaao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "嘉里大通",
+        "code": "jialidatong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新西兰中通",
+        "code": "nzzto",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "City-Link",
+        "code": "citylink",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "猛犸速递",
+        "code": "mmlogi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Hermes",
+        "code": "hermes",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "平安达腾飞",
+        "code": "pingandatengfei",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新加坡小包(Singapore Post)",
+        "code": "singpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "海带宝",
+        "code": "haidaibao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "蜜蜂速递",
+        "code": "bee001",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "嘉里大荣物流",
+        "code": "kerrytj",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Toll",
+        "code": "dpexen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "如家国际快递",
+        "code": "homecourier",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全联速运",
+        "code": "guexp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速派快递",
+        "code": "fastgoexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Fedex-国际件-中文",
+        "code": "fedexcn",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中通（带电话）",
+        "code": "zhongtongphone",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "尚橙物流",
+        "code": "shangcheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "沃埃家",
+        "code": "wowvip",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "锦程快递",
+        "code": "hrex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "AAE-中国件",
+        "code": "aae",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "西安运逸快递",
+        "code": "yyexp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "广东速腾物流",
+        "code": "suteng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "众川国际",
+        "code": "zhongchuan",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "CNPEX中邮快递",
+        "code": "cnpex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中集冷云",
+        "code": "cccc58",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "递四方",
+        "code": "disifang",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "优优速递",
+        "code": "youyou",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "加运美速递",
+        "code": "jym56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "秦邦快运",
+        "code": "qbexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "燕文物流",
+        "code": "yw56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "万家物流",
+        "code": "wanjiawuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "顺达快递",
+        "code": "sundarexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "货运皇",
+        "code": "kingfreight",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "英国大包、EMS（Parcel Force）",
+        "code": "parcelforce",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "转运中国",
+        "code": "uszcn",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "申通快运",
+        "code": "stoe56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鼎润物流",
+        "code": "la911",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "承诺达",
+        "code": "ytchengnuoda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "耀飞同城快递",
+        "code": "yaofeikuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "意大利(Poste Italiane)",
+        "code": "italiane",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "宏递快运",
+        "code": "hd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "申通国际",
+        "code": "stosolution",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "捷安达",
+        "code": "jieanda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "德国(Deutsche Post)",
+        "code": "deutschepost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "速递中国",
+        "code": "sendtochina",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "美国申通",
+        "code": "stoexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "英超物流",
+        "code": "yingchao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "法国(La Poste)",
+        "code": "csuivi",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "优速通达",
+        "code": "yousutongda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "商海德物流",
+        "code": "shd56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "南方传媒物流",
+        "code": "ndwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新西兰（New Zealand Post）",
+        "code": "newzealand",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "河北橙配",
+        "code": "chengpei",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "丰程物流",
+        "code": "sccod",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "增益速递",
+        "code": "zengyisudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "源安达",
+        "code": "yuananda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "EFSPOST",
+        "code": "efspost",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "景光物流",
+        "code": "jgwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "全一快递",
+        "code": "quanyikuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "UBI Australia",
+        "code": "gotoubi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "能达速递",
+        "code": "ganzhongnengda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "金岸物流",
+        "code": "jinan",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "TNT Australia",
+        "code": "tntau",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "TRAKPAK",
+        "code": "trakpak",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "安信达",
+        "code": "anxindakuaixi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "久久物流",
+        "code": "jiujiuwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "荷兰速递(Nederland Post)",
+        "code": "nederlandpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "玥玛速运",
+        "code": "yue777",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "天翼物流",
+        "code": "tywl99",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华中快递",
+        "code": "cpsair",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "港快速递",
+        "code": "gdkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "韩国（Korea Post）",
+        "code": "koreapost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "合心速递",
+        "code": "hexinexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "EFS Post（平安快递）",
+        "code": "efs",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "丰通快运",
+        "code": "ftky365",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "ZTE中兴物流",
+        "code": "zteexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "星云速递",
+        "code": "nebuex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "汉邦国际速递",
+        "code": "handboy",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "考拉速递",
+        "code": "koalaexp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "汇通天下物流",
+        "code": "httx56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "佐川急便",
+        "code": "sagawa",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "荷兰邮政-中文(PostNL international registered mail)",
+        "code": "postnlcn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "澳世速递",
+        "code": "ausexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中邮速递",
+        "code": "wondersyd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "e直运",
+        "code": "edtexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "秦远物流",
+        "code": "qinyuan",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新元国际",
+        "code": "xynyc",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "百事亨通",
+        "code": "bsht",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "日本郵便",
+        "code": "japanpost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "韩国邮政",
+        "code": "koreapostcn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "飞云快递系统",
+        "code": "fyex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "一号线",
+        "code": "lineone",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "美国快递",
+        "code": "meiguokuaidi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "春风物流",
+        "code": "spring56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "深圳德创物流",
+        "code": "dechuangwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "瑞典（Sweden Post）",
+        "code": "ruidianyouzheng",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "顺丰-美国件",
+        "code": "shunfengen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "集先锋快递",
+        "code": "jxfex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "民航快递",
+        "code": "minghangkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "韵丰物流",
+        "code": "yunfeng56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新速航",
+        "code": "sunspeedy",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中运全速",
+        "code": "topspeedex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "易达通",
+        "code": "yidatong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "星空国际",
+        "code": "wlwex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "家家通快递",
+        "code": "newsway",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "一号仓",
+        "code": "onehcang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "天天快物流",
+        "code": "guoeryue",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "英国邮政大包EMS",
+        "code": "parcelforcecn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "飞远配送",
+        "code": "feiyuanvipshop",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "佳成快递 ",
+        "code": "jiacheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "永昌物流",
+        "code": "yongchangwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "法国小包（colissimo）",
+        "code": "colissimo",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "青岛安捷快递",
+        "code": "anjiekuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "可可树美中速运",
+        "code": "excocotree",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "一智通",
+        "code": "1ziton",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "五六快运",
+        "code": "wuliuky",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "百腾物流",
+        "code": "baitengwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "台湾（中华邮政）",
+        "code": "postserv",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "TCXB国际物流",
+        "code": "tcxbthai",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "瑞士(Swiss Post)",
+        "code": "swisspost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "嘉诚速达",
+        "code": "jcsuda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "西班牙(Correos de Espa?a)",
+        "code": "correosdees",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "香港伟豪国际物流",
+        "code": "whgjkd",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "海淘物流",
+        "code": "ht22",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "荷兰邮政(PostNL international registered mail)",
+        "code": "postnl",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "优海国际速递",
+        "code": "uhi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "天翼快递",
+        "code": "tykd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "上海航瑞货运",
+        "code": "hangrui",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "百福东方",
+        "code": "baifudongfang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "加州猫速递",
+        "code": "jiazhoumao",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "airpak expresss",
+        "code": "airpak",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "红马甲物流",
+        "code": "sxhongmajia",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "远成物流",
+        "code": "yuanchengwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "TNT UK",
+        "code": "tntuk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "锋鸟物流",
+        "code": "beebird",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "天马迅达",
+        "code": "tianma",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中技物流",
+        "code": "zhongjiwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "大达物流",
+        "code": "idada",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "启辰国际速递",
+        "code": "qichen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中澳速递",
+        "code": "cnausu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中国澳门(Macau Post)",
+        "code": "macao",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "马来西亚小包（Malaysia Post(Registered)）",
+        "code": "malaysiapost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "恒宇运通",
+        "code": "hyytes",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "陆本速递 LUBEN EXPRESS",
+        "code": "luben",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "赛澳递for买卖宝",
+        "code": "saiaodimmb",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "运通速运",
+        "code": "yuntong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "环国运物流",
+        "code": "hgy56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宇佳物流",
+        "code": "yujiawl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "八达通",
+        "code": "bdatong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "泰进物流",
+        "code": "taijin",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "瀚朝物流",
+        "code": "hac56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "黑猫宅急便",
+        "code": "tcat",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "帮帮发",
+        "code": "bangbangpost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "增速跨境 ",
+        "code": "zyzoom",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "YODEL",
+        "code": "yodel",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中国翼",
+        "code": "cnws",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "E通速递",
+        "code": "etong",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "共速达",
+        "code": "gongsuda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "一起送",
+        "code": "yiqisong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DHL Benelux",
+        "code": "dhlbenelux",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "铁中快运",
+        "code": "tzky",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "百千诚物流",
+        "code": "bqcwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "昌宇国际",
+        "code": "changwooair",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Asendia USA",
+        "code": "asendiausa",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全球快运",
+        "code": "abcglobal",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中环转运",
+        "code": "zhonghuanus",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "EU-EXPRESS",
+        "code": "euexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "飞邦快递",
+        "code": "fbkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鑫通宝物流",
+        "code": "xtb",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "纵通速运",
+        "code": "ynztsy",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "亚洲顺物流",
+        "code": "yzswuliu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "德坤物流",
+        "code": "dekuncn",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "海红网送",
+        "code": "haihongwangsong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "跨境直邮通",
+        "code": "kjde",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "澳洲迈速快递",
+        "code": "maxeedexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "MyHermes",
+        "code": "myhermes",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "CNAIR",
+        "code": "cnair",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "邦通国际",
+        "code": "comexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "FQ狂派速递",
+        "code": "freakyquick",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Landmark Global",
+        "code": "landmarkglobal",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "西游寄",
+        "code": "xiyoug",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "CEVA Logistic",
+        "code": "cevalogistics",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中国香港(HongKong Post)英文",
+        "code": "hkposten",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "UPS i-parcel",
+        "code": "iparcel",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "track-parcel",
+        "code": "trackparcel",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "驿扬国际速运",
+        "code": "iyoungspeed",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "LaserShip",
+        "code": "lasership",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "腾达速递",
+        "code": "nntengda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "乌克兰邮政包裹",
+        "code": "ukrpostcn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "C&C国际速递",
+        "code": "cncexp",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全际通",
+        "code": "quanjitong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "城通物流",
+        "code": "chengtong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "俄罗斯邮政(Russian Post)",
+        "code": "pochta",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "顺丰-繁体",
+        "code": "shunfenghk",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "豌豆物流",
+        "code": "wandougongzhu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中天万运",
+        "code": "zhongtianwanyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "安捷物流",
+        "code": "anjie88",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "CCES/国通快递",
+        "code": "cces",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "EASY EXPRESS",
+        "code": "easyexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "一运全成物流",
+        "code": "yyqc56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "心怡物流",
+        "code": "alog",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "比利时国际(Bpost international)",
+        "code": "bpostinter",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "诚和通",
+        "code": "cht361",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "尼尔快递",
+        "code": "nell",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "丹麦(Post Denmark)",
+        "code": "postdanmarken",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "温通物流",
+        "code": "wto56kj",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "CJ物流",
+        "code": "doortodoor",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "云达通",
+        "code": "ydglobe",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "传喜物流",
+        "code": "chuanxiwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "成都东骏物流",
+        "code": "dongjun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "duodao56",
+        "code": "duodao56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "蓝天国际快递",
+        "code": "ltx",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "签收快递",
+        "code": "signedexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "贝业物流",
+        "code": "boyol",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "飞康达",
+        "code": "feikangda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "德尚国际速递",
+        "code": "gslexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "葡萄牙（Portugal CTT）",
+        "code": "portugalctt",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全日通",
+        "code": "quanritongkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "顺捷达",
+        "code": "shunjieda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "三象速递",
+        "code": "sxexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "深圳邮政",
+        "code": "szyouzheng",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "泰国（Thailand Thai Post）",
+        "code": "thailand",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "猴急送",
+        "code": "hjs",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "柬埔寨中通",
+        "code": "khzto",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "泰国中通ZTO",
+        "code": "thaizto",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "比利时(Belgium Post)",
+        "code": "belgiumpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "科捷物流",
+        "code": "kejie",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "快8速运",
+        "code": "kuai8",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "昂威物流",
+        "code": "onway",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "林道国际快递",
+        "code": "shlindao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "维普恩物流",
+        "code": "vps",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "转瞬达集运",
+        "code": "zsda56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "明辉物流",
+        "code": "zsmhwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "澳通华人物流",
+        "code": "cllexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "大洋物流",
+        "code": "dayangwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "皇家云仓",
+        "code": "hotwms",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "荷兰包裹(PostNL International Parcels)",
+        "code": "postnlpacle",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "泰国138国际物流",
+        "code": "sd138",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "运通中港快递",
+        "code": "ytkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "美国云达",
+        "code": "yundaexus",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "明大快递",
+        "code": "adaexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "邦送物流",
+        "code": "bangsongwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "北京EMS",
+        "code": "bjemstckj",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "乌克兰EMS-中文(EMS Ukraine)",
+        "code": "emsukrainecn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "骏达快递",
+        "code": "jdexpressusa",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "PCA Express",
+        "code": "pcaexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全速物流",
+        "code": "quansu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "上大物流",
+        "code": "shangda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "顺捷丰达",
+        "code": "shunjiefengda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "越丰物流",
+        "code": "yuefengwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "准实快运",
+        "code": "zsky123",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "无忧物流",
+        "code": "aliexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "amazon-国内订单",
+        "code": "amcnorder",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "飞豹快递",
+        "code": "feibaokuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "格鲁吉亚(Georgian Pos）",
+        "code": "georgianpost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "黑猫速运",
+        "code": "heimao56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宏品物流",
+        "code": "hongpinwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "7E速递",
+        "code": "qesd",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "雪域快递",
+        "code": "qhxykd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "三盛快递",
+        "code": "sanshengco",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宝通快递",
+        "code": "baotongkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "CHS中环国际快递",
+        "code": "chszhonghuanguoji",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "创一快递",
+        "code": "chuangyi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "GHT物流",
+        "code": "ghtexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "高捷快运",
+        "code": "goldjet",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "好来运",
+        "code": "hlyex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "急先达",
+        "code": "jixianda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "明亮物流",
+        "code": "mingliangwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "安达信",
+        "code": "advancing",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "爱尔兰(An Post)",
+        "code": "anposten",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "展勤快递",
+        "code": "byht",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "JDIEX",
+        "code": "jdiex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "新亚物流",
+        "code": "nalexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "土耳其",
+        "code": "ptt",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "赛澳递",
+        "code": "saiaodi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "SHL畅灵国际物流",
+        "code": "shlexp",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "明通国际快递",
+        "code": "tnjex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "51跨境通",
+        "code": "wykjt",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "易欧洲国际物流",
+        "code": "yiouzhou",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "捷克（?eská po?ta）",
+        "code": "ceskaposta",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中国香港骏辉物流",
+        "code": "chunfai",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "易达国际速递",
+        "code": "eta100",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "凡宇快递",
+        "code": "fanyukuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "印度(India Post)",
+        "code": "india",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "坦桑尼亚（Tanzania Posts Corporation）",
+        "code": "posta",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "德国优拜物流",
+        "code": "ubuy",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "万庚国际速递",
+        "code": "vangenexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "新干线快递",
+        "code": "anlexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "AOL澳通速递",
+        "code": "aolau",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中联速递",
+        "code": "auvanda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "长宇物流",
+        "code": "changyuwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "澳州顺风快递",
+        "code": "emms",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "易邮国际",
+        "code": "euguoji",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "E速达",
+        "code": "exsuda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "飞快达",
+        "code": "feikuaida",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "凤凰快递",
+        "code": "fenghuangkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华企快运",
+        "code": "huaqikuaiyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "金大物流",
+        "code": "jindawuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鲁通快运",
+        "code": "lutong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "毛里求斯(Mauritius Post)",
+        "code": "mauritius",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "圣安物流",
+        "code": "shenganwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "顺通快递",
+        "code": "stkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "深圳DPEX",
+        "code": "szdpex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "祥龙运通物流",
+        "code": "xianglongyuntong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宇航通物流",
+        "code": "yhtlogistics",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "一正达速运",
+        "code": "yizhengdasuyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "元智捷诚",
+        "code": "yuanzhijiecheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "奥地利(Austrian Post)",
+        "code": "austria",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "佰麒快递",
+        "code": "beckygo",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "BHT",
+        "code": "bht",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "重庆星程快递",
+        "code": "cqxingcheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DCS",
+        "code": "dcs",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "德国 EUC POST",
+        "code": "eucpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "FOX国际快递",
+        "code": "fox",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "红背心",
+        "code": "hongbeixin",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "jcex",
+        "code": "jcex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "骏丰国际速递",
+        "code": "junfengguoji",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "浩博物流",
+        "code": "njhaobo",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鹏远国际速递",
+        "code": "pengyuanexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全通快运",
+        "code": "quantwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "三态速递",
+        "code": "santaisudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "海信物流",
+        "code": "savor",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "海龟国际快递",
+        "code": "turtle",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "凡客配送（作废）",
+        "code": "vancl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "越南EMS(VNPost Express)",
+        "code": "vnpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "易通达",
+        "code": "yitongda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "A2U速递",
+        "code": "a2u",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "捷记方舟",
+        "code": "ajexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Aplus物流",
+        "code": "aplusex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "喀麦隆(CAMPOST)",
+        "code": "cameroon",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "河南次晨达",
+        "code": "ccd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "出口易",
+        "code": "chukou1",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "CE易欧通国际速递",
+        "code": "cloudexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "乌拉圭（Correo Uruguayo）",
+        "code": "correo",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "东红物流",
+        "code": "donghong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "东西E全运",
+        "code": "ecotransite",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "易达快运",
+        "code": "edaeuexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "飞力士物流",
+        "code": "flysman",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "GTT EXPRESS快递",
+        "code": "gttexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "好又快物流",
+        "code": "haoyoukuai",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "海联快递",
+        "code": "hltop",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华通快运",
+        "code": "htongexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "匈牙利（Magyar Posta）",
+        "code": "hungary",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "冰岛(Iceland Post)",
+        "code": "iceland",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "捷邦物流",
+        "code": "jieborne",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "吉祥邮（澳洲）",
+        "code": "jixiangyouau",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "快达物流",
+        "code": "kuaidawuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "木春货运",
+        "code": "mchy",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "PostElbe",
+        "code": "postelbe",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "荷兰邮政-中国件",
+        "code": "postnlchina",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "联运通物流",
+        "code": "szuem",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "欧洲UEX",
+        "code": "uexiex",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "文捷航空",
+        "code": "wenjiesudi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "YCG物流",
+        "code": "ycgglobal",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "一邦速递",
+        "code": "yibangwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宜送物流",
+        "code": "yiex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "银捷速递",
+        "code": "yinjiesudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "远盾物流",
+        "code": "yuandun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "远航国际快运",
+        "code": "yuanhhk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "泰捷达国际物流",
+        "code": "ztjieda",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "德国雄鹰速递",
+        "code": "adlerlogi",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全程快递",
+        "code": "agopost",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "法国大包、EMS-法文（Chronopost France）",
+        "code": "chronopostfra",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "新时速物流",
+        "code": "csxss",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "叮咚澳洲转运",
+        "code": "dindon",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "俄顺达",
+        "code": "eshunda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "europeanecom",
+        "code": "europeanecom",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全速快递",
+        "code": "fsexp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "万通快递",
+        "code": "gswtkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华瀚快递",
+        "code": "hhair56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "KCS",
+        "code": "kcs",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "蓝镖快递",
+        "code": "lanbiaokuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "林道国际快递-英文",
+        "code": "ldxpres",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "龙飞祥快递",
+        "code": "longfx",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "亚欧专线",
+        "code": "nlebv",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "北极星快运",
+        "code": "polarisexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Purolator",
+        "code": "purolator",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全速通",
+        "code": "quansutong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "日昱物流",
+        "code": "riyuwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "十方通物流",
+        "code": "sfift",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Siodemka",
+        "code": "siodemka",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "新加坡EMS、大包(Singapore Speedpost)",
+        "code": "speedpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "穗佳物流",
+        "code": "suijiawuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "天翔快递",
+        "code": "tianxiang",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "株式会社T.M.G",
+        "code": "tmg",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "通达兴物流",
+        "code": "tongdaxing",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "通和天下",
+        "code": "tonghetianxia",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "USPSCN",
+        "code": "uspscn",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "伍圆速递",
+        "code": "wuyuansudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "西邮寄",
+        "code": "xipost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "ABF",
+        "code": "abf",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "安达易国际速递",
+        "code": "adiexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "ADP国际快递",
+        "code": "adp",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "AFL",
+        "code": "afl",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "德方物流",
+        "code": "ahdf",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "卡邦配送",
+        "code": "ahkbps",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "艾瑞斯远",
+        "code": "ariesfar",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "澳货通",
+        "code": "auex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "飛斯特",
+        "code": "bester",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "彪记快递",
+        "code": "biaojikuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "堡昕德速递",
+        "code": "bosind",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速方(Sufast)",
+        "code": "bphchina",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "钏博物流",
+        "code": "cbo56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "城铁速递",
+        "code": "cex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "城际快递",
+        "code": "chengji",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "同舟行物流",
+        "code": "chinatzx",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "城晓国际快递",
+        "code": "ckeex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "CL日中速运",
+        "code": "clsp",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "CNUP 中联邮",
+        "code": "cnup",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "云南诚中物流",
+        "code": "czwlyn",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "东风快递",
+        "code": "dfkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DPD Germany",
+        "code": "dpdgermany",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "DPD UK",
+        "code": "dpduk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "E跨通",
+        "code": "ecallturn",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "龙象国际物流",
+        "code": "edragon",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "易联通达",
+        "code": "el56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "南非EMS",
+        "code": "emssouthafrica",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "东方汇",
+        "code": "est365",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "7号速递",
+        "code": "express7th",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "易转运",
+        "code": "ezhuanyuan",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "加拿大联通快运",
+        "code": "fastontime",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "FedRoad 联邦转运",
+        "code": "fedroad",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "芬兰(Itella Posti Oy)",
+        "code": "finland",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "安的快递",
+        "code": "gda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "GSM",
+        "code": "gsm",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "广通速递",
+        "code": "gtongsudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "GTS快递",
+        "code": "gts",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "广东通路",
+        "code": "guangdongtonglu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "海盟速递",
+        "code": "haimengsudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "海外环球",
+        "code": "haiwaihuanqiu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "飞鹰物流",
+        "code": "hnfy",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "汇强快递",
+        "code": "huiqiangkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华航快递",
+        "code": "hzpl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Interlink Express",
+        "code": "interlink",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "澳速通国际速递",
+        "code": "jetexpressgroup",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "九宫物流",
+        "code": "jiugong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "韩国邮政韩文",
+        "code": "koreapostkr",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "快速递",
+        "code": "ksudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "四川快优达速递",
+        "code": "kuaiyouda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "凯信达",
+        "code": "kxda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "立陶宛（Lietuvos pa?tas）",
+        "code": "lithuania",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "華信物流WTO",
+        "code": "logistics",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "6LS EXPRESS",
+        "code": "lsexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "乐天速递",
+        "code": "ltexp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "马来西亚大包、EMS（Malaysia Post(parcel,EMS)）",
+        "code": "malaysiaems",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "马耳他（Malta Post）",
+        "code": "malta",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "民邦速递",
+        "code": "minbangsudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "魔速达",
+        "code": "mosuda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Mexico Multipack",
+        "code": "multipack",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "诺尔国际物流",
+        "code": "nuoer",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "诚一物流",
+        "code": "parcelchina",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "配思货运",
+        "code": "peisihuoyunkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "全川物流",
+        "code": "quanchuan56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Red Express",
+        "code": "redexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "叙利亚(Syrian Post)",
+        "code": "republic",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "Safexpress",
+        "code": "safexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "塞尔维亚(PE Post of Serbia)",
+        "code": "serbia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "International Seur",
+        "code": "seur",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "曹操到",
+        "code": "sfpost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "王牌快递",
+        "code": "shipbyace",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "南非（South African Post Office）",
+        "code": "southafrican",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "星运快递",
+        "code": "staryvr",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "天美快递",
+        "code": "taimek",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "万家通快递",
+        "code": "timedg",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Toll Priority(Toll Online)",
+        "code": "tollpriority",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "UPS Mail Innovations",
+        "code": "upsmailinno",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "乌兹别克斯坦(Post of Uzbekistan)",
+        "code": "uzbekistan",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "鹰运国际速递",
+        "code": "vipexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "渥途国际速运",
+        "code": "wotu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "微转运",
+        "code": "wzhaunyun",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "鑫世锐达",
+        "code": "xsrd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "亚马逊中国",
+        "code": "yamaxunwuliu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "艺凡快递",
+        "code": "yifankd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "邮来速递",
+        "code": "youlai",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "雅澳物流",
+        "code": "yourscm",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "壹品速递",
+        "code": "ypsd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "御风速运",
+        "code": "yufeng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "三三国际物流",
+        "code": "zenzen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中外运速递",
+        "code": "zhongwaiyun",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "智通物流",
+        "code": "ztong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "阿富汗(Afghan Post)",
+        "code": "afghan",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "航空快递",
+        "code": "airgtc",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "阿尔巴尼亚(Posta shqipatre)",
+        "code": "albania",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "亚马逊中国订单",
+        "code": "amazoncnorder",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "amazon-国际订单",
+        "code": "amusorder",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "澳速物流",
+        "code": "aosu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "apgecommerce",
+        "code": "apgecommerce",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "美国汉邦快递",
+        "code": "aplus100",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "阿鲁巴[荷兰]（Post Aruba）",
+        "code": "aruba",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "AUV国际快递",
+        "code": "auvexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "澳新物流",
+        "code": "axexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "阿塞拜疆EMS(EMS AzerExpressPost)",
+        "code": "azerbaijan",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "巴林(Bahrain Post)",
+        "code": "bahrain",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "孟加拉国(EMS)",
+        "code": "bangladesh",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "报通快递",
+        "code": "baoxianda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "巴巴多斯(Barbados Post)",
+        "code": "barbados",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "BCWELT",
+        "code": "bcwelt",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "伯利兹(Belize Postal)",
+        "code": "belize",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "白俄罗斯(Belpochta)",
+        "code": "belpost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "笨鸟国际",
+        "code": "benniao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "奔腾物流",
+        "code": "benteng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "青云物流",
+        "code": "bjqywl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鑫锐达",
+        "code": "bjxsrd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "BlueDart",
+        "code": "bluedart",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "标杆物流",
+        "code": "bmlchina",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "波黑(JP BH Posta)",
+        "code": "bohei",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "玻利维亚",
+        "code": "bolivia",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "BorderGuru",
+        "code": "borderguru",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "博茨瓦纳",
+        "code": "botspost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "巴西(Brazil Post/Correios)",
+        "code": "brazilposten",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "文莱(Brunei Postal)",
+        "code": "brunei",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "新喀里多尼亚[法国](New Caledonia)",
+        "code": "caledonia",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "柬埔寨(Cambodia Post)",
+        "code": "cambodia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "到了港",
+        "code": "camekong",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Campbell’s Express",
+        "code": "campbellsexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "能装能送",
+        "code": "canhold",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Canpar",
+        "code": "canpar",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "卢森堡航空",
+        "code": "cargolux",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "CDEK",
+        "code": "cdek",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "成达国际速递",
+        "code": "chengda",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "智利(Correos Chile)",
+        "code": "chile",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "中邮电商",
+        "code": "chinapostcb",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "SQK国际速递",
+        "code": "chinasqk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "嘉荣物流",
+        "code": "chllog",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "法国大包、EMS-英文(Chronopost France)",
+        "code": "chronopostfren",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "Chronopost Portugal",
+        "code": "chronopostport",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "城市映急",
+        "code": "city56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "大韩通运",
+        "code": "cjkoreaexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "CNE",
+        "code": "cnexps",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "速舟物流",
+        "code": "cnspeedster",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "哥伦比亚(4-72 La Red Postal de Colombia)",
+        "code": "colombia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "莫桑比克（Correios de Moçambique）",
+        "code": "correios",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "阿根廷(Correo Argentina)",
+        "code": "correoargentino",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "哥斯达黎加(Correos de Costa Rica)",
+        "code": "correos",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "塞浦路斯(Cyprus Post)",
+        "code": "cypruspost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "大道物流",
+        "code": "dadaoex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "达速物流",
+        "code": "dasu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "德中快递",
+        "code": "decnlh",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Deltec Courier",
+        "code": "deltec",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "澳行快递",
+        "code": "desworks",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "达方物流",
+        "code": "dfpost",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DHL HK",
+        "code": "dhlhk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "DHL-荷兰（DHL Netherlands）",
+        "code": "dhlnetherlands",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "DHL-波兰（DHL Poland）",
+        "code": "dhlpoland",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "递五方云仓",
+        "code": "di5pll",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "店通快递",
+        "code": "diantongkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "云南滇驿物流",
+        "code": "dianyi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "递达速运",
+        "code": "didasuyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "叮咚快递",
+        "code": "dingdong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Direct Link",
+        "code": "directlink",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "递四方澳洲",
+        "code": "disifangau",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "递四方美国",
+        "code": "disifangus",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "天翔东捷运",
+        "code": "djy56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "东瀚物流",
+        "code": "donghanwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "DPD Poland",
+        "code": "dpdpoland",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "DTDC India",
+        "code": "dtdcindia",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "东方航空物流",
+        "code": "ealceair",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "EC-Firstclass",
+        "code": "ecfirstclass",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "ECMS Express",
+        "code": "ecmsglobal",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "厄瓜多尔(Correos del Ecuador)",
+        "code": "ecuador",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "埃及（Egypt Post）",
+        "code": "egypt",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "艾菲尔国际速递",
+        "code": "eiffel",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "希腊包裹（ELTA Hellenic Post）",
+        "code": "elta",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "希腊EMS（ELTA Courier）",
+        "code": "eltahell",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "阿联酋(Emirates Post)",
+        "code": "emirates",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "波兰小包(Poczta Polska)",
+        "code": "emonitoring",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "高考通知书",
+        "code": "emsluqu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "乌克兰EMS(EMS Ukraine)",
+        "code": "emsukraine",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "英国(大包,EMS)",
+        "code": "england",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "联众国际",
+        "code": "epspost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Estafeta",
+        "code": "estafeta",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Estes",
+        "code": "estes",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "埃塞俄比亚(Ethiopian postal)",
+        "code": "ethiopia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "中欧国际物流",
+        "code": "eucnrail",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "败欧洲",
+        "code": "europe8",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "优莎速运",
+        "code": "eusacn",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "澳洲新干线快递",
+        "code": "expressplus",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "颿达国际快递-英文",
+        "code": "fandaguoji",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "颿达国际快递",
+        "code": "fardarww",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Fastway Ireland",
+        "code": "fastway",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "正途供应链",
+        "code": "fastzt",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "FedEx-英国件（FedEx UK)",
+        "code": "fedexuk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "FedEx-英国件",
+        "code": "fedexukcn",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "飞狐快递",
+        "code": "feihukuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "斐济(Fiji Post)",
+        "code": "fiji",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "花瓣转运",
+        "code": "flowerkd",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "法翔速运",
+        "code": "ftlexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "高铁快运",
+        "code": "gaotieex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Gati-中文",
+        "code": "gaticn",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Gati-英文",
+        "code": "gatien",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Gati-KWE",
+        "code": "gatikwe",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "广东诚通物流",
+        "code": "gdct56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "全网物流",
+        "code": "gdqwwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "容智快运",
+        "code": "gdrz58",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新鹏快递",
+        "code": "gdxp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "GE2D跨境物流",
+        "code": "ge2d",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "环创物流",
+        "code": "ghl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "直布罗陀[英国]( Royal Gibraltar Post)",
+        "code": "gibraltar",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "冠捷物流 ",
+        "code": "gjwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "globaltracktrace",
+        "code": "globaltracktrace",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "英脉物流",
+        "code": "gml",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "格陵兰[丹麦]（TELE Greenland A/S）",
+        "code": "greenland",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "潍鸿",
+        "code": "grivertek",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "哥士传奇速递",
+        "code": "gscq365",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "GT国际快运",
+        "code": "gtgogo",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "冠庭国际物流",
+        "code": "guanting",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "国送快运",
+        "code": "guosong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宏观国际快递",
+        "code": "gvpexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "贵州星程快递",
+        "code": "gzxingcheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "海红for买卖宝",
+        "code": "haihongmmb",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "海星桥快递",
+        "code": "haixingqiao",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "翰丰快递",
+        "code": "hanfengjl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "航宇快递",
+        "code": "hangyu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "开心快递",
+        "code": "happylink",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "亚美尼亚(Haypost-Armenian Postal)",
+        "code": "haypost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "恒瑞物流",
+        "code": "hengrui56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Highsince",
+        "code": "highsince",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Hi淘易快递",
+        "code": "hitaoe",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "云邮跨境快递",
+        "code": "hkems",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "互联快运",
+        "code": "hlkytj",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "共联配",
+        "code": "hlpgyl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华美快递",
+        "code": "hmus",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "河南全速通",
+        "code": "hnqst",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "顺时达物流",
+        "code": "hnssd56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "居家通",
+        "code": "homexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宏捷国际物流",
+        "code": "hongjie",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "红远物流",
+        "code": "hongywl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "环球通达 ",
+        "code": "hqtd",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "卓烨快递",
+        "code": "hrbzykd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "高铁速递",
+        "code": "hre",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "克罗地亚（Hrvatska Posta）",
+        "code": "hrvatska",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "海硕高铁速递",
+        "code": "hsgtsd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华通务达物流",
+        "code": "htwd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "华达快运",
+        "code": "huada",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "环东物流",
+        "code": "huandonglg",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "驼峰国际",
+        "code": "humpline",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "兰州伙伴物流",
+        "code": "huoban",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "户通物流",
+        "code": "hutongwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鸿远物流",
+        "code": "hyeship",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "上海昊宏国际货物",
+        "code": "hyk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "iExpress",
+        "code": "iexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "logen路坚",
+        "code": "ilogen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "ILYANG",
+        "code": "ilyang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "艾姆勒",
+        "code": "imlb2c",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "印度尼西亚EMS(Pos Indonesia-EMS)",
+        "code": "indonesia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "多米尼加（INPOSDOM – Instituto Postal Dominicano）",
+        "code": "inposdom",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "伊朗（Iran Post）",
+        "code": "iran",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "以色列(Israel Post)",
+        "code": "israelpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "Italy SDA",
+        "code": "italysad",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "牙买加（Jamaica Post）",
+        "code": "jamaicapost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "急递",
+        "code": "jdpplus",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "泽西岛",
+        "code": "jerseypost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "佳家通货运",
+        "code": "jiajiatong56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "佳吉快递",
+        "code": "jiajikuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "极光转运",
+        "code": "jiguang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "锦程物流",
+        "code": "jinchengwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "劲通快递",
+        "code": "jintongkd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "晋越快递",
+        "code": "jinyuekuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "久易快递",
+        "code": "jiuyicn",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "佳捷翔物流",
+        "code": "jjx888",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "约旦(Jordan Post)",
+        "code": "jordan",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "骏绅物流",
+        "code": "jsexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "聚物物流",
+        "code": "juwu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "聚中大",
+        "code": "juzhongda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "考拉国际速递",
+        "code": "kaolaexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "哈萨克斯坦(Kazpost)",
+        "code": "kazpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "肯尼亚(POSTA KENYA)",
+        "code": "kenya",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "快服务",
+        "code": "kfwnet",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "番薯国际货运",
+        "code": "koali",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "淘韩国际快递",
+        "code": "krtao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "快淘快递",
+        "code": "kuaitao",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "吉尔吉斯斯坦(Kyrgyz Post)",
+        "code": "kyrgyzpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "跨跃国际",
+        "code": "kyue",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "蓝弧快递",
+        "code": "lanhukuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "老挝(Lao Express) ",
+        "code": "lao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "塞内加尔",
+        "code": "laposte",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "林安物流",
+        "code": "lasy56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "拉脱维亚(Latvijas Pasts)",
+        "code": "latvia",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "立白宝凯物流",
+        "code": "lbbk",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "乐递供应链",
+        "code": "ledii",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "云豹国际货运",
+        "code": "leopard",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "莱索托(Lesotho Post)",
+        "code": "lesotho",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "美联快递",
+        "code": "letseml",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "龙枫国际快递",
+        "code": "lfexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "lazada",
+        "code": "lgs",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "联运快递",
+        "code": "lianyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "黎巴嫩(Liban Post)",
+        "code": "libanpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "Linex",
+        "code": "linex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "丽狮物流",
+        "code": "lishi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "小熊物流",
+        "code": "littlebearbear",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "良藤国际速递",
+        "code": "lmfex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "隆浪快递",
+        "code": "longlangkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "长风物流",
+        "code": "longvast",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "恒通快递",
+        "code": "lqht",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "联通快递",
+        "code": "ltparcel",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "论道国际物流",
+        "code": "lundao",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "卢森堡(Luxembourg Post)",
+        "code": "luxembourg",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "LWE",
+        "code": "lwe",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "马其顿(Macedonian Post)",
+        "code": "macedonia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "麦力快递",
+        "code": "mailikuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "迈隆递运",
+        "code": "mailongdy",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "马尔代夫(Maldives Post)",
+        "code": "maldives",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "芒果速递",
+        "code": "mangguo",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "今枫国际快运",
+        "code": "mapleexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "美邦国际快递",
+        "code": "meibang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "美达快递",
+        "code": "meidaexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "美泰物流",
+        "code": "meitai",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "墨西哥（Correos de Mexico）",
+        "code": "mexico",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "Mexico Senda Express",
+        "code": "mexicodenda",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "银河物流",
+        "code": "milkyway",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "美龙快递",
+        "code": "mjexp",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "摩尔多瓦(Posta Moldovei)",
+        "code": "moldova",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "蒙古国(Mongol Post) ",
+        "code": "mongolpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "黑山(Posta Crne Gore)",
+        "code": "montenegro",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "摩洛哥 ( Morocco Post )",
+        "code": "morocco",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "MRW",
+        "code": "mrw",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中俄速通（淼信）",
+        "code": "mxe56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "纳米比亚(NamPost)",
+        "code": "namibia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "红马速递",
+        "code": "nedahm",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "尼泊尔（Nepal Postal Services）",
+        "code": "nepalpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "尼日利亚(Nigerian Postal)",
+        "code": "nigerianpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "NLE",
+        "code": "nle",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "华赫物流",
+        "code": "nmhuahe",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Nova Poshta",
+        "code": "novaposhta",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "OCA Argentina",
+        "code": "ocaargen",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "阿曼(Oman Post)",
+        "code": "oman",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "爱沙尼亚(Eesti Post)",
+        "code": "omniva",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "OPEK",
+        "code": "opek",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "波音速递",
+        "code": "overseaex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "巴基斯坦(Pakistan Post)",
+        "code": "pakistan",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "巴拉圭(Correo Paraguayo)",
+        "code": "paraguay",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全球速递",
+        "code": "pdstow",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "派尔快递",
+        "code": "peex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "陪行物流",
+        "code": "peixingwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鹏程快递",
+        "code": "pengcheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "秘鲁(SERPOST)",
+        "code": "peru",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "菲律宾（Philippine Postal）",
+        "code": "phlpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "品速心达快递",
+        "code": "pinsuxinda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "品信快递",
+        "code": "pinxinkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "先锋国际快递",
+        "code": "pioneer",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "Portugal Seur",
+        "code": "portugalseur",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "PostNord(Posten AB)",
+        "code": "postenab",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "挪威（Posten Norge）",
+        "code": "postennorge",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "巴布亚新几内亚(PNG Post)",
+        "code": "postpng",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "急顺通",
+        "code": "pzhjst",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "ANTS EXPRESS",
+        "code": "qdants",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "千里速递",
+        "code": "qianli",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "卡塔尔（Qatar Post）",
+        "code": "qpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "千顺快递",
+        "code": "qskdyxgs",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Quantium",
+        "code": "quantium",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "全信通快递",
+        "code": "quanxintong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "全之鑫物流",
+        "code": "qzx56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "睿和泰速运",
+        "code": "rhtexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "荣庆物流",
+        "code": "rokin",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "罗马尼亚（Posta Romanian）",
+        "code": "romanian",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "rpx",
+        "code": "rpx",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "日日顺快线",
+        "code": "rrskx",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "日日通国际",
+        "code": "rrthk",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "卢旺达(Rwanda i-posita)",
+        "code": "rwanda",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "S2C",
+        "code": "s2c",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "萨摩亚(Samoa Post)",
+        "code": "samoa",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "沙特阿拉伯(Saudi Post)",
+        "code": "saudipost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "中加国际快递",
+        "code": "scic",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "四川星程快递",
+        "code": "scxingcheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速呈",
+        "code": "sczpds",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "首达速运",
+        "code": "sdsy888",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "Selektvracht",
+        "code": "selektvracht",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "澳丰速递",
+        "code": "sfau",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "圣飞捷快递",
+        "code": "sfjhd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "衫达快运",
+        "code": "shanda56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "上海快通",
+        "code": "shanghaikuaitong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "上海无疆for买卖宝",
+        "code": "shanghaiwujiangmmb",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "捎客物流",
+        "code": "shaoke",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "盛通快递",
+        "code": "shengtongscm",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "神马快递",
+        "code": "shenma",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "阳光快递",
+        "code": "shiningexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "苏豪快递",
+        "code": "shipsoho",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "世运快递",
+        "code": "shiyunkuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "wish邮",
+        "code": "shpostwish",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "顺邦国际物流",
+        "code": "shunbang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "顺士达速运",
+        "code": "shunshid",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "四海快递",
+        "code": "sihaiet",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "四海捷运",
+        "code": "sihiexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "中外运空运",
+        "code": "sinoairinex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "中外运速递-中文",
+        "code": "sinoex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "易普递",
+        "code": "sixroad",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "skynet",
+        "code": "skynet",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "SkyNet Malaysia",
+        "code": "skynetmalaysia",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "skynetworldwide",
+        "code": "skynetworldwide",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "荷兰Sky Post",
+        "code": "skypost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "斯洛伐克(Slovenská Posta)",
+        "code": "slovak",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "斯洛文尼亚(Slovenia Post)",
+        "code": "slovenia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "斯里兰卡(Sri Lanka Post)",
+        "code": "slpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "嗖一下同城快递",
+        "code": "sofast56",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "行必达",
+        "code": "speeda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "申必达",
+        "code": "speedoex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "首通快运",
+        "code": "staky",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "星速递",
+        "code": "starex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速豹",
+        "code": "subaoex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速呈宅配",
+        "code": "sucheng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "特急便物流",
+        "code": "sucmj",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "苏丹（Sudapost）",
+        "code": "sudapost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "郑州速捷",
+        "code": "sujievip",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "速配欧翼",
+        "code": "superoz",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "速品快递",
+        "code": "supinexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "坦桑尼亚(Tanzania Posts)",
+        "code": "tanzania",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "TCI XPS",
+        "code": "tcixps",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "TD Cargo",
+        "code": "tdcargo",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "天纵物流",
+        "code": "tianzong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "天联快运",
+        "code": "tlky",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "TNT Italy",
+        "code": "tntitaly",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "TNT Post",
+        "code": "tntpostcn",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "TNY物流",
+        "code": "tny",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "顶世国际物流",
+        "code": "topshey",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "突尼斯EMS(Rapid-Poste)",
+        "code": "tunisia",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "UEX国际物流",
+        "code": "uex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "乌干达(Posta Uganda)",
+        "code": "uganda",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "邮鸽速运",
+        "code": "ugoexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "乌克兰小包、大包(UkrPoshta)",
+        "code": "ukraine",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "乌克兰小包、大包(UkrPost)",
+        "code": "ukrpost",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "UPS Freight",
+        "code": "upsfreight",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "UTAO优到",
+        "code": "utaoscm",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "瓦努阿图(Vanuatu Post)",
+        "code": "vanuatu",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "越中国际物流",
+        "code": "vctrans",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "越南小包(Vietnam Posts)",
+        "code": "vietnam",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "万博快递",
+        "code": "wanboex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "宁夏万家通",
+        "code": "wanjiatong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "万达美",
+        "code": "wdm",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "万邑通",
+        "code": "winit",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "凡仕特物流",
+        "code": "wlfast",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "WTD海外通",
+        "code": "wtdex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "万运国际快递",
+        "code": "wygj168",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "西安胜峰",
+        "code": "xaetc",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "国晶物流",
+        "code": "xdshipping",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "西安城联速递",
+        "code": "xianchengliansudi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "湘达物流",
+        "code": "xiangdawuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "翔腾物流",
+        "code": "xiangteng",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "小C海淘",
+        "code": "xiaocex",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "西安喜来快递",
+        "code": "xilaikd",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新元快递",
+        "code": "xingyuankuaidi",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "新宁物流",
+        "code": "xinning",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "鑫远东速运",
+        "code": "xyd666",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "一辉物流",
+        "code": "yatfai",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "也门(Yemen Post)",
+        "code": "yemen",
+        "comtype": "国际邮政"
+    },
+    {
+        "company": "驿递汇速递",
+        "code": "yidihui",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "易航物流",
+        "code": "yihangmall",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "亿领速运",
+        "code": "yilingsuyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "一柒国际物流",
+        "code": "yiqiguojiwuliu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "亿顺航",
+        "code": "yishunhang",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "宜送",
+        "code": "yisong",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "易邮速运",
+        "code": "yiyou",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "洋口岸",
+        "code": "ykouan",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "永邦国际物流",
+        "code": "yongbangwuliu",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "友家速递",
+        "code": "youjia",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "运通快运",
+        "code": "ytky168",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "粤中国际货运代理（上海）有限公司",
+        "code": "yuezhongsh",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "德国云快递",
+        "code": "yunexpress",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "远为快递",
+        "code": "ywexpress",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "直德邮",
+        "code": "zdepost",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "珠峰速运",
+        "code": "zf365",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "众辉达物流",
+        "code": "zhdwl",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "志腾物流",
+        "code": "zhitengwuliu",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "忠信达",
+        "code": "zhongxinda",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "众派速递",
+        "code": "zhpex",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "卓实快运",
+        "code": "zhuoshikuaiyun",
+        "comtype": "国内运输商"
+    },
+    {
+        "company": "振捷国际货运",
+        "code": "zjgj56",
+        "comtype": "国际运输商"
+    },
+    {
+        "company": "其它",
+        "code": "other",
+        "comtype": "国际运输商"
+    }
+]
