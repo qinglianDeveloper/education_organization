@@ -1367,3 +1367,8 @@ export const mobileValidator = (params) => {
 export const orgList = (params) => {
     return getRequest('/org/getList', params)
 }
+
+//手机号密码登录
+export const pwdLogin = (params) => {
+    return postRequest('/pwdLogin', params)
+}
