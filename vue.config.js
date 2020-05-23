@@ -10,6 +10,20 @@ const path = require('path')
 
 let url = "http://47.102.104.2:6020" //开发环境
 
+//获取局域网的IP
+var os = require('os'),
+    iptable = {},
+    ifaces = os.networkInterfaces();
+for (var dev in ifaces) {
+    ifaces[dev].forEach(function (details, alias) {
+        if ((details.family == 'IPv4') && (details.internal == false)) {
+            // iptable[dev+(alias?':'+alias:'')]=details.address;
+            iptable['localIP'] = details.address;
+        }
+    });
+}
+console.log(iptable.localIP);
+
 module.exports = {
     // 部署应用包时的基本 URL,用法和 webpack 本身的 output.publicPath 一致
     publicPath: './',
