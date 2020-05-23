@@ -1,34 +1,34 @@
 <template>
   <div class="report  main-width padding-lr">
-    <div class="ul">
+    <div class="ul" v-if="userInfo.type !== 'ORGPRINCIPAL'">
       <!-- 机构负责人 -->
-      <div class="li">
+      <router-link class="li" to="/h5-organizationApply" tag="div">
         <p>机构复学申报</p>
-      </div>
-      <div class="li">
+      </router-link>
+      <router-link class="li" to="/h5-healthyMonitor" tag="div">
         <p>每日健康监测</p>
-      </div>
+      </router-link>
       <div class="li unable">
         <p>每日健康监测</p>
         <p>请在复学审批通过后使用此功能<!-- 机构复学申报未通过 --></p>
     </div>
     </div>
 
-    <div class="ul">
+    <div class="ul" v-if="userInfo.type !== 'TEACHER'">
       <!-- 老师 -->
-      <div class="li">
+      <router-link class="li" to="/h5-healthyWrite" tag="div">
         <p>人员健康申报</p>
-      </div>
+      </router-link>
     </div>
 
-    <div class="ul">
+    <div class="ul" v-if="userInfo.type !== 'STUDENT'">
       <!-- 学生 -->
-      <div class="li">
+      <router-link class="li" to="/h5-healthyWrite" tag="div">
         <p>人员健康申报</p>
-      </div>
-      <div class="li">
+      </router-link>
+      <router-link class="li" to="/h5-healthyReport" tag="div">
         <p>每日健康监测</p>
-      </div>
+      </router-link>
     </div>
 
     <navigations :num="0"/>
@@ -42,11 +42,11 @@ export default {
   },
   data() {
     return {
-      
+      userInfo:{},
     };
   },
   created() {
-    
+    this.userInfo = this.$store.state.h5_user.h5_userInfo;
   },
   mounted() {
     

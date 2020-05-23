@@ -7,9 +7,6 @@
       <FormItem label="2.机构名称（全称）" prop="phone">
         <Input v-model="form.phone" placeholder="请输入" maxlength="11"></Input>
       </FormItem>
-      <FormItem label="机构所在镇区（街县）" prop="phone">
-        <Input v-model="form.phone" placeholder="请输入" maxlength="11"></Input>
-      </FormItem>
       <FormItem label="3.详细地址" prop="phone">
         <Input v-model="form.phone" placeholder="请输入" maxlength="11"></Input>
       </FormItem>

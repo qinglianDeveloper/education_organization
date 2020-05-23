@@ -64,7 +64,10 @@ export default {
           if (valid) { 
             pwdLogin({mobile,password}).then(res=>{
               if(res.code === 200){
-                this.$Message.success(res.result);
+                this.$store.commit("h5_saveUserInfo", res.result.userDO);
+                this.$router.replace('h5-report');
+                this.$Message.success(' 登录成功');
+                
               }else{
                 this.$Message.error(res.result);
               }

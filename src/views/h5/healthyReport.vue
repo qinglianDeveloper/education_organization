@@ -6,10 +6,7 @@
             <Input v-model="form.phone" disabled placeholder="请输入姓名" maxlength="11"></Input>
         </FormItem>
         <FormItem label="居家测温（℃）">
-            <Input v-model="form.phone" placeholder="请输入居家测温（℃）" maxlength="11"></Input>
-        </FormItem>
-        <FormItem label="姓名">
-            <Input v-model="form.phone" placeholder="请输入姓名" maxlength="11"></Input>
+            <Input type="number" v-model="form.phone" placeholder="请输入居家测温（℃）" maxlength="11"></Input>
         </FormItem>
         <FormItem label="咳嗽">
             <RadioGroup v-model="form.phone">

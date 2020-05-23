@@ -159,6 +159,7 @@ export default {
             register({mobile,validator,type,userName,password,orgId}).then(res=>{
               if(res.code === 200){
                 this.$Message.success(res.result);
+                this.$router.replace('h5-login');
               }else{
                 this.$Message.error(res.result);
               }
