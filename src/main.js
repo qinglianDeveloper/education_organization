@@ -8,7 +8,7 @@ import store from "@/store";
 import hasPermission from '@/libs/hasPermission';
 import axios from "axios"
 import "@/assets/iconfont/iconfont.css"
-
+import "@/views/h5/iconfont/iconfont.css"
 import config from '@/config'
 /**
  * @description 全局注册应用配置

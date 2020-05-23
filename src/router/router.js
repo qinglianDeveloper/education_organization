@@ -1,5 +1,78 @@
 // import login from "@/views/Login"
-export const routers = [{
+export const routers = [
+    //h5路由start
+    {
+        path: '/h5-login',
+        name: 'h5-login',
+        component: () =>
+            import("@/views/h5/login"),
+    },
+    {
+        path: '/h5-register',
+        name: 'h5-register',
+        component: () =>
+            import("@/views/h5/register"),
+    },
+    {
+        path: '/h5-report',
+        name: 'h5-report',
+        component: () =>
+            import("@/views/h5/report"),
+    },
+    {
+        path: '/h5-organizationApply',
+        name: 'h5-organizationApply',
+        component: () =>
+            import("@/views/h5/organizationApply"),
+    },
+    {
+        path: '/h5-healthyWrite',
+        name: 'h5-healthyWrite',
+        component: () =>
+            import("@/views/h5/healthyWrite"),
+    },
+    {
+        path: '/h5-healthyReport',
+        name: 'h5-healthyReport',
+        component: () =>
+            import("@/views/h5/healthyReport"),
+    },
+    {
+        path: '/h5-healthyMonitor',
+        name: 'h5-healthyMonitor',
+        component: () =>
+            import("@/views/h5/healthyMonitor"),
+    },
+    {
+        path: '/h5-user',
+        name: 'h5-user',
+        component: () =>
+            import("@/views/h5/user"),
+    },
+    {
+        path: '/h5-applyFail',
+        name: 'h5-applyFail',
+        component: () =>
+            import("@/views/h5/applyFail"),
+    },
+    {
+        path: '/h5-applyList',
+        name: 'h5-applyList',
+        component: () =>
+            import("@/views/h5/applyList"),
+    },
+    {
+        path: '/h5-monitorList',
+        name: 'h5-monitorList',
+        component: () =>
+            import("@/views/h5/monitorList"),
+    },
+    //h5路由end
+
+
+
+    
+    {
     path: '/login',
     name: 'login',
     component: () =>

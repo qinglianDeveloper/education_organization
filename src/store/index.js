@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import app from "./modules/app"
 import user from "./modules/user"
 import menu from './menu';
+import h5_user from './h5_user';
 
 // 使用
 Vue.use(Vuex);
@@ -12,7 +13,8 @@ const store = new Vuex.Store({
     modules: {
         app,
         user,
-        menu
+        menu,
+        h5_user
     }
 });
 

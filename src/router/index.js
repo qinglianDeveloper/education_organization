@@ -45,6 +45,9 @@ let otherRouter = ["goodsDetails", "goodsAdd", "updateGoods", "goodsTwo", "integ
 
 router.beforeEach(async (to, from, next) => {
     /* 佳信判断-测试版 */
+    if(to.name.indexOf('h5') > -1){
+        return next();
+    }
     if (to.name == "customerRelevance" || to.name == "callRelevance") {
         return next();
     }

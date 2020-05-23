@@ -1351,8 +1351,27 @@ export const getSalesPerformance = (params) => {
 }
 
 
+/* 8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */
 
 // 健康-机构列表
 export const getOrgList = (params) => {
     return getRequest('/org/getPageList', params)
+}
+//用户注册
+export const register = (params) => {
+    return postRequest('/register', params)
+}
+//获取短信验证码
+export const mobileValidator = (params) => {
+    return getRequest('/getMobileValidator', params)
+}
+
+//获取教育机构列表,用于下拉选择
+export const orgList = (params) => {
+    return getRequest('/org/getList', params)
+}
+
+//手机号密码登录
+export const pwdLogin = (params) => {
+    return postRequest('/pwdLogin', params)
 }
