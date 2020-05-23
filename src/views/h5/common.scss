@@ -1,0 +1,77 @@
+
+
+.main-width{
+    width: 100%;
+    max-width: 500px;
+    margin:0px auto;
+
+    
+    button[type=button]{
+        display: block;
+        width: 100%;
+    }
+}
+
+
+
+.padding-lr {
+    $val: 20px;
+    padding-left: $val !important;
+    padding-right: $val !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.c333 {
+    color: #333 !important;
+}
+
+.c666 {
+    color: #666 !important;
+}
+
+.c999 {
+    color: #999 !important;
+}
+
+.cbbb {
+    color: #bbb !important;
+}
+
+.cccc {
+    color: #ccc !important;
+}
+
+.cfff {
+    color: #fff !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.ellipsis1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@for $i from 2 through 10 {
+    .ellipsis#{$i} {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: $i;
+        -webkit-box-orient: vertical;
+    }
+}
+
+/**10像素到40像素的字体,用法:fz20 **/
+
+@for $j from 10 through 200 {
+    .f#{$j} {
+        font-size: $j+px;
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "1835481",
+  "name": "教育平台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8228045",
+      "name": "我 的",
+      "font_class": "mine-gray",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "11043631",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "12519641",
+      "name": "进度填报",
+      "font_class": "jindutianbao",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}
