@@ -356,7 +356,7 @@ export default {
           this.data = res.result.content;
           this.data.forEach(item => {
             if (item.salesName == "" || item.salesName == null) {
-              item.salesName = "云的家";
+              item.salesName = "健康申报";
             }
             if (item.channelName == "" || item.channelName == null) {
               item.channelName = "-";

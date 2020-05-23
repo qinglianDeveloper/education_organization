@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2020-02-16 15:46:36
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-05-23 13:36:05
+--> 
 <template>
   <div class="welcome">
     <Row class="title">欢迎进入楼无忧后台管理系统</Row>
@@ -33,8 +41,4 @@ export default {
     transform: translate(-50%, -40%);
   }
 }
-// img {
-//   width: 100px;
-//   height: 100px;
-// }
 </style>

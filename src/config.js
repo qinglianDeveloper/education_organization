@@ -1,4 +1,4 @@
-let path1 = "/ydj-admin/admin";
+let path1 = "/HealthReport-admin/admin";
 let path2 = "/admin";
 let state = process.env.NODE_ENV === 'production';
 let baseUrl = state ? path1 : path2;

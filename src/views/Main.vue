@@ -6,8 +6,8 @@
       :style="{width: shrink?'60px':'240px', overflow: shrink ? 'visible' : 'visible'}"
     >
       <div slot="top" class="logo-con">
-        <div v-show="!shrink" class="max-title">云的家后台管理系统</div>
-        <div v-show="shrink" class="min-title">YDJ</div>
+        <div v-show="!shrink" class="max-title">后台管理系统</div>
+        <div v-show="shrink" class="min-title">ADMIN</div>
       </div>
 
       <shrinkable-menu
@@ -222,7 +222,7 @@ export default {
       } else if (name == "loginout") {
         this.$Modal.confirm({
           title: "确认退出",
-          content: "您确认要退出云的家后台管理系统?",
+          content: "您确认要退出健康申报后台管理系统?",
           onOk: () => {
             sessionStorage.removeItem("userInfo");
             localStorage.removeItem("tagNaveList");

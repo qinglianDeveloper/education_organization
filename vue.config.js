@@ -4,13 +4,11 @@
  * @Author: sueRimn
  * @Date: 2020-02-17 21:35:19
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-07 15:47:21
+ * @LastEditTime: 2020-05-23 08:53:29
  */
 const path = require('path')
 
-let url = "http://8.129.183.72:6020/" //开发环境
-//let url = "http://172.16.30.46:6020/" //陈宇仁
-// let url = "http://120.24.215.57:6020" //测试环境
+let url = "http://47.102.104.2:6020" //开发环境
 
 module.exports = {
     // 部署应用包时的基本 URL,用法和 webpack 本身的 output.publicPath 一致

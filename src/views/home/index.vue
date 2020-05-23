@@ -1,106 +1,44 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2020-02-16 15:46:36
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-05-23 13:36:27
+--> 
 <template>
-  <div class="home">
-    <!-- {{"1"+menuBtns}} -->
-    <datePage v-if="showData"></datePage>
-    <welcomePage v-if="showWelcome"></welcomePage>
+  <div class="welcome">
+    <Row class="title">欢迎进入健康申报后台管理系统</Row>
+    <div class="img">
+      <img :src="imgUrl" />
+    </div>
   </div>
 </template>
 <script>
-import datePage from "./datePage";
-import welcomePage from "./welcomePage";
-import { mapState } from "vuex";
 export default {
-  name: "home",
-  components: { datePage, welcomePage },
-  created() {
-    // console.log(this.menuBtns);
-    // this.showHome();
-  },
-  mounted() {
-    // this.showHome();
-  },
   data() {
     return {
-      showData: false,
-      showWelcome: false
+      imgUrl: require("@/assets/welcome.png")
     };
-  },
-  methods: {
-    showHome() {
-      if (
-        this.menuBtns.indexOf("home:data") > -1 &&
-        this.menuBtns.indexOf("home:welcome") == -1
-      ) {
-        console.log("1");
-        this.showData = true;
-        this.showWelcome = false;
-      } else if (
-        this.menuBtns.indexOf("home:data") > -1 &&
-        this.menuBtns.indexOf("home:welcome") > -1
-      ) {
-        console.log("2");
-        this.showData = true;
-        this.showWelcome = false;
-      } else if (
-        this.menuBtns.indexOf("home:data") == -1 &&
-        this.menuBtns.indexOf("home:welcome") > -1
-      ) {
-        console.log("3");
-
-        this.showData = false;
-        this.showWelcome = true;
-      } else if (
-        this.menuBtns.indexOf("home:data") == -1 &&
-        this.menuBtns.indexOf("home:welcome") == -1
-      ) {
-        console.log("4");
-
-        this.showData = false;
-        this.showWelcome = true;
-      }
-    }
-
-    // showData() {
-    //   if (
-    //     this.menuBtns.indexOf("home:data") > -1 ||
-    //     this.menuBtns.indexOf("home:welcome") == -1
-    //   ) {
-    //     return true;
-    //   } else if (
-    //     this.menuBtns.indexOf("home:data") > -1 ||
-    //     this.menuBtns.indexOf("home:welcome") > -1
-    //   ) {
-    //     return true;
-    //   }
-    // },
-    // showWelcome() {
-    //   if (
-    //     this.menuBtns.indexOf("home:data") == -1 ||
-    //     this.menuBtns.indexOf("home:welcome") > -1
-    //   ) {
-    //     return true;
-    //   } else if (
-    //     this.menuBtns.indexOf("home:data") == -1 ||
-    //     this.menuBtns.indexOf("home:welcome") == -1
-    //   ) {
-    //     return true;
-    //   }
-    // }
-  },
-  computed: {
-    ...mapState({
-      menuBtns: state => state.menu.menuBtns
-    })
-  },
-  watch: {
-    menuBtns() {
-      this.showHome();
-    }
   }
 };
 </script>
 <style lang="scss" scoped>
-.home {
+.welcome {
   height: 100%;
+  position: relative;
+  .title {
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+  }
+  .img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+  }
 }
 </style>

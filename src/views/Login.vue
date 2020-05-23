@@ -2,7 +2,7 @@
 <template>
   <div class="login">
     <div class="main">
-      <h2 class="title">云的家后台管理系统</h2>
+      <h2 class="title">健康申报后台管理系统</h2>
       <div class="login-info">
         <div class="login-info-from">
           <Form ref="formCustom" :model="formCustom" :rules="rules">

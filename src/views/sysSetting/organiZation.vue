@@ -320,7 +320,7 @@ export default {
       selectAllRole: [], // 请求返回的全部角色列表
       // syncLoading: false,
       isEdit: false,
-      tableTitle: "广州青莲网络科技有限公司",
+      tableTitle: "健康申报登记管理",
       colTableList: [
         {
           title: "姓名",
