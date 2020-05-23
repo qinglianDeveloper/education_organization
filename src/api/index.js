@@ -1352,3 +1352,7 @@ export const getSalesPerformance = (params) => {
 
 
 
+// 健康-机构列表
+export const getOrgList = (params) => {
+    return getRequest('/org/getPageList', params)
+}

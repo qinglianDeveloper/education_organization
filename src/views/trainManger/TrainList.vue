@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-23 15:23:50
+ * @LastEditTime: 2020-05-23 16:29:35
 --> 
 <template>
   <div class="trainlist">
@@ -29,10 +29,10 @@
           :label-width="100"
         >
           <FormItem label="教育机构名称">
-            <Input v-model="searchForm.companyName" placeholder="请输入教育机构名称" />
+            <Input v-model="searchForm.orgName" placeholder="请输入教育机构名称" />
           </FormItem>
           <FormItem label="负责人姓名">
-            <Input v-model="searchForm.salesName" placeholder="请输入负责人姓名" />
+            <Input v-model="searchForm.principalName" placeholder="请输入负责人姓名" />
           </FormItem>
         </Form>
         <div style="float:right;margin:11px 0">
@@ -51,7 +51,11 @@
         :loading="loading"
         :height="tableHeight"
         @on-selection-change="changeSelect"
-      ></Table>
+      >
+        <template slot="action" slot-scope="{row,index}">
+          <Button type="success" size="small" @click="handleDetails(row,index)">查看详情</Button>
+        </template>
+      </Table>
     </Row>
     <!-- 分页 -->
     <Row type="flex" justify="end" class="page">
@@ -71,12 +75,58 @@
   </div>
 </template>
 <script>
+import { getOrgList } from "@/api";
+import { dateFormat } from "@/utils/current";
 export default {
   data() {
     return {
-      columns: [],
+      columns: [
+        {
+          type: "selection",
+          width: 60,
+          align: "center",
+          fixed: "left"
+        },
+        {
+          title: "机构所在区域",
+          key: "areaDetail",
+          align: "center",
+          minWidth: 180
+        },
+        {
+          title: "教育机构名称",
+          key: "orgName",
+          align: "center",
+          minWidth: 200
+        },
+        {
+          title: "负责人姓名",
+          key: "principalName",
+          align: "center",
+          minWidth: 160
+        },
+        {
+          title: "负责人电话号码",
+          key: "principalMobile",
+          align: "center",
+          minWidth: 160
+        },
+        {
+          title: "登记时间",
+          key: "createdTime",
+          align: "center",
+          minWidth: 170
+        },
+        {
+          title: "操作",
+          slot: "action",
+          align: "center",
+          width: 130,
+          fixed: "right"
+        }
+      ],
       data: [],
-      loading: false,
+      loading: true,
       tableHeight: 0,
       searchForm: {
         pageNumber: 1,
@@ -96,7 +146,20 @@ export default {
     window.onresize = null;
   },
   methods: {
-    getTableInfo() {},
+    getTableInfo() {
+      getOrgList(this.searchForm).then(res => {
+        if (res.code == 200) {
+          res.result.content.forEach(item => {
+            if (item.createdTime) {
+              item.createdTime = dateFormat(item.createdTime);
+            }
+          });
+          this.data = res.result.content;
+          this.total = res.result.totalElements;
+          this.loading = false;
+        }
+      });
+    },
     init() {
       // 计算页面高度
       this.pageHeight();
@@ -116,9 +179,22 @@ export default {
       this.tableHeight = pageHeight - headerHeight - footerHeight - 123;
     },
     add() {},
-    handleSearch() {},
-    handleReset() {},
+    handleSearch() {
+      this.searchForm.pageNumber = 1;
+      this.searchForm.pageSize = 10;
+      this.getTableInfo();
+    },
+    handleReset() {
+      this.searchForm = {
+        pageNumber: 1,
+        pageSize: 10,
+        orgName: "",
+        principalName: ""
+      };
+      this.getTableInfo();
+    },
     changeSelect() {},
+    handleDetails() {},
     changePage(e) {
       this.searchForm.pageNumber = e;
       this.getTableInfo();

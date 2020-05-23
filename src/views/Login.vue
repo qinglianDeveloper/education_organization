@@ -46,7 +46,6 @@
   </div>
 </template>
 <script>
-// import Cookies from "js-cookie"; //cookie插件
 import Sidentify from "@/components/codeImage.vue";
 import { login, getImageCode } from "@/api"; //接口
 export default {
