@@ -7,7 +7,7 @@ const h5_user = {
     mutations: {
         h5_saveUserInfo(state, userInfo) {
             //this.$store.commit("h5_saveUserInfo", userInfo);
-            //this.$store.h5_user.h5_userInfo;
+            //this.$store.state.h5_user.h5_userInfo;
             state.h5_userInfo = userInfo;
         }
     },
