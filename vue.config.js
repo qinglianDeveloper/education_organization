@@ -9,6 +9,7 @@
 const path = require('path')
 
 let url = "http://47.102.104.2:6020" //开发环境
+url = 'http://172.16.10.171:6020';
 
 //获取局域网的IP
 var os = require('os'),

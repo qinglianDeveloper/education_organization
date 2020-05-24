@@ -1405,3 +1405,20 @@ export const deletApprove = (params) => {
 export const addApprove = (params) => {
     return postRequest('/common/resumeApprove/insert', params)
 }
+//提交复学审批表
+export const applySubmit = (params) => {
+    return postFormData('/common/resumeApprove/insert', params, 'json')
+}
+//审核复学审批表
+export const applyList = (params) => {
+    return getRequest('/common/resumeApprove/audit', params)
+}
+
+//通用地址获取接口
+export const adressInfo = (params) => {
+    return getRequest('/address/getListSearch', params)
+}
+
+
+
+

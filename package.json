@@ -13,6 +13,7 @@
     "core-js": "^3.3.2",
     "countup": "^1.8.2",
     "vue": "^2.6.10",
+    "vue-city-bspicker": "^1.1.0",
     "vue-pdf": "^4.0.8"
   },
   "devDependencies": {
