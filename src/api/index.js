@@ -1384,6 +1384,10 @@ export const getAddresslist = (params) => {
 export const addOrg = (params) => {
     return postRequest('/org/add', params)
 }
+// 编辑教育机构
+export const editOrg = (params) => {
+    return postRequest('/org/edit', params)
+}
 // 机构列表-健康上报-教师列表
 export const getTeacherList = (params) => {
     return getRequest('/teacher/getPageList', params)
@@ -1419,6 +1423,16 @@ export const adressInfo = (params) => {
     return getRequest('/address/getListSearch', params)
 }
 
-
-
+// 新增用户
+export const addUser = (params) => {
+    return postRequest('/sys/platformUser/add', params)
+}
+// 删除用户
+export const deleteUser = (params) => {
+    return postRequest('/sys/platformUser/delete/' + params)
+}
+// 编辑用户
+export const editUser = (params) => {
+    return postRequest('/sys/platformUser/edit', params)
+}
 

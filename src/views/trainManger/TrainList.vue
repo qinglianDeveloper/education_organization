@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 10:58:56
+ * @LastEditTime: 2020-05-24 16:01:42
 --> 
 <template>
   <div class="trainlist">
@@ -96,12 +96,12 @@
         <FormItem label="机构名称:" prop="orgName">
           <Input v-model="formItem.orgName" />
         </FormItem>
-        <FormItem label="区域:" prop="area">
+        <FormItem label="区域:" prop="areaId">
           <Cascader
             @on-visible-change="clickArea"
             ref="cascader"
             :data="addressData"
-            :value="formItem.area"
+            :value="formItem.areaId"
             @on-change="changeArea"
             :load-data="loadData"
             transfer
@@ -120,11 +120,18 @@
   </div>
 </template>
 <script>
-import { getOrgList, getListSearch, getAddresslist, addOrg } from "@/api";
+import {
+  getOrgList,
+  getListSearch,
+  getAddresslist,
+  addOrg,
+  editOrg
+} from "@/api";
 import { dateFormat } from "@/utils/current";
 export default {
   data() {
     return {
+      isEdit: "add",
       columns: [
         {
           type: "selection",
@@ -183,7 +190,7 @@ export default {
       addressData: [],
       formItem: {
         orgName: "",
-        areaId: "",
+        areaId: [],
         area: [],
         areaDetail: ""
       },
@@ -195,7 +202,7 @@ export default {
             trigger: "blur"
           }
         ],
-        area: [
+        areaId: [
           {
             required: true,
             message: "请选择地区",
@@ -259,20 +266,39 @@ export default {
     },
     add() {
       this.modalTitle = "新增培训机构";
+      this.isEdit = "add";
       this.modalStatus = true;
       this.$refs["formItem"].resetFields();
+      this.formItem = {
+        orgName: "",
+        areaId: [],
+        area: [],
+        areaDetail: ""
+      };
     },
     handleSubmit() {
       this.$refs["formItem"].validate(valid => {
-        console.log(valid, this.formItem);
         if (valid) {
-          addOrg(this.formItem).then(res => {
-            if (res.code == 200) {
-              this.$Message.success("新增机构成功！");
-              this.getTableInfo();
-              this.modalStatus = false;
-            }
-          });
+          let obj = JSON.parse(JSON.stringify(this.formItem));
+          obj.areaId = this.formItem.areaId.join(",");
+          console.log(valid, obj);
+          if (this.isEdit == "add") {
+            addOrg(obj).then(res => {
+              if (res.code == 200) {
+                this.$Message.success("新增机构成功!");
+                this.getTableInfo();
+                this.modalStatus = false;
+              }
+            });
+          } else if (this.isEdit == "edit") {
+            editOrg(obj).then(res => {
+              if (res.code == 200) {
+                this.$Message.success("新增机构成功!");
+                this.getTableInfo();
+                this.modalStatus = false;
+              }
+            });
+          }
         }
       });
     },
@@ -302,8 +328,32 @@ export default {
     },
     handleEdit(row, index) {
       this.modalTitle = "编辑培训机构";
+      this.isEdit = "edit";
       this.modalStatus = true;
       this.$refs["formItem"].resetFields();
+      let obj = JSON.parse(JSON.stringify(row));
+      this.formItem.id = obj.id;
+      this.formItem.orgName = obj.orgName;
+      let arr = obj.areaId.split(",");
+      // for (let i = 0, leng = arr.length; i < leng; i++) {
+      //   arr[i] = arr[i] * 1;
+      // }
+      this.regroupAddress(arr);
+
+      // this.formItem.area = obj.area;
+      this.formItem.areaDetail = obj.areaDetail;
+    },
+
+    //数据--通用地址
+    async regroupAddress(arr) {
+      for (let i = 0, len = arr.length; i < len; i++) {
+        await this.getAddresslist(arr[i], i, arr);
+      }
+      let ar = [];
+      arr.forEach(item => {
+        ar.push(item * 1);
+      });
+      this.formItem.areaId = ar;
     },
     handleDelete(row, index) {
       this.$Modal.confirm({
@@ -313,14 +363,45 @@ export default {
       });
     },
     // 获取省份
-    getAddresslist(obj) {
-      getAddresslist({ level: 1 }).then(res => {
-        this.addressData = res.result;
-        this.addressData.forEach(item => {
-          item.children = [];
-          item.loading = false;
+    getAddresslist(id, i, arr) {
+      if (this.isEdit == "add") {
+        getAddresslist({ level: 1 }).then(res => {
+          this.addressData = res.result;
+          this.addressData.forEach(item => {
+            item.children = [];
+            item.loading = false;
+          });
         });
-      });
+      } else if (this.isEdit == "edit") {
+        return getAddresslist({ pid: id }).then(res => {
+          if (i == 0) {
+            this.addressData.forEach(item => {
+              if (item.id == id) {
+                item.children = res.result;
+                item.loading = false;
+              } else {
+                item.children = [];
+                item.loading = false;
+              }
+            });
+          } else if (i == 1) {
+            this.addressData.forEach(item => {
+              if (item.id == arr[i - 1]) {
+                item.children.forEach(it => {
+                  if (it.id == id) {
+                    it.children = res.result;
+                    it.loading = false;
+                    console.log(it.name, it.children);
+                  } else {
+                    it.children = [];
+                    it.loading = false;
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
     },
     clickArea(val) {
       console.log(val, this.addressData, "点击了");
@@ -329,13 +410,16 @@ export default {
       }
     },
     changeArea(v, item) {
-      console.log(v, item);
       let area = [];
       item.map(val => {
         area.push(val.label);
       });
+      let areaId = [];
+      v.map(val => {
+        areaId.push(val * 1);
+      });
       this.formItem.area = area;
-      this.formItem.areaId = v.join(",");
+      this.formItem.areaId = areaId;
     },
     loadData(item, callback) {
       item.loading = true;

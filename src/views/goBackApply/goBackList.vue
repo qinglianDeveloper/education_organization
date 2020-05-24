@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 11:02:37
+ * @LastEditTime: 2020-05-24 13:44:55
 --> 
 <template>
   <div class="trainlist">
@@ -79,10 +79,30 @@
         ></Page>
       </div>
     </Row>
+    <!-- 审核弹框 -->
+    <Modal v-model="checkStatus" title="复学审批">
+      <Form ref="formItem" :model="checkForm" :mask-closable="false">
+        <FormItem
+          label="状态:"
+          :label-width="70"
+          prop="status"
+          :rules="{required: true, message: '请选择状态', trigger: 'change',type:'number'}"
+        >
+          <RadioGroup v-model="checkForm.status">
+            <Radio :label="1" style="margin-right:20px">通过</Radio>
+            <Radio :label="2">未通过</Radio>
+          </RadioGroup>
+        </FormItem>
+      </Form>
+      <div slot="footer">
+        <Button type="default" @click="checkStatus=false">取消</Button>
+        <Button type="primary" @click="handleSubmit">确定</Button>
+      </div>
+    </Modal>
   </div>
 </template>
 <script>
-import { getAuditlist, deletApprove } from "@/api";
+import { getAuditlist, deletApprove, applyList } from "@/api";
 export default {
   data() {
     return {
@@ -132,7 +152,11 @@ export default {
         pageNumber: 1,
         pageSize: 10
       },
-      total: 0
+      total: 0,
+      checkStatus: false,
+      checkForm: {
+        status: ""
+      }
     };
   },
   created() {
@@ -176,7 +200,6 @@ export default {
     },
     getTableInfo() {
       getAuditlist(this.searchForm).then(res => {
-        // console.log(888888, res);
         if (res.code == 200) {
           this.data = res.result.content;
           this.total = res.result.totalElements;
@@ -218,9 +241,38 @@ export default {
     },
     changeSelect() {},
     handleDetail(row) {},
-    handleDelete(row) {},
-    handleCheck(row) {},
-    handleSubmit() {},
+    handleDelete(row) {
+      this.$Modal.confirm({
+        title: "确认删除",
+        content: "确认删除这条复学审批?",
+        onOk: () => {
+          deletApprove({ id: row.id }).then(res => {
+            if (res.code == 200) {
+              this.$Message.success("删除成功!");
+              this.getTableInfo();
+            }
+          });
+        }
+      });
+    },
+    handleCheck(row) {
+      this.checkStatus = true;
+      this.$refs["formItem"].resetFields();
+      this.checkForm.id = row.id;
+    },
+    handleSubmit() {
+      this.$refs["formItem"].validate(valid => {
+        if (valid) {
+          applyList(this.checkForm).then(res => {
+            if (res.code == 200) {
+              this.$Message.success("状态修改成功!");
+              this.checkStatu = false;
+              this.getTableInfo();
+            }
+          });
+        }
+      });
+    },
     changePage(e) {
       this.searchForm.pageNumber = e;
       this.getTableInfo();

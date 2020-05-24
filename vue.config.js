@@ -4,24 +4,24 @@
  * @Author: sueRimn
  * @Date: 2020-02-17 21:35:19
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-23 08:53:29
+ * @LastEditTime: 2020-05-24 15:10:12
  */
 const path = require('path')
 
-let url = "http://47.102.104.2:6020" //开发环境
+// let url = "http://47.102.104.2:6020" //开发环境
 url = 'http://172.16.10.171:6020';
 
 //获取局域网的IP
 var os = require('os'),
-    iptable = {},
-    ifaces = os.networkInterfaces();
+    iptable = {},
+    ifaces = os.networkInterfaces();
 for (var dev in ifaces) {
-    ifaces[dev].forEach(function (details, alias) {
-        if ((details.family == 'IPv4') && (details.internal == false)) {
-            // iptable[dev+(alias?':'+alias:'')]=details.address;
-            iptable['localIP'] = details.address;
-        }
-    });
+    ifaces[dev].forEach(function (details, alias) {
+        if ((details.family == 'IPv4') && (details.internal == false)) {
+            // iptable[dev+(alias?':'+alias:'')]=details.address;
+            iptable['localIP'] = details.address;
+        }
+    });
 }
 console.log(iptable.localIP);
 

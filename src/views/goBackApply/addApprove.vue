@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 13:01:41
+ * @LastEditTime: 2020-05-24 13:15:59
 --> 
 <template>
   <div class="add">
@@ -345,7 +345,6 @@ export default {
             return h("Input", {
               props: {
                 value: ""
-                //size:'small',
               },
               on: {
                 input: val => {
@@ -355,24 +354,6 @@ export default {
             });
           }
         },
-        /* {
-          title: "名称",
-          key: "name",
-          render: (h, params) => {
-            this.form.supplies[params.index] = params.row;
-            return h(
-              "div",
-              this.$refs.myTable.$scopedSlots.name({
-                row: params.row,
-                idx: params.row._index
-              })
-            );
-          }
-        }, */
-        /* {
-          title: "名称",
-          key: "name"
-        }, */
         {
           title: "单位",
           key: "unit",
@@ -380,11 +361,10 @@ export default {
             return h("Input", {
               props: {
                 value: ""
-                //size:'small',
               },
               on: {
                 input: val => {
-                  this.form.supplies[params.index].name = val;
+                  this.form.supplies[params.index].unit = val;
                 }
               }
             });
@@ -397,11 +377,10 @@ export default {
             return h("Input", {
               props: {
                 value: ""
-                //size:'small',
               },
               on: {
                 input: val => {
-                  this.form.supplies[params.index].name = val;
+                  this.form.supplies[params.index].number = val;
                 }
               }
             });
