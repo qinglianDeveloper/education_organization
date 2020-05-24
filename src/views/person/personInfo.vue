@@ -185,7 +185,7 @@
   </div>
 </template>
 <script>
-import { getTeacherList, getStudentList,personHealthDetail } from "@/api";
+import { getTeacherList, getStudentList,personHealthByUser } from "@/api";
 import { dateFormat } from "@/utils/current";
 export default {
   data() {
@@ -338,7 +338,7 @@ export default {
     },
     getPersonHealthDetail(id){
       //详情
-      personHealthDetail({id:id}).then(res=>{
+      personHealthByUser({id}).then(res=>{
         if(res.code === 200){
 
         }
