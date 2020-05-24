@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-02-17 21:35:19
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 17:20:31
+ * @LastEditTime: 2020-05-24 17:50:51
 --> 
 <template>
   <div class="user">
@@ -87,8 +87,9 @@
           <Input v-model="form.mobile" v-if="isEdit=='add'" />
           <span v-else>{{form.mobile}}</span>
         </FormItem>
-        <FormItem label="所属镇区:" prop="areaId" v-if="isShow">
+        <FormItem label="所属镇区:" prop="areaId">
           <Cascader
+            v-if="isEdit=='add'"
             @on-visible-change="clickArea"
             ref="cascader"
             :data="addressData"
@@ -97,17 +98,17 @@
             :load-data="loadData"
             transfer
           ></Cascader>
+          <span v-else>{{form.area}}</span>
         </FormItem>
-        <FormItem v-else label="所属镇区:">
-          <span>{{form.area}}</span>
-        </FormItem>
-        <FormItem label="角色:" prop="type" v-if="isEdit=='add'">
-          <RadioGroup v-model="form.type">
+
+        <FormItem label="角色:" prop="type">
+          <RadioGroup v-model="form.type" v-if="isEdit=='add'">
             <Radio label="TOWNPRINCIPAL" style="margin-right:20px">镇区负责人</Radio>
             <Radio label="EDUCATIONPRINCIPAL">教育局人员</Radio>
           </RadioGroup>
+          <span v-else>{{form.type | changeType}}</span>
         </FormItem>
-        <FormItem label="角色:" v-else>{{form.type | changeType}}</FormItem>
+
         <FormItem label="初始密码:" prop="password" v-if="isEdit=='add'">
           <Input v-model="form.password" />
         </FormItem>
@@ -131,7 +132,6 @@ export default {
   data() {
     return {
       isEdit: "add",
-      isShow: true,
       columns: [
         {
           type: "selection",
@@ -299,9 +299,6 @@ export default {
       });
     },
     add() {
-      this.modalTitle = "新增用户";
-      this.modalStatus = true;
-      this.isEdit = "add";
       this.form = {
         userName: "",
         mobile: "",
@@ -310,6 +307,10 @@ export default {
         type: "",
         password: ""
       };
+      this.modalTitle = "新增用户";
+      this.isEdit = "add";
+      this.modalStatus = true;
+      console.log(111111111, this.form);
       this.$refs["form"].resetFields();
     },
     handleSearch() {
@@ -326,19 +327,11 @@ export default {
     },
     changeSelect() {},
     handleEdit(row) {
-      if (row.type == "TOWNPRINCIPAL" || row.type == "EDUCATIONPRINCIPAL") {
-        this.isShow = true;
-        // console.log("有");
-      } else {
-        this.isShow = false;
-        // console.log("无");
-      }
       this.modalTitle = "编辑用户";
       this.isEdit = "edit";
       this.modalStatus = true;
-      // this.$refs["form"].resetFields();
+      this.$refs["form"].resetFields();
       let obj = JSON.parse(JSON.stringify(row));
-
       this.form.id = obj.id;
       this.form.userName = obj.userName;
       this.form.mobile = obj.mobile;
