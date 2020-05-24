@@ -1419,6 +1419,12 @@ export const adressInfo = (params) => {
     return getRequest('/address/getListSearch', params)
 }
 
+// 提交人员健康申报表
+export const personHealth = (params) => {
+    return postRequest('/common/personnelHealth/insert', params)
+}
+
+
 
 
 
