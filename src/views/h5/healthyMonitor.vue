@@ -7,7 +7,7 @@
     <Form label-position="top">
       <FormItem label="所在培训机构">
         <Select v-model="model11" filterable>
-          <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          <Option v-for="(item,index) in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
         </Select>
       </FormItem>
     </Form>
