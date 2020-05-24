@@ -1378,7 +1378,7 @@ export const pwdLogin = (params) => {
 
 //提交复学审批表
 export const applySubmit = (params) => {
-    return postRequest('/common/resumeApprove/insert', params)
+    return postFormData('/common/resumeApprove/insert', params,'json')
 }
 //审核复学审批表
 export const applyList = (params) => {

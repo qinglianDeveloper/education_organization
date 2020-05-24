@@ -1,13 +1,13 @@
 <template>
   <div class="organizationApply main-width padding-lr">
     <Form ref="formValidate" :model="form" label-position="top" :rules="ruleValidate">
-      <FormItem label="1.机构所在镇区（街县）" prop="organizationTown">
-        <Input v-model="form.organizationTown" placeholder="请输入"></Input>
+      <FormItem label="1.机构所在镇区（街县）" required @click.native="$refs.vueCityPicker.show()">
+        <Input v-model="form.organizationTown" placeholder="请输入" disabled></Input>
       </FormItem>
-      <FormItem label="2.机构名称（全称）" prop="organizationName">
+      <FormItem label="2.机构名称（全称）" required>
         <Input v-model="form.organizationName" placeholder="请输入"></Input>
       </FormItem>
-      <FormItem label="3.详细地址" prop="address">
+      <FormItem label="3.详细地址" required>
         <Input v-model="form.address" placeholder="请输入"></Input>
       </FormItem>
       <FormItem label="4.教育部门办学许可证号">
@@ -19,55 +19,55 @@
       <FormItem label="6.民政部门登记证号">
         <Input v-model="form.civilAffairsNo" placeholder="请输入"></Input>
       </FormItem>
-      <FormItem label="8.人社部门登记证号">
+      <FormItem label="7.人社部门登记证号">
         <Input v-model="form.mohrssNo" placeholder="请输入"></Input>
       </FormItem>
-      <FormItem label="8.机构负责人" prop="organizationPrincipal">
+      <FormItem label="8.机构负责人" required>
         <Input v-model="form.organizationPrincipal" placeholder="请输入"></Input>
       </FormItem>
-      <FormItem label="9.负责人电话" prop="principalPhone">
+      <FormItem label="9.负责人电话" required>
         <Input v-model="form.principalPhone" placeholder="请输入" maxlength="11"></Input>
       </FormItem>
-      <FormItem label="10.填报人" prop="filledName">
+      <FormItem label="10.填报人" required>
         <Input v-model="form.filledName" placeholder="请输入"></Input>
       </FormItem>
-      <FormItem label="11.填报人电话" prop="filledPhone">
+      <FormItem label="11.填报人电话" required>
         <Input v-model="form.filledPhone" placeholder="请输入" maxlength="11"></Input>
       </FormItem>
-      <FormItem label="12.复学教职工总人数（人）" prop="teacherCount">
+      <FormItem label="12.复学教职工总人数（人）" required>
         <Input v-model="form.teacherCount" placeholder="请输入" type="number"></Input>
       </FormItem>
-      <FormItem label="13.复学教职员工核酸检测阴性人数（人）" prop="negativeTeacherCount">
+      <FormItem label="13.复学教职员工核酸检测阴性人数（人）" required>
         <Input v-model="form.negativeTeacherCount" placeholder="请输入" type="number"></Input>
       </FormItem>
-      <FormItem label="14.复学学生人数（人）" prop="stuCount">
+      <FormItem label="14.复学学生人数（人）" required>
         <Input v-model="form.stuCount" placeholder="请输入" type="number"></Input>
       </FormItem>
-      <FormItem label="15.来自境外、重点疫区学员人数（人）" prop="outStuCount">
+      <FormItem label="15.来自境外、重点疫区学员人数（人）" required>
         <Input v-model="form.outStuCount" placeholder="请输入" type="number"></Input>
       </FormItem>
-      <FormItem label="16.来自境外、重点疫区学生核酸检测阴性人数(人)" prop="negativeOutStuCount">
+      <FormItem label="16.来自境外、重点疫区学生核酸检测阴性人数(人)" required>
         <Input v-model="form.negativeOutStuCount" placeholder="请输入" type="number"></Input>
       </FormItem>
-      <FormItem label="17.申请复学时间（月日）" prop="startDate">
+      <FormItem label="17.申请复学时间（月日）" required>
         <DatePicker @on-change="selectDate1" type="date" placeholder="选择日期" style="width: 100%;"></DatePicker>
       </FormItem>
-      <FormItem label="18.机构自查完成时间（月日）" prop="readyDate">
+      <FormItem label="18.机构自查完成时间（月日）" required>
         <DatePicker @on-change="selectDate2" type="date" placeholder="选择日期" style="width: 100%;"></DatePicker>
       </FormItem>
-      <FormItem label="19.计划镇区专班验收时间（月日）" prop="acceptanceDate">
+      <FormItem label="19.计划镇区专班验收时间（月日）" required>
         <DatePicker @on-change="selectDate3" type="date" placeholder="选择日期" style="width: 100%;"></DatePicker>
       </FormItem>
-      <FormItem label="20.计划报送市专班时间（月日）" prop="submitDate">
+      <FormItem label="20.计划报送市专班时间（月日）" required>
         <DatePicker @on-change="selectDate4" type="date" placeholder="选择日期" style="width: 100%;"></DatePicker>
       </FormItem>
-      <FormItem label="21.机构自查是否符合复学条件？" prop="eligible">
+      <FormItem label="21.机构自查是否符合复学条件？" required>
         <RadioGroup v-model="form.eligible">
           <Radio :label="1">是</Radio>
           <Radio :label="0">否</Radio>
         </RadioGroup>
       </FormItem>
-      <FormItem label="22.自查情况：（必填）" prop="submitDate">
+      <FormItem label="22.自查情况：（必填）" required>
         <CheckboxGroup>
           <Checkbox label="checka" v-model="form.checka" style="width: 100%;">是否制定突发公共卫生事件应急预案</Checkbox>
           <Checkbox label="checkb" v-model="form.checkb" style="width: 100%;">是否全面排查教职员工基本信息，建立“一人一档”</Checkbox>
@@ -94,7 +94,7 @@
           <Button type="default" size="small" style="width:60px;" @click.native="addItem">添加行</Button>
         </ButtonGroup>
       </FormItem>
-      <FormItem label="23.本机构已知晓并承诺：" prop="protocol">
+      <FormItem label="23.本机构已知晓并承诺：" required>
         <p>严格落实《中华人民共和国传染病防治法》，按照国家、省、市相关要求，认真履行主体责任，完善应急预案，已经落实各项防范措施（详见下面自查情况），保障教职员工、学生的生命安全和身体健康，确保不发生传染性疫情事件。若因防范措施不到位或者管理不当，发生疫情并导致疫情传播，产生重大影响，立即停课并承担相应的法律后果。</p>
         <RadioGroup v-model="form.protocol">
           <Radio label="是">是</Radio>
@@ -105,14 +105,17 @@
     <div class="button-ground">
       <Button type="primary" @click.native="submit('formValidate')">申请</Button>
     </div>
+    <vueCityPicker ref="vueCityPicker" @success="chooseCity"></vueCityPicker>
   </div>
 </template>
 <script>
 import { adressInfo , applySubmit } from "@/api";
+import vueCityPicker from "./components/vueCityPicker";
 export default { 
-  components: {},
+  components: {vueCityPicker},
   data() {
     return {
+      validateValue:'validateValue',
       form: {
         supplies:[{
           id:1,
@@ -140,6 +143,7 @@ export default {
         readyDate:'',//机构自查完成时间（月日）
         acceptanceDate:'',//计划镇区专班验收时间（月日）
         submitDate:'',//计划报送市专班时间（月日）
+        eligible:'',//机构自查是否符合复学条件
         checka:'',//
         checkb:'',//
         checkc:'',//
@@ -160,7 +164,10 @@ export default {
         protocol:'',//本机构已知晓并承诺（1是，0否）
       },
       ruleValidate: {
-        organizationTown: [
+        validateValue: [
+          { required: true, message: '内容不能为空', trigger: 'blur' }
+        ],
+        /* organizationTown: [
           { required: true, message: '机构所在镇区不能为空', trigger: 'blur' }
         ],
         organizationName: [
@@ -228,7 +235,7 @@ export default {
         ],
         protocol: [
           { required: true, message: '本机构已知晓并承诺必选', trigger: 'blur' }
-        ]
+        ] */
       },
       columns: [
         {
@@ -310,12 +317,15 @@ export default {
     };
   },
   created() {
-    this.getAdressInfo();
+    
   },
   mounted() {
     
   },
   methods: {
+    chooseCity(v){
+      this.form.organizationTown = v;
+    },
     selectDate1(v) {
       this.form.startDate = v;
     },
@@ -327,18 +337,6 @@ export default {
     },
     selectDate4(v) {
       this.form.submitDate = v;
-    },
-    getAdressInfo(){
-      //地址
-      adressInfo({level:1}).then(res=>{
-
-      });
-      adressInfo({level:2}).then(res=>{
-
-      });
-      adressInfo({level:3}).then(res=>{
-
-      });
     },
     deletItem(){
       //删除行
@@ -356,19 +354,36 @@ export default {
       this.form.supplies.push(obj)
     },
     submit(name){
-      this.$refs[name].validate((valid) => {
-          if (valid) {
-            applySubmit(this.from).then(res=>{
-              if(res.code === 200){
-                this.$Message.success(res.result);
-                this.$router.go(-1);
-              }else{
-                this.$Message.error(res.result);
-              }
-            });
-          } else {
-              this.$Message.error(res.result);
-          }
+      /* if(this.form.organizationTown === '')return this.$Message.error('1.机构所在镇区不能为空');
+      if(this.form.organizationName === '')return this.$Message.error('2.机构名称不能为空');
+      if(this.form.address === '')return this.$Message.error('3.详细地址不能为空');
+      if(this.form.organizationPrincipal === '')return this.$Message.error('8.机构负责人不能为空');
+      if(this.form.principalPhone === '')return this.$Message.error('9.负责人电话不能为空');
+      if(this.form.filledName === '')return this.$Message.error('10.填报人不能为空');
+      if(this.form.filledPhone === '')return this.$Message.error('11.填报人电话不能为空');
+      if(this.form.teacherCount === '')return this.$Message.error('12.复学教职工总人数不能为空');
+      if(this.form.negativeTeacherCount === '')return this.$Message.error('13.复学教职员工核酸检测阴性人数不能为空');
+      if(this.form.stuCount === '')return this.$Message.error('14.复学学生人数不能为空');
+      if(this.form.outStuCount === '')return this.$Message.error('15.来自境外、重点疫区学员人数不能为空');
+      if(this.form.negativeOutStuCount === '')return this.$Message.error('16.来自境外、重点疫区学生核酸检测阴性人数不能为空');
+      if(this.form.startDate === '')return this.$Message.error('17.申请复学时间不能为空');
+      if(this.form.readyDate === '')return this.$Message.error('18.机构自查完成时间不能为空');
+      if(this.form.acceptanceDate === '')return this.$Message.error('19.计划镇区专班验收时间不能为空');
+      if(this.form.submitDate === '')return this.$Message.error('20.计划报送市专班时间不能为空');
+      if(this.form.eligible === '')return this.$Message.error('21.本机构已知晓并承诺不能为空');
+      if(this.form.protocol === '')return this.$Message.error('23.本机构已知晓并承诺不能为空'); */
+      
+      
+      //if(!/^[1][0-9]{10}$/.test(this.form.principalPhone))return this.$Message.error('9.负责人电话不正确');
+      //if(!/^[1][0-9]{10}$/.test(this.form.filledPhone))return this.$Message.error('11.填报人电话不正确');
+
+      applySubmit(this.form).then(res=>{
+        if(res.code === 200){
+          this.$Message.success(res.result);
+          this.$router.go(-1);
+        }else{
+          this.$Message.error(res.result);
+        }
       });
       
     } 
