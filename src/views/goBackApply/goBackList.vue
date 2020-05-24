@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-23 15:25:09
+ * @LastEditTime: 2020-05-24 11:02:37
 --> 
 <template>
   <div class="trainlist">
@@ -26,13 +26,14 @@
           :model="searchForm"
           ref="searchForm"
           style="display:flex;float:left"
-          :label-width="100"
+          :label-width="60"
         >
-          <FormItem label="教育机构名称">
-            <Input v-model="searchForm.companyName" placeholder="请输入教育机构名称" />
-          </FormItem>
-          <FormItem label="负责人姓名">
-            <Input v-model="searchForm.salesName" placeholder="请输入负责人姓名" />
+          <FormItem label="状态">
+            <Select v-model="searchForm.status" transfer>
+              <Option :value="0">已提交</Option>
+              <Option :value="1">通过</Option>
+              <Option :value="2">未通过</Option>
+            </Select>
           </FormItem>
         </Form>
         <div style="float:right;margin:11px 0">
@@ -51,13 +52,23 @@
         :loading="loading"
         :height="tableHeight"
         @on-selection-change="changeSelect"
-      ></Table>
+      >
+        <template slot-scope="{row}" slot="status">
+          <Tag :color="tagClor(row.status)">{{row.status | statusChange}}</Tag>
+        </template>
+        <template slot-scope="{row}" slot="action">
+          <Button type="primary" @click="handleDetail(row)" style="margin-right:6px" size="small">查看</Button>
+          <Button type="error" @click="handleDelete(row)" style="margin-right:6px" size="small">删除</Button>
+          <Button type="primary" @click="handleCheck(row)" size="small">审核</Button>
+        </template>
+      </Table>
     </Row>
     <!-- 分页 -->
     <Row type="flex" justify="end" class="page">
       <div ref="footer" class="footer">
         <Page
           :current="searchForm.pageNumber"
+          :page-size="searchForm.pageSize"
           :total="total"
           @on-change="changePage"
           @on-page-size-change="changePageSize"
@@ -71,10 +82,49 @@
   </div>
 </template>
 <script>
+import { getAuditlist, deletApprove } from "@/api";
 export default {
   data() {
     return {
-      columns: [],
+      columns: [
+        {
+          type: "selection",
+          width: 60,
+          align: "center",
+          fixed: "left"
+        },
+        {
+          title: "所属镇区",
+          align: "center",
+          key: "address",
+          minWidth: 100
+        },
+        {
+          title: "机构全称",
+          align: "center",
+          key: "organizationName",
+          minWidth: 100
+        },
+        {
+          title: "提交时间",
+          align: "center",
+          key: "creationTime",
+          minWidth: 140
+        },
+        {
+          title: "状态",
+          align: "center",
+          slot: "status",
+          minWidth: 100
+        },
+        {
+          title: "操作",
+          slot: "action",
+          align: "center",
+          width: 200,
+          fixed: "right"
+        }
+      ],
       data: [],
       loading: false,
       tableHeight: 0,
@@ -95,8 +145,44 @@ export default {
     // 销毁全局方法
     window.onresize = null;
   },
+  filters: {
+    statusChange(val) {
+      switch (val) {
+        case 0:
+          return "已提交";
+          break;
+        case 1:
+          return "通过";
+          break;
+        case 2:
+          return "未通过";
+          break;
+      }
+    }
+  },
   methods: {
-    getTableInfo() {},
+    tagClor(val) {
+      switch (val) {
+        case 0:
+          return "blue";
+          break;
+        case 1:
+          return "green";
+          break;
+        case 2:
+          return "red";
+          break;
+      }
+    },
+    getTableInfo() {
+      getAuditlist(this.searchForm).then(res => {
+        // console.log(888888, res);
+        if (res.code == 200) {
+          this.data = res.result.content;
+          this.total = res.result.totalElements;
+        }
+      });
+    },
     init() {
       // 计算页面高度
       this.pageHeight();
@@ -115,10 +201,26 @@ export default {
       let footerHeight = this.$refs.footer.clientHeight;
       this.tableHeight = pageHeight - headerHeight - footerHeight - 123;
     },
-    add() {},
-    handleSearch() {},
-    handleReset() {},
+    add() {
+      this.$router.push({ name: "addApprove" });
+    },
+    handleSearch() {
+      this.searchForm.pageNumber = 1;
+      this.searchForm.pageSize = 10;
+      this.getTableInfo();
+    },
+    handleReset() {
+      this.searchForm = {
+        pageNumber: 1,
+        pageSize: 10
+      };
+      this.getTableInfo();
+    },
     changeSelect() {},
+    handleDetail(row) {},
+    handleDelete(row) {},
+    handleCheck(row) {},
+    handleSubmit() {},
     changePage(e) {
       this.searchForm.pageNumber = e;
       this.getTableInfo();

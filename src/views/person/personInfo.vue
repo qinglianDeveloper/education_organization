@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:53:38
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-23 15:53:52
+ * @LastEditTime: 2020-05-24 10:09:52
 --> 
 <template>
   <div class="trainlist">
@@ -38,7 +38,7 @@
           </Table>
         </TabPane>
         <!-- 学生 -->
-        <TabPane label="学生" name="studen">
+        <TabPane label="学生" name="student">
           <Table
             :columns="columnsStuden"
             :data="dataStuden"
@@ -47,7 +47,11 @@
             :loading="loadingStuden"
             :height="tableHeight"
             @on-selection-change="changeSelectStuden"
-          ></Table>
+          >
+            <template slot="action" slot-scope="{row,index}">
+              <Button type="success" size="small" @click="handleDetails(row,index)">查看详情</Button>
+            </template>
+          </Table>
         </TabPane>
       </Tabs>
     </Row>
@@ -56,6 +60,7 @@
       <div ref="footer" class="footer">
         <Page
           :current="searchForm.pageNumber"
+          :page-size="searchForm.pageSize"
           :total="total"
           @on-change="changePage"
           @on-page-size-change="changePageSize"
@@ -66,9 +71,13 @@
         ></Page>
       </div>
     </Row>
+    <!-- 详情弹框 -->
+    <Modal v-model="modalStatus" :title="modalTitle"></Modal>
   </div>
 </template>
 <script>
+import { getTeacherList, getStudentList } from "@/api";
+import { dateFormat } from "@/utils/current";
 export default {
   data() {
     return {
@@ -81,13 +90,15 @@ export default {
           fixed: "left"
         },
         {
-          title: "学生姓名",
+          title: "教师姓名",
           align: "center",
+          key: "name",
           minWidth: 100
         },
         {
           title: "提交时间",
           align: "center",
+          key: "registrationTime",
           minWidth: 160
         },
         {
@@ -101,17 +112,49 @@ export default {
       dataTeacher: [],
       loadingTeacher: false,
       tableHeight: 0,
-      columnsStuden: [],
+      columnsStuden: [
+        {
+          type: "selection",
+          width: 60,
+          align: "center",
+          fixed: "left"
+        },
+        {
+          title: "学生姓名",
+          align: "center",
+          key: "name",
+          minWidth: 100
+        },
+        {
+          title: "提交时间",
+          align: "center",
+          key: "registrationTime",
+          minWidth: 160
+        },
+        {
+          title: "操作",
+          slot: "action",
+          align: "center",
+          width: 130,
+          fixed: "right"
+        }
+      ],
       dataStuden: [],
       loadingStuden: false,
       searchForm: {
         pageNumber: 1,
         pageSize: 10
       },
-      total: 0
+      total: 0,
+      modalStatus: false,
+      modalTitle: ""
     };
   },
-  created() {},
+  created() {
+    this.searchForm.orgId = this.$route.query.id;
+    this.TabsValue = "teacher";
+    this.getTableData();
+  },
   mounted() {
     this.init();
   },
@@ -138,17 +181,57 @@ export default {
       let footerHeight = this.$refs.footer.clientHeight;
       this.tableHeight = pageHeight - headerHeight - footerHeight - 120;
     },
+    getTableData() {
+      if (this.TabsValue == "teacher") {
+        getTeacherList(this.searchForm).then(res => {
+          if (res.code == 200) {
+            res.result.content.forEach(item => {
+              if (item.registrationTime) {
+                item.registrationTime = dateFormat(item.registrationTime);
+              }
+            });
+            this.dataTeacher = res.result.content;
+            this.total = res.result.totalElements;
+          }
+        });
+      } else if (this.TabsValue == "student") {
+        getStudentList(this.searchForm).then(res => {
+          if (res.code == 200) {
+            res.result.content.forEach(item => {
+              if (item.registrationTime) {
+                item.registrationTime = dateFormat(item.registrationTime);
+              }
+            });
+            this.dataStuden = res.result.content;
+            this.total = res.result.totalElements;
+          }
+        });
+      }
+    },
     changeSelectTeacher() {},
     changeSelectStuden() {},
     clickTabs(name) {
-      console.log(name);
+      this.TabsValue = name;
+      //   console.log(name);
+      this.searchForm.pageNumber = 1;
+      this.searchForm.pageSize = 10;
+      this.getTableData();
     },
-    handleDetails() {},
+    handleDetails(row, index) {
+      if (this.TabsValue == "teacher") {
+        this.modalTitle = "教师详情";
+      } else if (this.TabsValue == "student") {
+        this.modalTitle = "学生详情";
+      }
+      this.modalStatus = true;
+    },
     changePage(e) {
       this.searchForm.pageNumber = e;
+      this.getTableData();
     },
     changePageSize(e) {
       this.searchForm.pageSize = e;
+      this.getTableData();
     }
   }
 };

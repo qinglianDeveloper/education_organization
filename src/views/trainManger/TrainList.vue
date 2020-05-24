@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-23 16:29:35
+ * @LastEditTime: 2020-05-24 10:58:56
 --> 
 <template>
   <div class="trainlist">
@@ -53,7 +53,25 @@
         @on-selection-change="changeSelect"
       >
         <template slot="action" slot-scope="{row,index}">
-          <Button type="success" size="small" @click="handleDetails(row,index)">查看详情</Button>
+          <Button
+            type="primary"
+            size="small"
+            style="margin-right:6px"
+            @click="handleEveryday(row,index)"
+          >每日健康</Button>
+          <Button
+            type="primary"
+            size="small"
+            style="margin-right:6px"
+            @click="handleReport(row,index)"
+          >健康上报</Button>
+          <Button
+            type="primary"
+            size="small"
+            style="margin-right:6px"
+            @click="handleEdit(row,index)"
+          >编辑</Button>
+          <!-- <Button type="error" size="small" @click="handleDelete(row,index)">删除</Button> -->
         </template>
       </Table>
     </Row>
@@ -72,10 +90,37 @@
         ></Page>
       </div>
     </Row>
+    <!-- 新建&编辑弹框 -->
+    <Modal v-model="modalStatus" :title="modalTitle" :mask-closable="false">
+      <Form ref="formItem" :model="formItem" :label-width="100" :rules="ruleValidate">
+        <FormItem label="机构名称:" prop="orgName">
+          <Input v-model="formItem.orgName" />
+        </FormItem>
+        <FormItem label="区域:" prop="area">
+          <Cascader
+            @on-visible-change="clickArea"
+            ref="cascader"
+            :data="addressData"
+            :value="formItem.area"
+            @on-change="changeArea"
+            :load-data="loadData"
+            transfer
+          ></Cascader>
+        </FormItem>
+
+        <FormItem label="地址:" prop="areaDetail">
+          <Input :autosize="true" type="textarea" v-model="formItem.areaDetail" placeholder="请输入地址"></Input>
+        </FormItem>
+      </Form>
+      <div slot="footer">
+        <Button type="default" @click="modalStatus=false">取消</Button>
+        <Button type="primary" @click="handleSubmit">确定</Button>
+      </div>
+    </Modal>
   </div>
 </template>
 <script>
-import { getOrgList } from "@/api";
+import { getOrgList, getListSearch, getAddresslist, addOrg } from "@/api";
 import { dateFormat } from "@/utils/current";
 export default {
   data() {
@@ -121,7 +166,7 @@ export default {
           title: "操作",
           slot: "action",
           align: "center",
-          width: 130,
+          width: 260,
           fixed: "right"
         }
       ],
@@ -132,7 +177,40 @@ export default {
         pageNumber: 1,
         pageSize: 10
       },
-      total: 0
+      total: 0,
+      modalTitle: "",
+      modalStatus: false,
+      addressData: [],
+      formItem: {
+        orgName: "",
+        areaId: "",
+        area: [],
+        areaDetail: ""
+      },
+      ruleValidate: {
+        orgName: [
+          {
+            required: true,
+            message: "请输入教育机构名称",
+            trigger: "blur"
+          }
+        ],
+        area: [
+          {
+            required: true,
+            message: "请选择地区",
+            trigger: "change",
+            type: "array"
+          }
+        ],
+        areaDetail: [
+          {
+            required: true,
+            message: "地址不能为空",
+            trigger: "blur"
+          }
+        ]
+      }
     };
   },
   created() {
@@ -140,6 +218,7 @@ export default {
   },
   mounted() {
     this.init();
+    this.getAddresslist(); //地址接口
   },
   destroyed() {
     // 销毁全局方法
@@ -178,7 +257,25 @@ export default {
       let footerHeight = this.$refs.footer.clientHeight;
       this.tableHeight = pageHeight - headerHeight - footerHeight - 123;
     },
-    add() {},
+    add() {
+      this.modalTitle = "新增培训机构";
+      this.modalStatus = true;
+      this.$refs["formItem"].resetFields();
+    },
+    handleSubmit() {
+      this.$refs["formItem"].validate(valid => {
+        console.log(valid, this.formItem);
+        if (valid) {
+          addOrg(this.formItem).then(res => {
+            if (res.code == 200) {
+              this.$Message.success("新增机构成功！");
+              this.getTableInfo();
+              this.modalStatus = false;
+            }
+          });
+        }
+      });
+    },
     handleSearch() {
       this.searchForm.pageNumber = 1;
       this.searchForm.pageSize = 10;
@@ -194,7 +291,68 @@ export default {
       this.getTableInfo();
     },
     changeSelect() {},
-    handleDetails() {},
+    handleEveryday(row, index) {},
+    handleReport(row, index) {
+      this.$router.push({
+        name: "personInfo",
+        query: {
+          id: row.id
+        }
+      });
+    },
+    handleEdit(row, index) {
+      this.modalTitle = "编辑培训机构";
+      this.modalStatus = true;
+      this.$refs["formItem"].resetFields();
+    },
+    handleDelete(row, index) {
+      this.$Modal.confirm({
+        title: "确认删除",
+        content: "您确认要删除这个机构?",
+        onOk: () => {}
+      });
+    },
+    // 获取省份
+    getAddresslist(obj) {
+      getAddresslist({ level: 1 }).then(res => {
+        this.addressData = res.result;
+        this.addressData.forEach(item => {
+          item.children = [];
+          item.loading = false;
+        });
+      });
+    },
+    clickArea(val) {
+      console.log(val, this.addressData, "点击了");
+      if (val && !this.addressData[0]) {
+        this.getAddresslist();
+      }
+    },
+    changeArea(v, item) {
+      console.log(v, item);
+      let area = [];
+      item.map(val => {
+        area.push(val.label);
+      });
+      this.formItem.area = area;
+      this.formItem.areaId = v.join(",");
+    },
+    loadData(item, callback) {
+      item.loading = true;
+      getAddresslist({ pid: item.id }).then(res => {
+        if (res.code == 200) {
+          item.loading = false;
+          item.children = res.result;
+          if (item.level < 2) {
+            item.children.forEach(it => {
+              it.loading = false;
+              it.children = [];
+            });
+          }
+          callback();
+        }
+      });
+    },
     changePage(e) {
       this.searchForm.pageNumber = e;
       this.getTableInfo();

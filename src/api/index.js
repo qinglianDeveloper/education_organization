@@ -1375,3 +1375,33 @@ export const orgList = (params) => {
 export const pwdLogin = (params) => {
     return postRequest('/pwdLogin', params)
 }
+
+// 通用地址-省市联级
+export const getAddresslist = (params) => {
+    return getRequest('/address/getListSearch', params)
+}
+// 新增教育机构
+export const addOrg = (params) => {
+    return postRequest('/org/add', params)
+}
+// 机构列表-健康上报-教师列表
+export const getTeacherList = (params) => {
+    return getRequest('/teacher/getPageList', params)
+}
+// 机构列表-健康上报-学生列表
+export const getStudentList = (params) => {
+    return getRequest('/student/getPageList', params)
+}
+
+// 复学申请列表
+export const getAuditlist = (params) => {
+    return getRequest('/common/resumeApprove/searchList', params)
+}
+// 复学申请删除
+export const deletApprove = (params) => {
+    return deleteRequest('/common/resumeApprove/delete', params)
+}
+// 复学申请新增
+export const addApprove = (params) => {
+    return postRequest('/common/resumeApprove/insert', params)
+}
