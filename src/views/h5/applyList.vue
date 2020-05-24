@@ -1,7 +1,7 @@
 <template>
   <div class="applyList main-width">
     <CellGroup>
-        <Cell title="某某某机构复学申请记录" :to="item.status === 2?'h5-applyList':'h5-applyFail'" v-for="(item,index) in arr">
+        <Cell title="某某某机构复学申请记录" :to="item.status === 2?'h5-applyList':'h5-applyFail'" v-for="(item,index) in arr" :key="index">
             <span :class="{'color0':item.status === 0,'color1':item.status === 1,'color2':item.status === 2}" slot="extra">{{item.status | statusFilter}}</span>
         </Cell>
         <!-- <Cell title="某某某机构复学申请记录">
