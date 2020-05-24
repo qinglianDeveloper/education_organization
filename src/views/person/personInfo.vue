@@ -341,6 +341,9 @@ export default {
       personHealthByUser({id}).then(res=>{
         if(res.code === 200){
           this.form = res.result || {};
+          if(res.result === null){
+            this.$Message.error('没查到相关健康信息');
+          }
         }
       });
     },
