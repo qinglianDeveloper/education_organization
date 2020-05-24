@@ -315,6 +315,7 @@ export default {
               return h('Input',{
                     props: {
                       value:'',
+                      type:"number",
                       //size:'small',
                   },
                     on: {
@@ -469,6 +470,21 @@ export default {
       
       if(!/^[1][0-9]{10}$/.test(this.form.principalPhone))return this.$Message.error('9.负责人电话不正确');
       if(!/^[1][0-9]{10}$/.test(this.form.filledPhone))return this.$Message.error('11.填报人电话不正确');
+
+      form.supplies.forEach(item => {
+        item.number = item.number * 1;
+      });
+      for (let i in form) {
+        if (
+          i == "teacherCount" ||
+          i == "negativeTeacherCount" ||
+          i == "stuCount" ||
+          i == "outStuCount" ||
+          i == "negativeOutStuCount"
+        ) {
+          form[i] = form[i] * 1;
+        }
+      }
       
 
       applySubmit(form).then(res=>{

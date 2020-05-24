@@ -387,6 +387,17 @@ export default {
   }
 }
 .personInfo-Modal{
+  position: relative;
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+  }
   .big-title {
     display: flex;
     align-items: center;
