@@ -41,7 +41,7 @@ function mateMenu(arr, name) {
 let arr = [];
 let flag = true;
 
-let otherRouter = ["goodsDetails", "goodsAdd", "updateGoods", "goodsTwo", "integralAdd", "integralShow", "workDetails", "addworkList", "workAddTemplate", "serverOrderDetails", "userDetails", "noticeAllocationAddEdit", "userAllocationAddEdit", "clientDetails", "articleAddEdit", "userCenter", "error-502", "home", "update", "channelDirect", "NavigationDuplicated", "orderDetails", "callAddWork", "callDetailsWork", "callDetailsUser", "personInfo", "addApprove"];
+let otherRouter = ["goodsDetails", "goodsAdd", "updateGoods", "goodsTwo", "integralAdd", "integralShow", "workDetails", "addworkList", "workAddTemplate", "serverOrderDetails", "userDetails", "noticeAllocationAddEdit", "userAllocationAddEdit", "clientDetails", "articleAddEdit", "userCenter", "error-502", "home", "update", "channelDirect", "NavigationDuplicated", "orderDetails", "callAddWork", "callDetailsWork", "callDetailsUser", "personInfo", "addApprove", 'detailApprove'];
 
 router.beforeEach(async (to, from, next) => {
     /* 佳信判断-测试版 */
