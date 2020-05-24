@@ -340,7 +340,7 @@ export default {
       //详情
       personHealthByUser({id}).then(res=>{
         if(res.code === 200){
-
+          this.form = res.result || {};
         }
       });
     },
