@@ -1455,6 +1455,12 @@ export const exportData = () => {
 export const personHealthDetail = (params) => {
     return getRequest('/common/personnelHealth/detail', params)
 }
+// 通过用户ID查询健康申报表
+export const personHealthByUser = (params) => {
+    return getRequest('/common/personnelHealth/byUser',params)
+}
+
+
 
 
 

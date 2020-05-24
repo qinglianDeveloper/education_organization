@@ -58,7 +58,6 @@
                 style="width:140px;margin-left:10px;"
                 @click="getMobileValidator"
                 v-if="!isDisabledCode"
-                :disabled="true"
               >获取验证码</Button>
               <div
                 v-else
