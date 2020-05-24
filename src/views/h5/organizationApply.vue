@@ -485,6 +485,19 @@ export default {
 <style scoped lang="scss">
 @import "./common.scss";
 </style>
+<style lang="scss">
+.organizationApply{
+  label{
+    text-align: left !important;
+  }
+  .ivu-radio-group{
+    display: block !important;
+    >span{
+      display: block !important;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 .organizationApply {
   padding: 10px 0px;

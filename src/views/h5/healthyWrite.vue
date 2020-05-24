@@ -12,14 +12,14 @@
         </FormItem>
         <FormItem label="2.身份" required>
             <RadioGroup v-model="form.identity">
-              <Radio :label="0">学员</Radio>
-              <Radio :label="1">教员</Radio>
+              <Radio :label="0" v-if="userInfo.type === 'STUDENT'">学员</Radio>
+              <Radio :label="1" v-if="userInfo.type === 'TEACHER'">教员</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="3.家长姓名" v-if="form.identity === 0">
+        <FormItem label="3.家长姓名" v-if="form.identity === 0" required>
             <Input v-model="form.parentName" placeholder="请输入家长姓名"></Input>
         </FormItem>
-        <FormItem label="4.家长联系方式" v-if="form.identity === 0">
+        <FormItem label="4.家长联系方式" v-if="form.identity === 0" required>
             <Input v-model="form.parentPhone" placeholder="请输入家长联系方式" maxlength="11"></Input>
         </FormItem>
         <FormItem label="5.姓名" required>
@@ -36,7 +36,7 @@
           <DatePicker @on-change="selectDate1" type="date" placeholder="选择日期" style="width: 100%;"></DatePicker>
         </FormItem>
         <FormItem label="8.身份证号" required>
-            <Input v-model="form.idCardNumber" placeholder="请输入身份证号"maxlength="18"></Input>
+            <Input v-model="form.idCardNumber" placeholder="请输入身份证号" maxlength="18"></Input>
         </FormItem>
         <FormItem label="9.现住址" required>
             <Input v-model="form.address" placeholder="请输入现住址"></Input>
@@ -69,8 +69,8 @@
 
 
         <div class="big-title f18 bold">流行病学史</div>
-        <p style="margin-bottom:10px;">返校（参加培训）前14天，您是否有以下情况</p>
-        <FormItem label="12.是否曾出国或出境？ " required>
+        <p style="margin-bottom:10px;">12.返校（参加培训）前14天，您是否有以下情况</p>
+        <FormItem label="12.1是否曾出国或出境？ " required>
             <RadioGroup v-model="form.abroad">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
@@ -159,6 +159,7 @@ export default {
   },
   created() {
     this.userInfo = this.$store.state.h5_user.h5_userInfo;
+    this.form.identity = this.userInfo.type === 'STUDENT'?0:1;
     this.getOrgLists();
   },
   mounted() {
@@ -171,7 +172,7 @@ export default {
     getOrgLists(){
       //所在的机构
       let obj = {
-        principalId:this.userInfo.id,
+        //principalId:this.userInfo.id,
         pageNumber:1,
         pageSize:100,
       }
@@ -187,6 +188,8 @@ export default {
       //
       if(this.form.organizationId === '')return this.$Message.error('1.所在培训机构ID不能为空');
       if(this.form.identity === '')return this.$Message.error('2.身份不能为空');
+      if(this.form.identity === 0 && this.form.parentName === '')return this.$Message.error('3.家长姓名不能为空');
+      if(this.form.identity === 0 && this.form.parentPhone === '')return this.$Message.error('4.家长联系电话不能为空');
       if(this.form.name === '')return this.$Message.error('5.姓名不能为空');
       if(this.form.gender === '')return this.$Message.error('6.性别不能为空');
       if(this.form.birthday  === '')return this.$Message.error('7.出生日期不能为空');
@@ -200,7 +203,7 @@ export default {
       if(this.form.aroundPatient === '')return this.$Message.error('15.周围人群中有无2人及以上出现发热、干咳等症状或接触过新冠肺炎患者不能为空');
       if(this.form.familySymptom === '')return this.$Message.error('16.家人/同住人员有无发热、干咳等症状不能为空');
       
-      if(!/^[1][0-9]{10}$/.test(this.form.parentPhone))return this.$Message.error('家长联系电话不正确');
+      if(this.form.identity === 0 && !/^[1][0-9]{10}$/.test(this.form.parentPhone))return this.$Message.error('家长联系电话不正确');
       if(!/(^\d{15}$)|(^\d{17}([0-9]|X)$)/.test(this.form.idCardNumber))return this.$Message.error('身份证号不正确');
 
       personHealth(this.form).then(res=>{
@@ -217,6 +220,20 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "./common.scss";
+</style>
+<style lang="scss">
+.healthyWrite{
+  label{
+    text-align: left !important;
+  }
+  
+  .ivu-radio-group{
+    display: block !important;
+    >span{
+      display: block !important;
+    }
+  }
+}
 </style>
 <style lang="scss" scoped>
 .healthyWrite{
