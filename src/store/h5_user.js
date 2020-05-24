@@ -6,8 +6,11 @@ const h5_user = {
     },
     mutations: {
         h5_saveUserInfo(state, userInfo) {
+            console.log('userInfo: ', userInfo);
+            if(!userInfo)return;
             //this.$store.commit("h5_saveUserInfo", userInfo);
             //this.$store.state.h5_user.h5_userInfo;
+            localStorage.setItem('h5_userInfo',JSON.stringify(userInfo));
             state.h5_userInfo = userInfo;
         }
     },

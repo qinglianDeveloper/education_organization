@@ -24,6 +24,13 @@ export default {
     // })
   },
   watch: {},
+  created(){
+    let userInfo = localStorage.getItem('h5_userInfo');
+    if(userInfo !== null){
+      userInfo = JSON.parse(userInfo);
+      this.$store.commit("h5_saveUserInfo", userInfo);
+    }
+  },
   methods: {
     ...mapActions("menu", ["getMenuList"])
   }
