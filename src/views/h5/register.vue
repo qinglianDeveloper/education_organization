@@ -168,7 +168,6 @@ export default {
               this.$Message.error(res.result);
           }
       });
-      debugger;
     }
   }
 };
