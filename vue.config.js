@@ -4,16 +4,12 @@
  * @Author: sueRimn
  * @Date: 2020-02-17 21:35:19
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 19:36:44
+ * @LastEditTime: 2020-05-24 20:16:18
  */
 const path = require('path')
 
-<<<<<<< HEAD
-// let url = "http://47.102.104.2:6020" //开发环境
-=======
 let url = "http://47.102.104.2:6020" //开发环境
->>>>>>> 078a2cbd9cc97e61e39de273eac8a932a9dea8bd
-url = 'http://172.16.30.46:6020';
+// url = 'http://172.16.30.46:6020';
 
 //获取局域网的IP
 var os = require('os'),

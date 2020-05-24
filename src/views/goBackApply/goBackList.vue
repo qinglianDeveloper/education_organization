@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 19:58:56
+ * @LastEditTime: 2020-05-24 21:22:38
 --> 
 <template>
   <div class="trainlist">
@@ -15,7 +15,6 @@
         </div>
         <div class="export-btn">
           <Button type="warning" style="margin-right:6px" @click="exportData">导出</Button>
-          <!-- <a href="/common/resumeApprove/export">导出</a> -->
           <Button type="primary" icon="md-add" @click="add">新建</Button>
         </div>
       </div>
@@ -66,6 +65,7 @@
             @click="handleCheck(row)"
             size="small"
             v-if="menuBtns.indexOf('admin:check:apply')>-1"
+            :disabled="!row.status==0"
           >审核</Button>
         </template>
       </Table>
@@ -91,7 +91,7 @@
       <Form ref="formItem" :model="checkForm" :mask-closable="false">
         <FormItem
           label="状态:"
-          :label-width="70"
+          :label-width="90"
           prop="status"
           :rules="{required: true, message: '请选择状态', trigger: 'change',type:'number'}"
         >
@@ -99,6 +99,16 @@
             <Radio :label="1" style="margin-right:20px">通过</Radio>
             <Radio :label="2">未通过</Radio>
           </RadioGroup>
+        </FormItem>
+        <FormItem
+          v-if="checkForm.status==2"
+          key="auditReasonContent"
+          label="拒绝原因:"
+          :label-width="90"
+          prop="auditReason"
+          :rules="{required: true, message: '请输入拒绝原因', trigger: 'blur',}"
+        >
+          <Input type="textarea" :autosize="true" v-model="checkForm.auditReason" />
         </FormItem>
       </Form>
       <div slot="footer">
@@ -124,20 +134,20 @@ export default {
         {
           title: "所属镇区",
           align: "center",
-          key: "address",
-          minWidth: 100
+          key: "organizationTown",
+          minWidth: 200
         },
         {
           title: "机构全称",
           align: "center",
           key: "organizationName",
-          minWidth: 100
+          minWidth: 200
         },
         {
           title: "提交时间",
           align: "center",
           key: "creationTime",
-          minWidth: 140
+          minWidth: 180
         },
         {
           title: "状态",
@@ -163,7 +173,8 @@ export default {
       total: 0,
       checkStatus: false,
       checkForm: {
-        status: ""
+        status: "",
+        auditReason: ""
       }
     };
   },
@@ -199,20 +210,15 @@ export default {
   },
   methods: {
     exportData() {
-      exportData().then(res => {
-        var blob = new Blob([res], {
-          type:
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
-        }); //application/vnd.openxmlformats-officedocument.spreadsheetml.sheet这里表示xlsx类型
-        var downloadElement = document.createElement("a");
-        var href = window.URL.createObjectURL(blob); //创建下载的链接
-        downloadElement.href = href;
-        downloadElement.download = "复学申请表" + ".xlsx"; //下载后文件名
-        document.body.appendChild(downloadElement);
-        downloadElement.click(); //点击下载
-        document.body.removeChild(downloadElement); //下载完成移除元素
-        window.URL.revokeObjectURL(href); //释放掉blob对象
-      });
+      let link = document.createElement("a");
+      let state = process.env.NODE_ENV === "production";
+      if (state) {
+        link.href = `/HealthReport-admin/admin/common/resumeApprove/export`;
+      } else {
+        link.href = `/admin/common/resumeApprove/export`;
+      }
+      link.target = "_self";
+      link.click();
     },
     tagClor(val) {
       switch (val) {
@@ -269,7 +275,9 @@ export default {
       this.getTableInfo();
     },
     changeSelect() {},
-    handleDetail(row) {},
+    handleDetail(row) {
+      this.$router.push({ name: "detailApprove", query: { id: row.id } });
+    },
     handleDelete(row) {
       this.$Modal.confirm({
         title: "确认删除",
@@ -295,7 +303,7 @@ export default {
           applyList(this.checkForm).then(res => {
             if (res.code == 200) {
               this.$Message.success("状态修改成功!");
-              this.checkStatu = false;
+              this.checkStatus = false;
               this.getTableInfo();
             }
           });

@@ -270,6 +270,17 @@ export const routers = [
             },
             component: () =>
                 import("@/views/goBackApply/addApprove")
+        }, {
+            /* 详情审批 */
+            path: "/detailApprove",
+            name: "detailApprove",
+            meta: {
+                parent: "复学申请管理",
+                parentName: 'goBackApply',
+                title: '复学审批详情',
+            },
+            component: () =>
+                import("@/views/goBackApply/detailApprove")
         },
         ]
     },
