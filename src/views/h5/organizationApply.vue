@@ -1,11 +1,14 @@
 <template>
   <div class="organizationApply main-width padding-lr">
     <Form ref="formValidate" :model="form" label-position="top" :rules="ruleValidate">
-      <FormItem label="1.机构所在镇区（街县）" required @click.native="$refs.vueCityPicker.show()">
-        <Input v-model="form.organizationTown" placeholder="请输入" disabled></Input>
+      <FormItem label="1.机构名称（全称）" required>
+        <!-- <Input v-model="form.organizationName" placeholder="请输入"></Input> -->
+        <Select v-model="form.organizationId" @on-change="selectOrganization">
+          <Option v-for="(item,index) in options" :key="index" :value="item.id">{{item.orgName}}</Option>
+        </Select>
       </FormItem>
-      <FormItem label="2.机构名称（全称）" required>
-        <Input v-model="form.organizationName" placeholder="请输入"></Input>
+      <FormItem label="2.机构所在镇区（街县）" required>
+        <Input v-model="form.organizationTown" placeholder="请输入" disabled></Input>
       </FormItem>
       <FormItem label="3.详细地址" required>
         <Input v-model="form.address" placeholder="请输入"></Input>
@@ -68,24 +71,86 @@
         </RadioGroup>
       </FormItem>
       <FormItem label="22.自查情况：（必填）" required>
-        <CheckboxGroup>
-          <Checkbox label="checka" v-model="form.checka" style="width: 100%;">是否制定突发公共卫生事件应急预案</Checkbox>
-          <Checkbox label="checkb" v-model="form.checkb" style="width: 100%;">是否全面排查教职员工基本信息，建立“一人一档”</Checkbox>
-          <Checkbox label="checkc" v-model="form.checkc" style="width: 100%;">是否发放疫情防控资料，开展员工疫情防控培训</Checkbox>
-          <Checkbox label="checkd" v-model="form.checkd" style="width: 100%;">是否建立日常消杀和保洁制度，且有专人负责</Checkbox>
-          <Checkbox label="checke" v-model="form.checke" style="width: 100%;">是否对复学学生基本情况进行排摸，建立学生信息台账</Checkbox>
-          <Checkbox label="checkf" v-model="form.checkf" style="width: 100%;">是否对全体教职员工和来自境外、国内重点地区的学生返校前7天进行核酸检测</Checkbox>
-          <Checkbox label="checkg" v-model="form.checkg" style="width: 100%;">是否建立师生进入登记、测温，以及异常健康人员信息上报制度</Checkbox>
-          <Checkbox label="checkh" v-model="form.checkh" style="width: 100%;">是否确保学生之间距离不少于1米</Checkbox>
-          <Checkbox label="checki" v-model="form.checki" style="width: 100%;">是否明确辖区发热门诊、辖区疾控机构联系方式</Checkbox>
-          <Checkbox label="checkj" v-model="form.checkj" style="width: 100%;">是否做到“封闭式”管理，严控人员进出</Checkbox>
-          <Checkbox label="checkk" v-model="form.checkk" style="width: 100%;">是否进行应急预案的演练</Checkbox>
-          <Checkbox label="checkl" v-model="form.checkl" style="width: 100%;">是否设置有临时观察区</Checkbox>
-          <Checkbox label="checkm" v-model="form.checkm" style="width: 100%;">是否通风良好（自然通风效果不佳可增加机械辅助通风设施）</Checkbox>
-          <Checkbox label="checkn" v-model="form.checkn" style="width: 100%;">是否设置足够洗手设施或免洗手消毒剂（含乙醇60%以上）</Checkbox>
-          <Checkbox label="checko" v-model="form.checko" style="width: 100%;">是否对本机构全体教师进行了一次《中山市中小学疫情防控下返校心理建设指引》专题培训？</Checkbox>
-          <Checkbox label="checkp" v-model="form.checkp" style="width: 100%;">是否制定接送车辆防疫预案和日常消毒制度</Checkbox>
-        </CheckboxGroup>
+        <RadioGroup v-model="form.checka">
+          <span>是否制定突发公共卫生事件应急预案</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkb">
+          <span>是否全面排查教职员工基本信息，建立“一人一档”</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkc">
+          <span>是否发放疫情防控资料，开展员工疫情防控培训</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkd">
+          <span>是否建立日常消杀和保洁制度，且有专人负责</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checke">
+          <span>是否对复学学生基本情况进行排摸，建立学生信息台账</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkf">
+          <span>是否对全体教职员工和来自境外、国内重点地区的学生返校前7天进行核酸检测</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkg">
+          <span>是否建立师生进入登记、测温，以及异常健康人员信息上报制度</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkh">
+          <span>是否确保学生之间距离不少于1米</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checki">
+          <span>是否明确辖区发热门诊、辖区疾控机构联系方式</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkj">
+          <span>是否做到“封闭式”管理，严控人员进出</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkk">
+          <span>是否进行应急预案的演练</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkl">
+          <span>是否设置有临时观察区</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkm">
+          <span>是否通风良好（自然通风效果不佳可增加机械辅助通风设施）</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkn">
+          <span>是否设置足够洗手设施或免洗手消毒剂（含乙醇60%以上）</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checko">
+          <span>是否对本机构全体教师进行了一次《中山市中小学疫情防控下返校心理建设指引》专题培训？</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
+        <RadioGroup v-model="form.checkp">
+          <span>是否制定接送车辆防疫预案和日常消毒制度</span>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
+        </RadioGroup>
       </FormItem>
       <FormItem label="机构疫情防控物资情况（口罩、测温仪器、消杀用品等））">
         <Table ref="myTable" border :columns="columns" :data="form.supplies" size="small"></Table>
@@ -97,25 +162,26 @@
       <FormItem label="23.本机构已知晓并承诺：" required>
         <p>严格落实《中华人民共和国传染病防治法》，按照国家、省、市相关要求，认真履行主体责任，完善应急预案，已经落实各项防范措施（详见下面自查情况），保障教职员工、学生的生命安全和身体健康，确保不发生传染性疫情事件。若因防范措施不到位或者管理不当，发生疫情并导致疫情传播，产生重大影响，立即停课并承担相应的法律后果。</p>
         <RadioGroup v-model="form.protocol">
-          <Radio label="是">是</Radio>
-          <Radio label="否">否</Radio>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
         </RadioGroup>
       </FormItem>
     </Form>
     <div class="button-ground">
       <Button type="primary" @click.native="submit('formValidate')">申请</Button>
     </div>
-    <vueCityPicker ref="vueCityPicker" @success="chooseCity"></vueCityPicker>
+    <!-- <vueCityPicker ref="vueCityPicker" @success="chooseCity"></vueCityPicker> -->
   </div>
 </template>
 <script>
-import { adressInfo , applySubmit } from "@/api";
+import { adressInfo , applySubmit,orgList } from "@/api";
 import vueCityPicker from "./components/vueCityPicker";
 export default { 
-  components: {vueCityPicker},
+  components: {/* vueCityPicker */},
   data() {
     return {
-      validateValue:'validateValue',
+      userInfo:{},
+      options:[],
       form: {
         supplies:[{
           id:1,
@@ -123,6 +189,7 @@ export default {
           unit:'',//单位
           number:'',//数量
         }],
+        organizationId:'',
         organizationTown:'',//机构所在镇区（街县）
         organizationName:'',//机构名称（全称）
         address:'',//详细地址
@@ -164,9 +231,6 @@ export default {
         protocol:'',//本机构已知晓并承诺（1是，0否）
       },
       ruleValidate: {
-        validateValue: [
-          { required: true, message: '内容不能为空', trigger: 'blur' }
-        ],
         /* organizationTown: [
           { required: true, message: '机构所在镇区不能为空', trigger: 'blur' }
         ],
@@ -290,7 +354,7 @@ export default {
                   },
                     on: {
                       input: (val) => {
-                          this.form.supplies[params.index].name = val;
+                          this.form.supplies[params.index].unit = val;
                         }
                     },
                 })
@@ -307,7 +371,7 @@ export default {
                   },
                     on: {
                       input: (val) => {
-                          this.form.supplies[params.index].name = val;
+                          this.form.supplies[params.index].number = val;
                         }
                     },
                 })
@@ -317,15 +381,32 @@ export default {
     };
   },
   created() {
-    
+    this.userInfo = this.$store.state.h5_user.h5_userInfo;
+    this.getOrgList();
   },
   mounted() {
     
   },
   methods: {
-    chooseCity(v){
-      this.form.organizationTown = v;
+    getOrgList() {//{ principalId: this.userInfo.id }
+      orgList({ principalId: this.userInfo.id }).then(res => {
+        if (res.code == 200) {
+          this.options = res.result;
+        }
+      });
     },
+    selectOrganization(val) {
+      this.options.forEach(item => {
+        if (item.id == val) {
+          this.form.organizationTown = item.area;
+          this.form.address = item.areaDetail;
+          this.form.organizationName = item.orgName;
+        }
+      });
+    },
+    /* chooseCity(v){
+      this.form.organizationTown = v;
+    }, */
     selectDate1(v) {
       this.form.startDate = v;
     },
@@ -354,8 +435,10 @@ export default {
       this.form.supplies.push(obj)
     },
     submit(name){
-      /* if(this.form.organizationTown === '')return this.$Message.error('1.机构所在镇区不能为空');
-      if(this.form.organizationName === '')return this.$Message.error('2.机构名称不能为空');
+      let form = JSON.parse(JSON.stringify(this.form));
+      
+      if(this.form.organizationName === '')return this.$Message.error('1.机构名称不能为空');
+      if(this.form.organizationTown === '')return this.$Message.error('2.机构所在镇区不能为空');
       if(this.form.address === '')return this.$Message.error('3.详细地址不能为空');
       if(this.form.organizationPrincipal === '')return this.$Message.error('8.机构负责人不能为空');
       if(this.form.principalPhone === '')return this.$Message.error('9.负责人电话不能为空');
@@ -371,15 +454,24 @@ export default {
       if(this.form.acceptanceDate === '')return this.$Message.error('19.计划镇区专班验收时间不能为空');
       if(this.form.submitDate === '')return this.$Message.error('20.计划报送市专班时间不能为空');
       if(this.form.eligible === '')return this.$Message.error('21.本机构已知晓并承诺不能为空');
-      if(this.form.protocol === '')return this.$Message.error('23.本机构已知晓并承诺不能为空'); */
+      for (const key in form) {
+        if (form.hasOwnProperty(key)) {
+          const element = form[key];
+          if(key.indexOf('check')>-1){
+            if(element === '')return this.$Message.error('22.自查情况必须要全部选择');
+          }
+        }
+      }
+      if(this.form.protocol === '')return this.$Message.error('23.本机构已知晓并承诺不能为空');
       
       
-      //if(!/^[1][0-9]{10}$/.test(this.form.principalPhone))return this.$Message.error('9.负责人电话不正确');
-      //if(!/^[1][0-9]{10}$/.test(this.form.filledPhone))return this.$Message.error('11.填报人电话不正确');
+      if(!/^[1][0-9]{10}$/.test(this.form.principalPhone))return this.$Message.error('9.负责人电话不正确');
+      if(!/^[1][0-9]{10}$/.test(this.form.filledPhone))return this.$Message.error('11.填报人电话不正确');
+      
 
-      applySubmit(this.form).then(res=>{
+      applySubmit(form).then(res=>{
         if(res.code === 200){
-          this.$Message.success(res.result);
+          this.$Message.success("保存成功");
           this.$router.go(-1);
         }else{
           this.$Message.error(res.result);

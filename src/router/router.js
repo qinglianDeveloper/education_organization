@@ -50,7 +50,7 @@ export const routers = [
             import("@/views/h5/user"),
     },
     {
-        path: '/h5-applyFail',
+        path: '/h5-applyFail/:id',
         name: 'h5-applyFail',
         component: () =>
             import("@/views/h5/applyFail"),

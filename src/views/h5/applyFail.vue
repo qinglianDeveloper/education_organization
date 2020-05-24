@@ -1,9 +1,9 @@
 <template>
   <div class="applyFail main-width padding-lr">
     <div class="big-title f18 bold text-center">您的申请未通过</div>
-    <Form :model="form" label-position="top" style="min-height:200px;">
+    <Form label-position="top" style="min-height:200px;">
         <FormItem label="原因如下：">
-            <p>原因555555</p>
+            <p>{{info.auditReason}}</p>
         </FormItem>
     </Form>
     <div class="button-ground">
@@ -13,25 +13,33 @@
   </div>
 </template>
 <script>
+import { applyDetailById } from "@/api";
 export default {
   components: { 
     
   },
   data() {
     return {
-      form:{
-        phone:''
-      }
+      info:{}
     };
   },
   created() {
-    
+    this.getFailReason();
   },
   mounted() {
     
   },
   methods: {
-    
+    getFailReason(){
+      let {id} = this.$route.params;
+      applyDetailById({id}).then(res=>{
+        if(res.code === 200){
+          this.info = res.result;
+        }else{
+          this.$Message.error(res.result);
+        }
+      });
+    }
   }
 };
 </script>

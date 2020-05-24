@@ -113,6 +113,7 @@ export default {
       },
       loading: false,
       options:[],
+      
     };
   },
   created() {
@@ -134,7 +135,7 @@ export default {
               }
             });
         } else {
-            this.options = [];
+            this.options = []; 
         }
     },
     getMobileValidator(){

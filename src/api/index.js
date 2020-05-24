@@ -1415,7 +1415,14 @@ export const applySubmit = (params) => {
 }
 //审核复学审批表
 export const applyList = (params) => {
-    return getRequest('/common/resumeApprove/audit', params)
+    return postRequest('/common/resumeApprove/audit', params)
+}
+
+
+
+//通过ID查询复学审批表
+export const applyDetailById = (params) => {
+    return getRequest('/common/resumeApprove/detail', params)
 }
 
 //通用地址获取接口
@@ -1435,4 +1442,12 @@ export const deleteUser = (params) => {
 export const editUser = (params) => {
     return postRequest('/sys/platformUser/edit', params)
 }
+// 提交人员健康申报表
+export const personHealth = (params) => {
+    return postRequest('/common/personnelHealth/insert', params)
+}
+
+
+
+
 
