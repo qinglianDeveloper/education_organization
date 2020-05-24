@@ -218,9 +218,6 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
-@import "./common.scss";
-</style>
 <style lang="scss">
 .healthyWrite{
   label{
@@ -236,6 +233,7 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+@import "./common.scss";
 .healthyWrite{
   padding: 20px 0px;
   .big-title {

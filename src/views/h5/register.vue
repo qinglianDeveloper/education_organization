@@ -5,7 +5,8 @@
         <FormItem label="手机号" prop="mobile">
           <div class="flex">
             <Input v-model="form.mobile" placeholder="请输入手机号" maxlength="11"></Input>
-            <Button type="primary" style="width:140px;margin-left:10px;" @click.native="getMobileValidator">获取验证码</Button>
+            <Button type="primary" style="width:140px;margin-left:10px;" v-if="!isDisabledCode" @click.native="getMobileValidator">获取验证码</Button>
+            <div v-else style="width:140px;margin-left:10px;border-radius:4px;background-color:#eee;color:#888;text-align:center">{{timer_num}} S</div>
           </div>
         </FormItem>
         <FormItem label="验证码" prop="validator">
@@ -21,7 +22,7 @@
         <!-- <FormItem label="培训机构" v-show="form.type !== 'ORGPRINCIPAL' && form.type !== ''" prop="orgId"> -->
         <FormItem label="培训机构" prop="orgId" v-show="form.type !== 'ORGPRINCIPAL' && form.type !== ''">
             <Select 
-              placeholder="请选择你所在的培训机构"
+              placeholder="请输入你所在的培训机构"
               v-model="form.orgId"
               filterable
               remote
@@ -54,6 +55,9 @@ export default {
   },
   data() {
     return {
+      timer_num: 60,
+      timeClock: null,
+      isDisabledCode: false,
       form:{
         mobile:'',
         validator:'',
@@ -122,7 +126,20 @@ export default {
   mounted() {
     
   },
+  beforeDestroy() {
+    clearInterval(this.timeClock);
+  },
   methods: {
+    // 倒计时
+    sendCode() {
+      this.timeClock = setInterval(() => {
+        this.timer_num = this.timer_num - 1;
+        if (this.timer_num == 0) {
+          clearInterval(this.timeClock);
+          this.isDisabledCode = false;
+        }
+      }, 1000);
+    },
     remoteMethod (query) {
         if (query !== '') {
             this.loading = true;
@@ -142,6 +159,9 @@ export default {
       //获取验证码
       let {mobile} = this.form;
       if (!/^[1][0-9]{10}$/.test(mobile)) return this.$Message.error('手机号码有误!');
+      this.isDisabledCode = true;
+      this.timer_num = 60;
+      this.sendCode();
       mobileValidator({phone:mobile}).then(res=>{
         if(res.code === 200){
           this.$Message.success(res.result);

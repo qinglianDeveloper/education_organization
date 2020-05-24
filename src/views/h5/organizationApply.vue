@@ -401,6 +401,8 @@ export default {
           this.form.organizationTown = item.area;
           this.form.address = item.areaDetail;
           this.form.organizationName = item.orgName;
+          this.form.organizationPrincipal = item.principalName;
+          this.form.principalPhone = item.principalMobile;
         }
       });
     },
@@ -482,9 +484,6 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
-@import "./common.scss";
-</style>
 <style lang="scss">
 .organizationApply{
   label{
@@ -499,6 +498,7 @@ export default {
 }
 </style>
 <style lang="scss" scoped>
+@import "./common.scss";
 .organizationApply {
   padding: 10px 0px;
 }
