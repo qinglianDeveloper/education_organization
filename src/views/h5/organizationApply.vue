@@ -97,8 +97,8 @@
       <FormItem label="23.本机构已知晓并承诺：" required>
         <p>严格落实《中华人民共和国传染病防治法》，按照国家、省、市相关要求，认真履行主体责任，完善应急预案，已经落实各项防范措施（详见下面自查情况），保障教职员工、学生的生命安全和身体健康，确保不发生传染性疫情事件。若因防范措施不到位或者管理不当，发生疫情并导致疫情传播，产生重大影响，立即停课并承担相应的法律后果。</p>
         <RadioGroup v-model="form.protocol">
-          <Radio label="是">是</Radio>
-          <Radio label="否">否</Radio>
+          <Radio :label="1">是</Radio>
+          <Radio :label="0">否</Radio>
         </RadioGroup>
       </FormItem>
     </Form>
@@ -290,7 +290,7 @@ export default {
                   },
                     on: {
                       input: (val) => {
-                          this.form.supplies[params.index].name = val;
+                          this.form.supplies[params.index].unit = val;
                         }
                     },
                 })
@@ -307,7 +307,7 @@ export default {
                   },
                     on: {
                       input: (val) => {
-                          this.form.supplies[params.index].name = val;
+                          this.form.supplies[params.index].number = val;
                         }
                     },
                 })
@@ -354,6 +354,7 @@ export default {
       this.form.supplies.push(obj)
     },
     submit(name){
+      let form = JSON.parse(JSON.stringify(this.form));
       /* if(this.form.organizationTown === '')return this.$Message.error('1.机构所在镇区不能为空');
       if(this.form.organizationName === '')return this.$Message.error('2.机构名称不能为空');
       if(this.form.address === '')return this.$Message.error('3.详细地址不能为空');
@@ -376,8 +377,16 @@ export default {
       
       //if(!/^[1][0-9]{10}$/.test(this.form.principalPhone))return this.$Message.error('9.负责人电话不正确');
       //if(!/^[1][0-9]{10}$/.test(this.form.filledPhone))return this.$Message.error('11.填报人电话不正确');
+      for (const key in form) {
+        if (form.hasOwnProperty(key)) {
+          const element = form[key];
+          if(key.indexOf('check')>-1){
+            form[key] = element === true?1:0;
+          }
+        }
+      }
 
-      applySubmit(this.form).then(res=>{
+      applySubmit(form).then(res=>{
         if(res.code === 200){
           this.$Message.success(res.result);
           this.$router.go(-1);
