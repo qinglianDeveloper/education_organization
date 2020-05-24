@@ -72,15 +72,125 @@
       </div>
     </Row>
     <!-- 详情弹框 -->
-    <Modal v-model="modalStatus" :title="modalTitle"></Modal>
+    <Modal v-model="modalStatus" :title="modalTitle">
+      <div class="personInfo-Modal">
+        <Form :model="form" label-position="top">
+          <div class="big-title">基本信息</div>
+            <FormItem label="1.所在培训机构" required>
+                <!-- <Select v-model="form.organizationId">
+                    <Option v-for="(item,index) in options" :value="item.id" :key="index">{{ item.orgName }}</Option>
+                </Select> -->
+                <Input v-model="form.parentName" placeholder="请输入家长姓名"></Input>
+            </FormItem>
+            <FormItem label="3.家长姓名" v-if="form.identity === 0" required>
+                <Input v-model="form.parentName" placeholder="请输入家长姓名"></Input>
+            </FormItem>
+            <FormItem label="4.家长联系方式" v-if="form.identity === 0" required>
+                <Input v-model="form.parentPhone" placeholder="请输入家长联系方式" maxlength="11"></Input>
+            </FormItem>
+            <FormItem label="5.姓名" required>
+                <Input v-model="form.name" placeholder="请输入姓名"></Input>
+            </FormItem>
+            <FormItem label="6.性别" required>
+                <RadioGroup v-model="form.gender">
+                  <Radio :label="1">男</Radio>
+                  <Radio :label="0">女</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="7.出生日期" required>
+              <!-- <DatePicker @on-change="selectDate1" type="date" placeholder="选择日期" style="width: 100%;"></DatePicker> -->
+              <Input v-model="form.birthday" placeholder="请输入家长姓名"></Input>
+            </FormItem>
+            <FormItem label="8.身份证号" required>
+                <Input v-model="form.idCardNumber" placeholder="请输入身份证号" maxlength="18"></Input>
+            </FormItem>
+            <FormItem label="9.现住址" required>
+                <Input v-model="form.address" placeholder="请输入现住址"></Input>
+            </FormItem>
+            <FormItem label="10.本人及家庭成员是否为新冠肺炎确诊病人或疑似病人" required>
+                <RadioGroup v-model="form.patient">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="如是，请提供诊治医院康复证明">
+                <RadioGroup v-model="form.rehabilitationProve" v-show="form.patient === 1">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="11.本人及家庭是否曾被要求隔离医学观察（或居家观察）" required>
+                <RadioGroup v-model="form.isolation">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="如是，请提供解除隔离观察证明" v-show="form.isolation === 1">
+                <RadioGroup v-model="form.isolationProve">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+
+
+
+            <div class="big-title">流行病学史</div>
+            <p style="margin-bottom:10px;">12.返校（参加培训）前14天，您是否有以下情况</p>
+            <FormItem label="12.1是否曾出国或出境？ " required>
+                <RadioGroup v-model="form.abroad">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="如是，请具体填写什么时候到过哪些国家和地区" v-show="form.abroad === 1">
+                <Input v-model="form.countryArea" placeholder="请输入国家和地区"></Input>
+            </FormItem>
+            <FormItem label="13.是否到过国内重点地区（和中高风险地区）？" required>
+                <RadioGroup v-model="form.importantArea">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="14.是否接触过来自重点地区（和中高风险地区）或其他有本地病例持续传播地区的发热或有呼吸道症状患者？" required>
+                <RadioGroup v-model="form.contactPatient">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="15.周围人群中有无2人及以上出现发热、干咳等症状或接触过新冠肺炎患者？" required>
+                <RadioGroup v-model="form.aroundPatient">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="16.家人/同住人员有无发热、干咳等症状？" required>
+                <RadioGroup v-model="form.familySymptom">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+            <FormItem label="如有，请描述患者姓名、与申报人关系及诊治情况">
+                <Input v-model="form.familySituation" placeholder="请输入姓名"></Input>
+            </FormItem>
+            <FormItem label="如果过有上述情况，最近7天是否已进行核酸检测">
+                <RadioGroup v-model="form.nucleicAcidTest">
+                  <Radio :label="1">是</Radio>
+                  <Radio :label="0">否</Radio>
+                </RadioGroup>
+            </FormItem>
+
+        </Form>
+      </div>
+    </Modal>
   </div>
 </template>
 <script>
-import { getTeacherList, getStudentList } from "@/api";
+import { getTeacherList, getStudentList,personHealthDetail } from "@/api";
 import { dateFormat } from "@/utils/current";
 export default {
   data() {
     return {
+      form:{},
       TabsValue: "teacher",
       columnsTeacher: [
         {
@@ -218,12 +328,21 @@ export default {
       this.getTableData();
     },
     handleDetails(row, index) {
+      this.getPersonHealthDetail(row.id);
       if (this.TabsValue == "teacher") {
-        this.modalTitle = "教师详情";
+        this.modalTitle = "查看详情";
       } else if (this.TabsValue == "student") {
-        this.modalTitle = "学生详情";
+        this.modalTitle = "查看详情";
       }
       this.modalStatus = true;
+    },
+    getPersonHealthDetail(id){
+      //详情
+      personHealthDetail({id:id}).then(res=>{
+        if(res.code === 200){
+
+        }
+      });
     },
     changePage(e) {
       this.searchForm.pageNumber = e;
@@ -236,6 +355,20 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.personInfo-Moda{
+  label{
+    text-align: left !important;
+  }
+  
+  .ivu-radio-group{
+    display: block !important;
+    >span{
+      display: block !important;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 .trainlist {
   padding: 16px;
@@ -251,6 +384,22 @@ export default {
   }
   .footer {
     margin-top: 10px;
+  }
+}
+.personInfo-Modal{
+  .big-title {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    &::before{
+      content: '';
+      display: block;
+      width: 5px;
+      height: 18px;
+      background: #2d8cf0;
+      margin-right: 5px;
+    }
   }
 }
 </style>

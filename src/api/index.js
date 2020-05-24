@@ -1447,6 +1447,14 @@ export const personHealth = (params) => {
     return postRequest('/common/personnelHealth/insert', params)
 }
 
+//通过ID查询人员健康申报表
+export const personHealthDetail = (params) => {
+    return getRequest('/common/personnelHealth/detail', params)
+}
+
+
+
+
 
 
 

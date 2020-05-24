@@ -47,8 +47,8 @@
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="如是，请提供诊治医院康复证明">
-            <RadioGroup v-model="form.rehabilitationProve" v-show="form.patient === 1">
+        <FormItem label="如是，请提供诊治医院康复证明" v-show="form.patient === 1">
+            <RadioGroup v-model="form.rehabilitationProve">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
             </RadioGroup>
@@ -79,34 +79,34 @@
         <FormItem label="如是，请具体填写什么时候到过哪些国家和地区" v-show="form.abroad === 1">
             <Input v-model="form.countryArea" placeholder="请输入国家和地区"></Input>
         </FormItem>
-        <FormItem label="13.是否到过国内重点地区（和中高风险地区）？" required>
+        <FormItem label="12.2.是否到过国内重点地区（和中高风险地区）？" required>
             <RadioGroup v-model="form.importantArea">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="14.是否接触过来自重点地区（和中高风险地区）或其他有本地病例持续传播地区的发热或有呼吸道症状患者？" required>
+        <FormItem label="12.3.是否接触过来自重点地区（和中高风险地区）或其他有本地病例持续传播地区的发热或有呼吸道症状患者？" required>
             <RadioGroup v-model="form.contactPatient">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="15.周围人群中有无2人及以上出现发热、干咳等症状或接触过新冠肺炎患者？" required>
+        <FormItem label="12.4.周围人群中有无2人及以上出现发热、干咳等症状或接触过新冠肺炎患者？" required>
             <RadioGroup v-model="form.aroundPatient">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="16.家人/同住人员有无发热、干咳等症状？" required>
+        <FormItem label="12.5.家人/同住人员有无发热、干咳等症状？" required>
             <RadioGroup v-model="form.familySymptom">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="如有，请描述患者姓名、与申报人关系及诊治情况">
+        <FormItem label="如有，请描述患者姓名、与申报人关系及诊治情况" v-show="form.familySymptom === 1">
             <Input v-model="form.familySituation" placeholder="请输入姓名"></Input>
         </FormItem>
-        <FormItem label="如果过有上述情况，最近7天是否已进行核酸检测">
+        <FormItem label="如果过有上述情况，最近7天是否已进行核酸检测" v-show="form.familySymptom === 1">
             <RadioGroup v-model="form.nucleicAcidTest">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
@@ -197,11 +197,11 @@ export default {
       if(this.form.address === '')return this.$Message.error('9.现住址不能为空');
       if(this.form.patient === '')return this.$Message.error('10.本人及家庭成员是否为新冠肺炎确诊病人或疑似病人不能为空');
       if(this.form.isolation === '')return this.$Message.error('11.本人及家庭是否曾被要求隔离医学观察不能为空');
-      if(this.form.abroad === '')return this.$Message.error('12.是否曾出国或出境不能为空');
-      if(this.form.importantArea === '')return this.$Message.error('13.是否到过国内重点地区（和中高风险地区）不能为空');
-      if(this.form.contactPatient === '')return this.$Message.error('14.是否接触过来自重点地区（和中高风险地区）或其他有本地病例持续传播地区的发热或有呼吸道症状患者不能为空');
-      if(this.form.aroundPatient === '')return this.$Message.error('15.周围人群中有无2人及以上出现发热、干咳等症状或接触过新冠肺炎患者不能为空');
-      if(this.form.familySymptom === '')return this.$Message.error('16.家人/同住人员有无发热、干咳等症状不能为空');
+      if(this.form.abroad === '')return this.$Message.error('12.1.是否曾出国或出境不能为空');
+      if(this.form.importantArea === '')return this.$Message.error('12.2.是否到过国内重点地区（和中高风险地区）不能为空');
+      if(this.form.contactPatient === '')return this.$Message.error('12.3.是否接触过来自重点地区（和中高风险地区）或其他有本地病例持续传播地区的发热或有呼吸道症状患者不能为空');
+      if(this.form.aroundPatient === '')return this.$Message.error('12.4.周围人群中有无2人及以上出现发热、干咳等症状或接触过新冠肺炎患者不能为空');
+      if(this.form.familySymptom === '')return this.$Message.error('12.5.家人/同住人员有无发热、干咳等症状不能为空');
       
       if(this.form.identity === 0 && !/^[1][0-9]{10}$/.test(this.form.parentPhone))return this.$Message.error('家长联系电话不正确');
       if(!/(^\d{15}$)|(^\d{17}([0-9]|X)$)/.test(this.form.idCardNumber))return this.$Message.error('身份证号不正确');
