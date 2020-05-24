@@ -95,7 +95,7 @@ export default {
     justify-content: center;
     position: relative;
     margin-bottom: 10px;
-    .save{
+    .save {
       position: absolute;
       top: 50%;
       right: 0px;
