@@ -1,6 +1,6 @@
 <template>
   <div class="report  main-width padding-lr">
-    <div class="ul" v-if="userInfo.type !== 'ORGPRINCIPAL'">
+    <div class="ul" v-if="userInfo.type === 'ORGPRINCIPAL'">
       <!-- 机构负责人 -->
       <router-link class="li" to="/h5-organizationApply" tag="div">
         <p>机构复学申报</p>
@@ -14,14 +14,14 @@
     </div>
     </div>
 
-    <div class="ul" v-if="userInfo.type !== 'TEACHER'">
+    <div class="ul" v-if="userInfo.type === 'TEACHER'">
       <!-- 老师 -->
       <router-link class="li" to="/h5-healthyWrite" tag="div">
         <p>人员健康申报</p>
       </router-link>
     </div>
 
-    <div class="ul" v-if="userInfo.type !== 'STUDENT'">
+    <div class="ul" v-if="userInfo.type === 'STUDENT'">
       <!-- 学生 -->
       <router-link class="li" to="/h5-healthyWrite" tag="div">
         <p>人员健康申报</p>

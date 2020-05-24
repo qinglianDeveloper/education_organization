@@ -1411,7 +1411,14 @@ export const applySubmit = (params) => {
 }
 //审核复学审批表
 export const applyList = (params) => {
-    return getRequest('/common/resumeApprove/audit', params)
+    return postRequest('/common/resumeApprove/audit', params)
+}
+
+
+
+//通过ID查询复学审批表
+export const applyDetailById = (params) => {
+    return getRequest('/common/resumeApprove/detail', params)
 }
 
 //通用地址获取接口

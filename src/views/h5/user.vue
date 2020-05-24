@@ -6,24 +6,25 @@
     </div>
     <CellGroup>
         <Cell title="每日健康监测记录" to="h5-monitorList" />
-        <Cell title="机构复学申报记录" to="h5-applyList" />
+        <Cell title="机构复学申报记录" v-if="userInfo.type === 'ORGPRINCIPAL'" to="h5-applyList" />
     </CellGroup>
     <navigations :num="1"/>
   </div>
 </template>
 <script>
 import navigations from "./components/navigations";
+
 export default {
   components: { 
     navigations
   },
   data() {
     return {
-      
+      userInfo:{},
     };
   },
   created() {
-    
+    this.userInfo = this.$store.state.h5_user.h5_userInfo;
   },
   mounted() {
     

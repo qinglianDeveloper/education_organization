@@ -14,23 +14,36 @@
   </div>
 </template>
 <script>
+import { getAuditlist } from "@/api";
 export default {
   components: { 
     
   },
   data() {
     return {
-      
+      userInfo:{},
     };
   },
   created() {
-    
+    this.userInfo = this.$store.state.h5_user.h5_userInfo;
+    this.getAuditlists();
   },
   mounted() {
     
   },
   methods: {
-    
+    getAuditlists(){
+      //条件搜索复学审批表列表
+      let obj = {
+        pageNumber:1,
+        pageSize:1,
+        //status:1,//0已提交，1通过，2未通过
+        organizationId:this.userInfo.id,
+      }
+      getAuditlist(obj).then(res=>{
+
+      });
+    }
   }
 };
 </script>
