@@ -1,7 +1,7 @@
 <template>
   <div class="applyList main-width">
     <CellGroup>
-        <Cell title="某某某机构复学申请记录" :to="item.status === 2?'h5-applyList':'h5-applyFail'" v-for="(item,index) in arr" :key="index">
+        <Cell title="某某某机构复学申请记录" @click.native="goLink(item)" v-for="(item,index) in arr" :key="index">
             <span :class="{'color0':item.status === 0,'color1':item.status === 1,'color2':item.status === 2}" slot="extra">{{item.status | statusFilter}}</span>
         </Cell>
         <!-- <Cell title="某某某机构复学申请记录">
@@ -34,7 +34,6 @@ export default {
   },
   filters:{
     statusFilter(n){
-      console.log('n: ', n);
       let status = '';
       switch (n) {
         case 0:
@@ -51,35 +50,30 @@ export default {
           break;
       }
       return status;
-    },
-    colorFilter(n){
-      let color = '';
-      switch (n) {
-        case 0:
-          status = 'color1';
-          break;
-        case 1:
-          status = 'color2';
-          break;
-        case 2:
-          status = 'color3';
-          break;
-        default:
-          status = 'color3';
-          break;
-      }
-      return color;
     }
   },
   mounted() {
     
   },
   methods: {
+    goLink(item){
+      //链接跳转
+      let {id,status} = item;
+      if(status === 0){
+        this.$Message.success("请耐心等待");
+      }
+      if(status === 1){
+        this.$Message.success("审核已通过");
+      }
+      if(status === 2){
+        this.$router.push(`/h5-applyFail/${id}`);
+      }
+    },
     getAuditlists(){
       //条件搜索复学审批表列表
       let obj = {
         pageNumber:1,
-        pageSize:1,
+        pageSize:999,
         //status:1,//0已提交，1通过，2未通过
         //organizationId:this.userInfo.id,
       }

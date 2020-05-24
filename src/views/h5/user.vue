@@ -1,8 +1,8 @@
 <template>
   <div class="user main-width">
     <div class="head">
-      <div class="name f20 bold cfff">张三（机构负责人）</div>
-      <div class="desc f14 cfff">某某某某教育机构</div>
+      <div class="name f20 bold cfff">{{userInfo.userName}}（{{userInfo.type | typeFilter}}）</div>
+      <!-- <div class="desc f14 cfff">某某某某教育机构</div> -->
     </div>
     <CellGroup>
         <Cell title="每日健康监测记录" to="h5-monitorList" />
@@ -13,7 +13,6 @@
 </template>
 <script>
 import navigations from "./components/navigations";
-
 export default {
   components: { 
     navigations
@@ -24,7 +23,40 @@ export default {
     };
   },
   created() {
+    /* 
+    STUDENT("STUDENT", "学生"),
+    TEACHER("TEACHER","教师"),
+    ORGPRINCIPAL("ORGPRINCIPAL", "培训机构负责人"),
+    TOWNPRINCIPAL("TOWNPRINCIPAL", "镇区机构负责人"),
+    EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人");
+    */
     this.userInfo = this.$store.state.h5_user.h5_userInfo;
+  },
+  filters:{
+    typeFilter(n){
+      let type = '';
+      switch (n) {
+        case 'STUDENT':
+          type = '学生';
+          break;
+        case 'TEACHER':
+          type = '教师';
+          break;
+        case 'ORGPRINCIPAL':
+          type = '培训机构负责人';
+          break;
+        case 'TOWNPRINCIPAL':
+          type = '镇区机构负责人';
+          break;
+        case 'EDUCATIONPRINCIPAL':
+          type = '教育局负责人';
+          break;
+        default:
+          type = '';
+          break;
+      }
+      return type;
+    }
   },
   mounted() {
     

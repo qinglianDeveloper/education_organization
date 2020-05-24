@@ -24,7 +24,7 @@ export default {
     };
   },
   created() {
-    
+    this.getFailReason();
   },
   mounted() {
     

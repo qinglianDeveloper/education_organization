@@ -5,10 +5,10 @@
       <router-link class="li" to="/h5-organizationApply" tag="div">
         <p>机构复学申报</p>
       </router-link>
-      <router-link class="li" to="/h5-healthyMonitor" tag="div">
+      <router-link class="li" to="/h5-healthyMonitor" tag="div" v-if="isCheck === true">
         <p>每日健康监测</p>
       </router-link>
-      <div class="li unable">
+      <div class="li unable" v-if="isCheck === false">
         <p>每日健康监测</p>
         <p>请在复学审批通过后使用此功能<!-- 机构复学申报未通过 --></p>
     </div>
@@ -36,6 +36,7 @@
 </template>
 <script>
 import navigations from "./components/navigations";
+import { getAuditlist } from "@/api";
 export default {
   components: { 
     navigations
@@ -43,16 +44,31 @@ export default {
   data() {
     return {
       userInfo:{},
+      isCheck:null,
     };
   },
   created() {
     this.userInfo = this.$store.state.h5_user.h5_userInfo;
   },
   mounted() {
-    
+    this.getAuditlists();
   },
   methods: {
-    
+    getAuditlists(){
+      //条件搜索复学审批表列表
+      let obj = {
+        pageNumber:1,
+        pageSize:99,
+        status:1,//0已提交，1通过，2未通过
+      }
+      getAuditlist(obj).then(res=>{
+        if(res.result.content.length === 0){
+          this.isCheck = false;
+        }else{
+          this.isCheck = true;
+        }
+      });
+    }
   }
 };
 </script>

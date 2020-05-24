@@ -48,7 +48,7 @@
             </RadioGroup>
         </FormItem>
         <FormItem label="如是，请提供诊治医院康复证明">
-            <RadioGroup v-model="form.rehabilitationProve">
+            <RadioGroup v-model="form.rehabilitationProve" v-show="form.patient === 1">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
             </RadioGroup>
@@ -59,7 +59,7 @@
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="如是，请提供解除隔离观察证明">
+        <FormItem label="如是，请提供解除隔离观察证明" v-show="form.isolation === 1">
             <RadioGroup v-model="form.isolationProve">
               <Radio :label="1">是</Radio>
               <Radio :label="0">否</Radio>
@@ -76,7 +76,7 @@
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
-        <FormItem label="如是，请具体填写什么时候到过哪些国家和地区">
+        <FormItem label="如是，请具体填写什么时候到过哪些国家和地区" v-show="form.abroad === 1">
             <Input v-model="form.countryArea" placeholder="请输入国家和地区"></Input>
         </FormItem>
         <FormItem label="13.是否到过国内重点地区（和中高风险地区）？" required>
@@ -142,7 +142,7 @@ export default {
         birthday:'',//出生日期 
         idCardNumber:'',//身份证号
         address:'',//现住址
-        patient:'',//本人及家庭成员是否为新冠肺炎确诊病人或疑似病人（1是，0否）
+        patient:null,//本人及家庭成员是否为新冠肺炎确诊病人或疑似病人（1是，0否）
         rehabilitationProve:'',//如是，请提供诊治医院康复证明（1有，0否）
         isolation:'',//本人及家庭是否曾被要求隔离医学观察（或居家观察）（1是，0否）
         isolationProve:'',//如是，请提供解除隔离观察证明（1有，0否）
