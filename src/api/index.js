@@ -1451,6 +1451,15 @@ export const personHealth = (params) => {
 export const exportData = () => {
     return getRequest('/common/resumeApprove/export')
 }
+//通过ID查询人员健康申报表
+export const personHealthDetail = (params) => {
+    return getRequest('/common/personnelHealth/detail', params)
+}
+
+
+
+
+
 
 
 

@@ -152,6 +152,7 @@ export default {
   },
   created() {
     this.userInfo = this.$store.state.h5_user.h5_userInfo;
+    this.form.identity = this.userInfo.type === "STUDENT" ? 0 : 1;
     this.getOrgLists();
   },
   mounted() {},
@@ -232,10 +233,22 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
-@import "./common.scss";
+<style lang="scss">
+.healthyWrite {
+  label {
+    text-align: left !important;
+  }
+
+  .ivu-radio-group {
+    display: block !important;
+    > span {
+      display: block !important;
+    }
+  }
+}
 </style>
 <style lang="scss" scoped>
+@import "./common.scss";
 .healthyWrite {
   padding: 20px 0px;
   .big-title {
