@@ -4,7 +4,7 @@
       <div class="big-title f18 bold">基本信息</div>
         <FormItem label="1.所在培训机构" required>
             <Select v-model="form.organizationId">
-                <Option v-for="item in options" :value="item.id" :key="index">{{ item.orgName }}</Option>
+                <Option v-for="(item,index) in options" :value="item.id" :key="index">{{ item.orgName }}</Option>
             </Select>
             <!-- <Select v-model="form.organizationId" @on-change="selectOrganization">
           <Option v-for="(item,index) in options" :key="index" :value="item.id">{{item.orgName}}</Option>
