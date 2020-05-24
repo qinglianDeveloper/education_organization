@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 13:15:59
+ * @LastEditTime: 2020-05-24 19:48:15
 --> 
 <template>
   <div class="add">
@@ -40,7 +40,7 @@
         <FormItem label="6.民政部门登记证号">
           <Input v-model="form.civilAffairsNo" placeholder="请输入"></Input>
         </FormItem>
-        <FormItem label="8.人社部门登记证号">
+        <FormItem label="7.人社部门登记证号">
           <Input v-model="form.mohrssNo" placeholder="请输入"></Input>
         </FormItem>
         <FormItem label="8.机构负责人" prop="organizationPrincipal">
@@ -88,62 +88,180 @@
             <Radio :label="0">否</Radio>
           </RadioGroup>
         </FormItem>
-        <FormItem label="22.自查情况：（必填）" prop="submitDate">
-          <CheckboxGroup>
-            <Checkbox label="checka" v-model="form.checka" style="width: 100%;">是否制定突发公共卫生事件应急预案</Checkbox>
-            <Checkbox
-              label="checkb"
-              v-model="form.checkb"
-              style="width: 100%;"
-            >是否全面排查教职员工基本信息，建立“一人一档”</Checkbox>
-            <Checkbox
-              label="checkc"
-              v-model="form.checkc"
-              style="width: 100%;"
-            >是否发放疫情防控资料，开展员工疫情防控培训</Checkbox>
-            <Checkbox label="checkd" v-model="form.checkd" style="width: 100%;">是否建立日常消杀和保洁制度，且有专人负责</Checkbox>
-            <Checkbox
-              label="checke"
-              v-model="form.checke"
-              style="width: 100%;"
-            >是否对复学学生基本情况进行排摸，建立学生信息台账</Checkbox>
-            <Checkbox
-              label="checkf"
-              v-model="form.checkf"
-              style="width: 100%;"
-            >是否对全体教职员工和来自境外、国内重点地区的学生返校前7天进行核酸检测</Checkbox>
-            <Checkbox
-              label="checkg"
-              v-model="form.checkg"
-              style="width: 100%;"
-            >是否建立师生进入登记、测温，以及异常健康人员信息上报制度</Checkbox>
-            <Checkbox label="checkh" v-model="form.checkh" style="width: 100%;">是否确保学生之间距离不少于1米</Checkbox>
-            <Checkbox
-              label="checki"
-              v-model="form.checki"
-              style="width: 100%;"
-            >是否明确辖区发热门诊、辖区疾控机构联系方式</Checkbox>
-            <Checkbox label="checkj" v-model="form.checkj" style="width: 100%;">是否做到“封闭式”管理，严控人员进出</Checkbox>
-            <Checkbox label="checkk" v-model="form.checkk" style="width: 100%;">是否进行应急预案的演练</Checkbox>
-            <Checkbox label="checkl" v-model="form.checkl" style="width: 100%;">是否设置有临时观察区</Checkbox>
-            <Checkbox
-              label="checkm"
-              v-model="form.checkm"
-              style="width: 100%;"
-            >是否通风良好（自然通风效果不佳可增加机械辅助通风设施）</Checkbox>
-            <Checkbox
-              label="checkn"
-              v-model="form.checkn"
-              style="width: 100%;"
-            >是否设置足够洗手设施或免洗手消毒剂（含乙醇60%以上）</Checkbox>
-            <Checkbox
-              label="checko"
-              v-model="form.checko"
-              style="width: 100%;"
-            >是否对本机构全体教师进行了一次《中山市中小学疫情防控下返校心理建设指引》专题培训？</Checkbox>
-            <Checkbox label="checkp" v-model="form.checkp" style="width: 100%;">是否制定接送车辆防疫预案和日常消毒制度</Checkbox>
-          </CheckboxGroup>
-        </FormItem>
+        <p style="margin-bottom:10px">
+          <span
+            style="display:inline-block;margin-right:4px;line-height:1;font-family:SimSun;font-size:14px;color:#ed4014;"
+          >*</span> 22.自查情况：（必填）
+        </p>
+        <!-- <FormItem label=""> -->
+        <div style="margin-left:16px">
+          <FormItem
+            prop="checka"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checka">
+              <span style="margin-right:20px">是否制定突发公共卫生事件应急预案</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkb"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkb">
+              <span style="margin-right:20px">是否全面排查教职员工基本信息，建立“一人一档”</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkc"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkc">
+              <span style="margin-right:20px">是否发放疫情防控资料，开展员工疫情防控培训</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkd"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkd">
+              <span style="margin-right:20px">是否建立日常消杀和保洁制度，且有专人负责</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checke"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checke">
+              <span style="margin-right:20px">是否对复学学生基本情况进行排摸，建立学生信息台账</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+
+          <FormItem
+            prop="checkf"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkf">
+              <span style="margin-right:20px">是否对全体教职员工和来自境外、国内重点地区的学生返校前7天进行核酸检测</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+
+          <FormItem
+            prop="checkg"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkg">
+              <span style="margin-right:20px">是否建立师生进入登记、测温，以及异常健康人员信息上报制度</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+
+          <FormItem
+            prop="checkh"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkh">
+              <span style="margin-right:20px">是否确保学生之间距离不少于1米</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+
+          <FormItem
+            prop="checki"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checki">
+              <span style="margin-right:20px">是否明确辖区发热门诊、辖区疾控机构联系方式</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkj"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkj">
+              <span style="margin-right:20px">是否做到“封闭式”管理，严控人员进出</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkk"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkk">
+              <span style="margin-right:20px">是否进行应急预案的演练</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkl"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkl">
+              <span style="margin-right:20px">是否设置有临时观察区</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkm"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkm">
+              <span style="margin-right:20px">是否通风良好（自然通风效果不佳可增加机械辅助通风设施）</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkn"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkn">
+              <span style="margin-right:20px">是否设置足够洗手设施或免洗手消毒剂（含乙醇60%以上）</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+
+          <FormItem
+            prop="checko"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checko">
+              <span style="margin-right:20px">是否对本机构全体教师进行了一次《中山市中小学疫情防控下返校心理建设指引》专题培训？</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            prop="checkp"
+            :rules="{required: true,message:'请选择',trigger: 'change', type:'number'}"
+          >
+            <RadioGroup v-model="form.checkp">
+              <span style="margin-right:20px">是否制定接送车辆防疫预案和日常消毒制度</span>
+              <Radio :label="1">是</Radio>
+              <Radio :label="0">否</Radio>
+            </RadioGroup>
+            <!-- </FormItem> -->
+          </FormItem>
+        </div>
         <FormItem label="机构疫情防控物资情况（口罩、测温仪器、消杀用品等））">
           <Table ref="myTable" border :columns="columns" :data="form.supplies" size="small"></Table>
           <ButtonGroup>
@@ -168,7 +286,7 @@
   </div>
 </template>
 <script>
-import { addApprove, orgList } from "@/api";
+import { applySubmit, orgList } from "@/api";
 export default {
   data() {
     return {
@@ -224,16 +342,36 @@ export default {
       },
       ruleValidate: {
         organizationTown: [
-          { required: true, message: "机构所在镇区不能为空", trigger: "blur" }
+          {
+            required: true,
+            message: "机构所在镇区不能为空",
+            trigger: "blur",
+            trigger: "change"
+          }
         ],
         organizationName: [
-          { required: true, message: "机构名称不能为空", trigger: "blur" }
+          {
+            required: true,
+            message: "机构名称不能为空",
+            trigger: "blur",
+            trigger: "change"
+          }
         ],
         address: [
-          { required: true, message: "详细地址不能为空", trigger: "blur" }
+          {
+            required: true,
+            message: "详细地址不能为空",
+            trigger: "blur",
+            trigger: "change"
+          }
         ],
         organizationPrincipal: [
-          { required: true, message: "机构负责人不能为空", trigger: "blur" }
+          {
+            required: true,
+            message: "机构负责人不能为空",
+            trigger: "blur",
+            trigger: "change"
+          }
         ],
         principalPhone: [
           { required: true, message: "负责人电话不能为空", trigger: "blur" },
@@ -242,6 +380,7 @@ export default {
             required: true,
             message: "请填写正确的手机号",
             trigger: "blur",
+            trigger: "change",
             transform(value) {
               var myreg = /^[1][0-9]{10}$/;
               if (!myreg.test(value)) {
@@ -318,7 +457,7 @@ export default {
           {
             required: true,
             message: "机构自查是否符合复学条件不能为空",
-            trigger: "blur",
+            trigger: "change",
             type: "number"
           }
         ],
@@ -326,7 +465,7 @@ export default {
           {
             required: true,
             message: "本机构已知晓并承诺必选",
-            trigger: "blur",
+            trigger: "change",
             type: "number"
           }
         ]
@@ -376,7 +515,8 @@ export default {
           render: (h, params) => {
             return h("Input", {
               props: {
-                value: ""
+                value: "",
+                type: "number"
               },
               on: {
                 input: val => {
@@ -404,6 +544,8 @@ export default {
     selectOrganization(val) {
       this.orgList.forEach(item => {
         if (item.id == val) {
+          this.form.organizationPrincipal = item.principalName;
+          this.form.principalPhone = item.principalMobile;
           this.form.organizationTown = item.area;
           this.form.address = item.areaDetail;
           this.form.organizationName = item.orgName;
@@ -439,11 +581,26 @@ export default {
     },
     submit(name) {
       this.$refs[name].validate(valid => {
+        this.form.supplies.forEach(item => {
+          item.number = item.number * 1;
+        });
+        for (let i in this.form) {
+          if (
+            i == "teacherCount" ||
+            i == "negativeTeacherCount" ||
+            i == "stuCount" ||
+            i == "outStuCount" ||
+            i == "negativeOutStuCount"
+          ) {
+            this.form[i] = this.form[i] * 1;
+          }
+        }
         if (valid) {
-          addApprove(this.form).then(res => {
+          let obj = JSON.stringify(this.form);
+          applySubmit(obj).then(res => {
             if (res.code === 200) {
               this.$Message.success("新增复学审批成功");
-              this.goBack;
+              this.goBack();
             }
           });
         }

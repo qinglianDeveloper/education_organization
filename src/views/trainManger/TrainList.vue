@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 16:01:42
+ * @LastEditTime: 2020-05-24 19:00:24
 --> 
 <template>
   <div class="trainlist">

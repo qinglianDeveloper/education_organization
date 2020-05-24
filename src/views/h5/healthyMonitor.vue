@@ -7,7 +7,7 @@
     <Form label-position="top">
       <FormItem label="所在培训机构">
         <Select v-model="model11" filterable>
-          <Option v-for="(item,index) in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          <Option v-for="(item,index) in cityList" :value="item.value" :key="index">{{ item.label }}</Option>
         </Select>
       </FormItem>
     </Form>
@@ -95,7 +95,7 @@ export default {
     justify-content: center;
     position: relative;
     margin-bottom: 10px;
-    .save{
+    .save {
       position: absolute;
       top: 50%;
       right: 0px;

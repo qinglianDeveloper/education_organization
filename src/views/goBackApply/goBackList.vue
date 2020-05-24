@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 13:44:55
+ * @LastEditTime: 2020-05-24 19:58:56
 --> 
 <template>
   <div class="trainlist">
@@ -14,6 +14,8 @@
           <span>复学申请列表</span>
         </div>
         <div class="export-btn">
+          <Button type="warning" style="margin-right:6px" @click="exportData">导出</Button>
+          <!-- <a href="/common/resumeApprove/export">导出</a> -->
           <Button type="primary" icon="md-add" @click="add">新建</Button>
         </div>
       </div>
@@ -59,7 +61,12 @@
         <template slot-scope="{row}" slot="action">
           <Button type="primary" @click="handleDetail(row)" style="margin-right:6px" size="small">查看</Button>
           <Button type="error" @click="handleDelete(row)" style="margin-right:6px" size="small">删除</Button>
-          <Button type="primary" @click="handleCheck(row)" size="small">审核</Button>
+          <Button
+            type="primary"
+            @click="handleCheck(row)"
+            size="small"
+            v-if="menuBtns.indexOf('admin:check:apply')>-1"
+          >审核</Button>
         </template>
       </Table>
     </Row>
@@ -102,7 +109,8 @@
   </div>
 </template>
 <script>
-import { getAuditlist, deletApprove, applyList } from "@/api";
+import { mapState } from "vuex";
+import { getAuditlist, deletApprove, applyList, exportData } from "@/api";
 export default {
   data() {
     return {
@@ -184,7 +192,28 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState({
+      menuBtns: state => state.menu.menuBtns
+    })
+  },
   methods: {
+    exportData() {
+      exportData().then(res => {
+        var blob = new Blob([res], {
+          type:
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+        }); //application/vnd.openxmlformats-officedocument.spreadsheetml.sheet这里表示xlsx类型
+        var downloadElement = document.createElement("a");
+        var href = window.URL.createObjectURL(blob); //创建下载的链接
+        downloadElement.href = href;
+        downloadElement.download = "复学申请表" + ".xlsx"; //下载后文件名
+        document.body.appendChild(downloadElement);
+        downloadElement.click(); //点击下载
+        document.body.removeChild(downloadElement); //下载完成移除元素
+        window.URL.revokeObjectURL(href); //释放掉blob对象
+      });
+    },
     tagClor(val) {
       switch (val) {
         case 0:

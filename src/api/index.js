@@ -1447,7 +1447,10 @@ export const personHealth = (params) => {
     return postRequest('/common/personnelHealth/insert', params)
 }
 
-
+// 导出数据
+export const exportData = () => {
+    return getRequest('/common/resumeApprove/export')
+}
 
 
 
