@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:53:38
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 10:09:52
+ * @LastEditTime: 2020-05-24 17:30:50
 --> 
 <template>
   <div class="trainlist">
@@ -92,7 +92,7 @@ export default {
         {
           title: "教师姓名",
           align: "center",
-          key: "name",
+          key: "userName",
           minWidth: 100
         },
         {
@@ -122,7 +122,7 @@ export default {
         {
           title: "学生姓名",
           align: "center",
-          key: "name",
+          key: "userName",
           minWidth: 100
         },
         {
