@@ -80,7 +80,7 @@
                 <!-- <Select v-model="form.organizationId">
                     <Option v-for="(item,index) in options" :value="item.id" :key="index">{{ item.orgName }}</Option>
                 </Select> -->
-                <Input v-model="form.parentName" placeholder="请输入家长姓名"></Input>
+                <Input v-model="form.organizationName" placeholder="所在培训机构"></Input>
             </FormItem>
             <FormItem label="3.家长姓名" v-if="form.identity === 0" required>
                 <Input v-model="form.parentName" placeholder="请输入家长姓名"></Input>

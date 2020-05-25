@@ -1,7 +1,8 @@
 <template>
   <div class="applyList main-width">
-    <CellGroup>
-        <Cell title="某某某机构复学申请记录" @click.native="goLink(item)" v-for="(item,index) in arr" :key="index">
+    <div class="text-center c666" style="padding:20px;" v-if="arr.length === 0">暂时没数据</div>
+    <CellGroup v-if="arr.length > 0">
+        <Cell :title="item.organizationPrincipal" @click.native="goLink(item)" v-for="(item,index) in arr" :key="index">
             <span :class="{'color0':item.status === 0,'color1':item.status === 1,'color2':item.status === 2}" slot="extra">{{item.status | statusFilter}}</span>
         </Cell>
         <!-- <Cell title="某某某机构复学申请记录">

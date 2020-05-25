@@ -32,13 +32,7 @@ export default {
     }
 
 
-    let d = new Date();
-    let yy = d.getFullYear();
-    let mm = d.getMonth();
-    let dd = d.getDate();
-    if(yy >= 2020 && mm >= 5){
-      this.$router.replace('/login');
-    }
+    
   },
   methods: {
     ...mapActions("menu", ["getMenuList"])
