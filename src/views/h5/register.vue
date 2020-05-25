@@ -38,7 +38,7 @@
             <Input type="password" v-model="form.password" placeholder="请输入密码"></Input>
         </FormItem>
         <FormItem label="确认密码" prop="password2">
-            <Input type="password" v-model="form.password2" placeholder="请输入再次输入密码"></Input>
+            <Input type="password" v-model="form.password2" placeholder="请再次输入密码"></Input>
         </FormItem>
     </Form>
     <div class="button-ground">

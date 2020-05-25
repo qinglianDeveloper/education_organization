@@ -52,7 +52,10 @@ export default {
     };
   },
   created() {
-    
+    let mobile = localStorage.getItem('h5_mobile') || '';
+    let password = localStorage.getItem('h5_password') || '';
+    this.mobile = mobile;
+    this.password = password;
   },
   mounted() {
     
@@ -64,6 +67,8 @@ export default {
           if (valid) { 
             pwdLogin({mobile,password}).then(res=>{
               if(res.code === 200){
+                localStorage.setItem('h5_mobile',mobile);
+                localStorage.setItem('h5_password',password);
                 this.$store.commit("h5_saveUserInfo", res.result.userDO);
                 this.$router.replace('h5-report');
                 this.$Message.success(' 登录成功');
