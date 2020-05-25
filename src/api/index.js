@@ -1469,6 +1469,10 @@ export const getDateList = (params) => {
 export const getEveryDayInfoList = (params) => {
     return getRequest('/common/dailyHealth/searchList', params)
 }
+// 删除机构
+export const deleteOrg = (params) => {
+    return postRequest('/org/delete', params)
+}
 
 
 

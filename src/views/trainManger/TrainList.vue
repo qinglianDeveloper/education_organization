@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-25 22:13:54
+ * @LastEditTime: 2020-05-25 23:11:16
 --> 
 <template>
   <div class="trainlist">
@@ -14,7 +14,7 @@
           <span>培训机构列表</span>
         </div>
         <div class="export-btn">
-          <Button type="primary" icon="md-add" @click="add">新建</Button>
+          <Button v-if="menuBtns.indexOf('add:org')>-1" type="primary" icon="md-add" @click="add">新建</Button>
         </div>
       </div>
       <Divider style="margin:10px 0" />
@@ -54,7 +54,7 @@
       >
         <template slot="action" slot-scope="{row,index}">
           <Button
-            type="primary"
+            type="success"
             size="small"
             style="margin-right:6px"
             @click="handleEveryday(row,index)"
@@ -71,7 +71,12 @@
             style="margin-right:6px"
             @click="handleEdit(row,index)"
           >编辑</Button>
-          <!-- <Button type="error" size="small" @click="handleDelete(row,index)">删除</Button> -->
+          <Button
+            type="error"
+            size="small"
+            @click="handleDelete(row,index)"
+            v-if="menuBtns.indexOf('delete:org')>-1"
+          >删除</Button>
         </template>
       </Table>
     </Row>
@@ -141,13 +146,15 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import {
   getOrgList,
   getListSearch,
   getAddresslist,
   addOrg,
   editOrg,
-  getDateList
+  getDateList,
+  deleteOrg
 } from "@/api";
 import { dateFormat } from "@/utils/current";
 export default {
@@ -195,7 +202,7 @@ export default {
           title: "操作",
           slot: "action",
           align: "center",
-          width: 260,
+          width: 300,
           fixed: "right"
         }
       ],
@@ -255,6 +262,11 @@ export default {
   destroyed() {
     // 销毁全局方法
     window.onresize = null;
+  },
+  computed: {
+    ...mapState({
+      menuBtns: state => state.menu.menuBtns
+    })
   },
   methods: {
     getTableInfo() {
@@ -407,7 +419,14 @@ export default {
       this.$Modal.confirm({
         title: "确认删除",
         content: "您确认要删除这个机构?",
-        onOk: () => {}
+        onOk: () => {
+          deleteOrg({ orgId: row.id }).then(res => {
+            if (res.code == 200) {
+              this.$Message.success("删除成功!");
+              this.getTableInfo();
+            }
+          });
+        }
       });
     },
     // 获取省份
