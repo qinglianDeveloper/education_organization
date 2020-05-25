@@ -5,7 +5,7 @@
       <!-- <div class="desc f14 cfff">某某某某教育机构</div> -->
     </div>
     <CellGroup>
-        <Cell title="每日健康监测记录" to="h5-monitorList" />
+        <Cell title="每日健康监测记录" v-if="userInfo.type === 'ORGPRINCIPAL'" to="h5-monitorList" />
         <Cell title="机构复学申报记录" v-if="userInfo.type === 'ORGPRINCIPAL'" to="h5-applyList" />
     </CellGroup>
     <navigations :num="1"/>

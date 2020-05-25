@@ -1465,6 +1465,38 @@ export const getDateList = (params) => {
     return getRequest('/common/dailyHealth/dateList', params)
 }
 
+// 学生提交每日健康信息表
+export const studentHealth = (params) => {
+    return postRequest('/common/dailyHealth/insert' , params)
+}
+
+// 获取有每日健康信息的日期列表
+export const healthList = (params) => {
+    return getRequest('/common/dailyHealth/dateList',params)
+}
+
+// 教师批量编辑学生的每日健康信息表
+export const saveTemperature = (params) => {
+    return postFormData('/common/dailyHealth/batchEdit' , params)
+}
+
+
+// 条件搜索每日健康信息列表
+export const healthDetails = (params) => {
+    return getRequest('/common/dailyHealth/searchList',params)
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // 每日健康信息列表
 export const getEveryDayInfoList = (params) => {
     return getRequest('/common/dailyHealth/searchList', params)
