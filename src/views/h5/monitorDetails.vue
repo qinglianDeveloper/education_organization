@@ -18,7 +18,17 @@
         </Select>
       </FormItem>
     </Form>
-    <Table border :columns="columns" :data="arr"></Table>
+    <Table border :columns="columns" :data="arr">
+      <template slot-scope="{row}" slot="temperatureHome">
+          <Tag :color="changeTemp(row.temperatureHome)">{{row.temperatureHome }}℃</Tag>
+        </template>
+        <template slot-scope="{row}" slot="cough">
+          <Tag :color="row.cough==1?'red':'green'">{{row.cough==1?'是':'否'}}</Tag>
+        </template>
+        <template slot-scope="{row}" slot="healthCode">
+          <Tag :color="codeColor(row.healthCode)">{{row.healthCode | changeCode}}</Tag>
+        </template>
+    </Table>
   </div>
 </template>
 <script>
@@ -43,25 +53,21 @@ export default {
         },
         {
           title: "居家测温",
-          key: "name22",
+          key: "temperatureHome",
           align: 'center',
+          slot: "temperatureHome"
         },
         {
           title: "咳嗽",
           key: "cough",
           align: 'center',
+          slot: "cough"
         },
         {
           title: "粤康码",
-          key: "temperatureHome",
+          key: "healthCode",
           align: 'center',
-          /* render:(h,params) => {
-            return h('i',{
-              props: {
-                value:'',
-              },
-            })
-          } */
+          slot: "healthCode"
         },
         {
           title: "机构测温",
@@ -70,7 +76,7 @@ export default {
           render:(h,params) => {
             return h('Input',{
               props: {
-                value:'',
+                value:this.arr[params.index].temperatureOrg,
                 type:'number',
                 //disabled:true,
                 //size:'small',
@@ -86,12 +92,44 @@ export default {
       ],
     };
   },
+  filters: {
+    changeCode(msg) {
+      switch (msg) {
+        case 0:
+          return "绿码";
+          break;
+        case 1:
+          return "红码";
+          break;
+        case 2:
+          return "黄码";
+          break;
+      }
+    }
+  },
   created() {
     this.setDate();
     this.remoteMethod();
   },
   mounted() {},
   methods: {
+    changeTemp(msg) {
+      if (msg > 37.3) {
+        return "red";
+      } else {
+        return "green";
+      }
+    },
+    codeColor(msg) {
+      switch (msg) {
+        case 0:
+          return "success";
+        case 1:
+          return "error";
+        case 2:
+          return "warning";
+      }
+    },
     setDate(){
       let {date} = this.$route.query;
       let d = new Date(date.replace(/\-/g, '/'));    
@@ -139,7 +177,14 @@ export default {
     },
     save(){
       //保存
-      saveTemperature().then(res=>{
+      console.log(this.arr);
+      let list = this.arr.map(item=>{
+        return {
+          id: item.id,
+          temperatureOrg: item.temperatureOrg
+        }
+      });
+      saveTemperature(list).then(res=>{
         if(res.code === 200){
           this.$Message.success("保存成功");
         }else{
