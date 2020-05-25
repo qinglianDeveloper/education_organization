@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 21:04:23
+ * @LastEditTime: 2020-05-25 20:08:41
 --> 
 <template>
   <div class="add">
@@ -283,11 +283,6 @@ export default {
         protocol: "" //本机构已知晓并承诺（1是，0否）
       },
       columns: [
-        {
-          title: "序号",
-          key: "id",
-          align: "center"
-        },
         {
           title: "名称",
           key: "name",
