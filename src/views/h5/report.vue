@@ -5,7 +5,7 @@
       <router-link class="li" to="/h5-organizationApply" tag="div">
         <p>机构复学申报</p>
       </router-link>
-      <router-link class="li" to="/h5-healthyMonitor" tag="div" v-if="isCheck === true">
+      <router-link class="li" :to="`/h5-monitorDetails?date=${day}`" tag="div" v-if="isCheck === true">
         <p>每日健康监测</p>
       </router-link>
       <div class="li unable" v-if="isCheck === false">
@@ -43,17 +43,27 @@ export default {
   },
   data() {
     return {
+      day:'',
       userInfo:{},
       isCheck:null,
     };
   },
   created() {
     this.userInfo = this.$store.state.h5_user.h5_userInfo;
+    this.setDate();
   },
   mounted() {
     this.getAuditlists();
   },
   methods: {
+    setDate(){
+      let d = new Date();
+      let YY = d.getFullYear();
+      let MM = d.getMonth() + 1;
+      let DD = d.getDate() ;
+      let add0 = (n) => n < 10 ? '0' + n : n;
+      this.day = `${YY}-${add0(MM)}-${add0(DD)}`
+    },
     getAuditlists(){
       //条件搜索复学审批表列表
       let obj = {

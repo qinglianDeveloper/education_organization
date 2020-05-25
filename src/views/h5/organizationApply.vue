@@ -29,13 +29,13 @@
         <Input v-model="form.organizationPrincipal" placeholder="请输入"></Input>
       </FormItem>
       <FormItem label="9.负责人电话" required>
-        <Input v-model="form.principalPhone" placeholder="请输入" maxlength="11"></Input>
+        <Input v-model="form.principalPhone" placeholder="请输入" maxlength="11" type="number"></Input>
       </FormItem>
       <FormItem label="10.填报人" required>
         <Input v-model="form.filledName" placeholder="请输入"></Input>
       </FormItem>
       <FormItem label="11.填报人电话" required>
-        <Input v-model="form.filledPhone" placeholder="请输入" maxlength="11"></Input>
+        <Input v-model="form.filledPhone" placeholder="请输入" maxlength="11" type="number"></Input>
       </FormItem>
       <FormItem label="12.复学教职工总人数（人）" required>
         <Input v-model="form.teacherCount" placeholder="请输入" type="number"></Input>
@@ -347,6 +347,7 @@ export default {
         {
           title: "单位",
           key: "unit",
+          align: 'center',
           render:(h,params) => {
               return h('Input',{
                     props: {
@@ -364,6 +365,7 @@ export default {
         {
           title: "数量",
           key: "number",
+          align: 'center',
           render:(h,params) => {
               return h('Input',{
                     props: {

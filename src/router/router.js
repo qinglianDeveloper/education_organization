@@ -38,10 +38,10 @@ export const routers = [
             import("@/views/h5/healthyReport"),
     },
     {
-        path: '/h5-healthyMonitor',
-        name: 'h5-healthyMonitor',
+        path: '/h5-monitorDetails',
+        name: 'h5-monitorDetails',
         component: () =>
-            import("@/views/h5/healthyMonitor"),
+            import("@/views/h5/monitorDetails"),
     },
     {
         path: '/h5-user',
