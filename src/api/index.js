@@ -1457,9 +1457,13 @@ export const personHealthDetail = (params) => {
 }
 // 通过用户ID查询健康申报表
 export const personHealthByUser = (params) => {
-    return getRequest('/common/personnelHealth/byUser',params)
+    return getRequest('/common/personnelHealth/byUser', params)
 }
 
+// 通过日健康信息的日期列表
+export const getDateList = (params) => {
+    return getRequest('/common/dailyHealth/dateList', params)
+}
 
 // 学生提交每日健康信息表
 export const studentHealth = (params) => {
@@ -1493,6 +1497,10 @@ export const healthDetails = (params) => {
 
 
 
+// 每日健康信息列表
+export const getEveryDayInfoList = (params) => {
+    return getRequest('/common/dailyHealth/searchList', params)
+}
 
 
 

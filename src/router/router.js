@@ -238,6 +238,17 @@ export const routers = [
             component: () =>
                 import("@/views/trainManger/TrainList")
         }, {
+            /* 每日健康信息列表 */
+            path: "/everyDay",
+            name: "everyDay",
+            meta: {
+                parent: "培训机构管理",
+                parentName: 'person',
+                title: '健康信息列表',
+            },
+            component: () =>
+                import("@/views/trainManger/everyDay")
+        }, {
             /* 复学申请列表 */
             path: "/goBackList",
             name: "goBackList",

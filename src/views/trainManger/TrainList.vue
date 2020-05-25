@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 19:00:24
+ * @LastEditTime: 2020-05-25 22:13:54
 --> 
 <template>
   <div class="trainlist">
@@ -117,6 +117,27 @@
         <Button type="primary" @click="handleSubmit">确定</Button>
       </div>
     </Modal>
+    <!-- 选择日期弹框 -->
+    <Modal v-model="dateStatus" title="选择日期查看当日列表" :mask-closable="false">
+      <Form ref="dateForm" :model="dateForm">
+        <FormItem
+          label="选择日期:"
+          prop="date"
+          :label-width="90"
+          :rules="{required: true,
+            message: '请选择日期',
+            trigger: 'change'}"
+        >
+          <Select v-model="dateForm.date">
+            <Option v-for="(item,index) in dateList" :key="index" :value="item">{{item}}</Option>
+          </Select>
+        </FormItem>
+      </Form>
+      <div slot="footer">
+        <Button type="default" @click="dateStatus=false">取消</Button>
+        <Button type="primary" @click="handleSubmitDate">确定</Button>
+      </div>
+    </Modal>
   </div>
 </template>
 <script>
@@ -125,7 +146,8 @@ import {
   getListSearch,
   getAddresslist,
   addOrg,
-  editOrg
+  editOrg,
+  getDateList
 } from "@/api";
 import { dateFormat } from "@/utils/current";
 export default {
@@ -217,7 +239,10 @@ export default {
             trigger: "blur"
           }
         ]
-      }
+      },
+      dateStatus: false,
+      dateForm: { date: "", id: "" },
+      dateList: []
     };
   },
   created() {
@@ -317,7 +342,30 @@ export default {
       this.getTableInfo();
     },
     changeSelect() {},
-    handleEveryday(row, index) {},
+    handleEveryday(row, index) {
+      this.$refs["dateForm"].resetFields();
+      this.dateForm.orgName = row.orgName;
+      this.dateForm.con = row.principalName;
+      this.dateForm.phone = row.principalMobile;
+      this.dateForm.id = row.id;
+      getDateList({ id: row.id }).then(res => {
+        if (res.code == 200) {
+          if (res.result[0]) {
+            this.dateStatus = true;
+            this.dateList = res.result;
+          } else {
+            this.$Message.warning("当前机构暂未有填报信息!");
+          }
+        }
+      });
+    },
+    handleSubmitDate() {
+      this.$refs.dateForm.validate(valid => {
+        if (valid) {
+          this.$router.push({ name: "everyDay", query: this.dateForm });
+        }
+      });
+    },
     handleReport(row, index) {
       this.$router.push({
         name: "personInfo",

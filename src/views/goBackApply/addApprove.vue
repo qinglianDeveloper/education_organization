@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 19:48:15
+ * @LastEditTime: 2020-05-25 20:08:08
 --> 
 <template>
   <div class="add">
@@ -56,19 +56,29 @@
           <Input v-model="form.filledPhone" placeholder="请输入" maxlength="11"></Input>
         </FormItem>
         <FormItem label="12.复学教职工总人数（人）" prop="teacherCount">
-          <Input v-model="form.teacherCount" placeholder="请输入" type="number"></Input>
+          <InputNumber :min="0" v-model="form.teacherCount" placeholder="请输入" style="width:100%"></InputNumber>
         </FormItem>
         <FormItem label="13.复学教职员工核酸检测阴性人数（人）" prop="negativeTeacherCount">
-          <Input v-model="form.negativeTeacherCount" placeholder="请输入" type="number"></Input>
+          <InputNumber
+            :min="0"
+            v-model="form.negativeTeacherCount"
+            placeholder="请输入"
+            style="width:100%"
+          ></InputNumber>
         </FormItem>
         <FormItem label="14.复学学生人数（人）" prop="stuCount">
-          <Input v-model="form.stuCount" placeholder="请输入" type="number"></Input>
+          <InputNumber :min="0" v-model="form.stuCount" placeholder="请输入" style="width:100%"></InputNumber>
         </FormItem>
         <FormItem label="15.来自境外、重点疫区学员人数（人）" prop="outStuCount">
-          <Input v-model="form.outStuCount" placeholder="请输入" type="number"></Input>
+          <InputNumber :min="0" v-model="form.outStuCount" placeholder="请输入" style="width:100%"></InputNumber>
         </FormItem>
         <FormItem label="16.来自境外、重点疫区学生核酸检测阴性人数(人)" prop="negativeOutStuCount">
-          <Input v-model="form.negativeOutStuCount" placeholder="请输入" type="number"></Input>
+          <InputNumber
+            :min="0"
+            v-model="form.negativeOutStuCount"
+            placeholder="请输入"
+            style="width:100%"
+          ></InputNumber>
         </FormItem>
         <FormItem label="17.申请复学时间（月日）" prop="startDate">
           <DatePicker @on-change="selectDate1" type="date" placeholder="选择日期" style="width: 100%;"></DatePicker>
@@ -312,11 +322,11 @@ export default {
         principalPhone: "", //负责人电话
         filledName: "", //填报人
         filledPhone: "", //填报人电话
-        teacherCount: "", //复学教职工总人数（人）
-        negativeTeacherCount: "", //复学教职员工核酸检测阴性人数（人）
-        stuCount: "", //复学学生人数（人）
-        outStuCount: "", //来自境外、重点疫区学员人数（人）
-        negativeOutStuCount: "", //来自境外、重点疫区学生核酸检测阴性人数（人）
+        teacherCount: null, //复学教职工总人数（人）
+        negativeTeacherCount: null, //复学教职员工核酸检测阴性人数（人）
+        stuCount: null, //复学学生人数（人）
+        outStuCount: null, //来自境外、重点疫区学员人数（人）
+        negativeOutStuCount: null, //来自境外、重点疫区学生核酸检测阴性人数（人）
         startDate: "", //申请复学时间（月日）
         readyDate: "", //机构自查完成时间（月日）
         acceptanceDate: "", //计划镇区专班验收时间（月日）
@@ -402,31 +412,40 @@ export default {
           {
             required: true,
             message: "复学教职工总人数不能为空",
-            trigger: "blur"
+            trigger: "blur",
+            type: "number"
           }
         ],
         negativeTeacherCount: [
           {
             required: true,
             message: "复学教职员工核酸检测阴性人数不能为空",
-            trigger: "blur"
+            trigger: "blur",
+            type: "number"
           }
         ],
         stuCount: [
-          { required: true, message: "复学学生人数不能为空", trigger: "blur" }
+          {
+            required: true,
+            message: "复学学生人数不能为空",
+            trigger: "blur",
+            type: "number"
+          }
         ],
         outStuCount: [
           {
             required: true,
             message: "来自境外、重点疫区学员人数不能为空",
-            trigger: "blur"
+            trigger: "blur",
+            type: "number"
           }
         ],
         negativeOutStuCount: [
           {
             required: true,
             message: "来自境外、重点疫区学生核酸检测阴性人数不能为空",
-            trigger: "blur"
+            trigger: "blur",
+            type: "number"
           }
         ],
         startDate: [
@@ -471,11 +490,6 @@ export default {
         ]
       },
       columns: [
-        {
-          title: "序号",
-          key: "id",
-          align: "center"
-        },
         {
           title: "名称",
           key: "name",
@@ -584,17 +598,7 @@ export default {
         this.form.supplies.forEach(item => {
           item.number = item.number * 1;
         });
-        for (let i in this.form) {
-          if (
-            i == "teacherCount" ||
-            i == "negativeTeacherCount" ||
-            i == "stuCount" ||
-            i == "outStuCount" ||
-            i == "negativeOutStuCount"
-          ) {
-            this.form[i] = this.form[i] * 1;
-          }
-        }
+
         if (valid) {
           let obj = JSON.stringify(this.form);
           applySubmit(obj).then(res => {
