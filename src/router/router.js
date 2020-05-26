@@ -238,7 +238,7 @@ export const routers = [
             component: () =>
                 import("@/views/trainManger/TrainList")
         }, {
-            /* 每日健康信息列表 */
+            /* 健康日报信息列表 */
             path: "/everyDay",
             name: "everyDay",
             meta: {

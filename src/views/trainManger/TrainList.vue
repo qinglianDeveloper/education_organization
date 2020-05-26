@@ -58,13 +58,13 @@
             size="small"
             style="margin-right:6px"
             @click="handleEveryday(row,index)"
-          >每日健康</Button>
+          >健康日报</Button>
           <Button
             type="primary"
             size="small"
             style="margin-right:6px"
             @click="handleReport(row,index)"
-          >健康上报</Button>
+          >健康申报</Button>
           <Button
             type="primary"
             size="small"

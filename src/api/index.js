@@ -1388,11 +1388,11 @@ export const addOrg = (params) => {
 export const editOrg = (params) => {
     return postRequest('/org/edit', params)
 }
-// 机构列表-健康上报-教师列表
+// 机构列表-健康申报-教师列表
 export const getTeacherList = (params) => {
     return getRequest('/teacher/getPageList', params)
 }
-// 机构列表-健康上报-学生列表
+// 机构列表-健康申报-学生列表
 export const getStudentList = (params) => {
     return getRequest('/student/getPageList', params)
 }
@@ -1465,23 +1465,23 @@ export const getDateList = (params) => {
     return getRequest('/common/dailyHealth/dateList', params)
 }
 
-// 学生提交每日健康信息表
+// 学生提交健康日报信息表
 export const studentHealth = (params) => {
     return postRequest('/common/dailyHealth/insert' , params)
 }
 
-// 获取有每日健康信息的日期列表
+// 获取有健康日报信息的日期列表
 export const healthList = (params) => {
     return getRequest('/common/dailyHealth/dateList',params)
 }
 
-// 教师批量编辑学生的每日健康信息表
+// 教师批量编辑学生的健康日报信息表
 export const saveTemperature = (params) => {
     return postFormData('/common/dailyHealth/batchEdit' , params)
 }
 
 
-// 条件搜索每日健康信息列表
+// 条件搜索健康日报信息列表
 export const healthDetails = (params) => {
     return getRequest('/common/dailyHealth/searchList',params)
 }
@@ -1497,7 +1497,7 @@ export const healthDetails = (params) => {
 
 
 
-// 每日健康信息列表
+// 健康日报信息列表
 export const getEveryDayInfoList = (params) => {
     return getRequest('/common/dailyHealth/searchList', params)
 }

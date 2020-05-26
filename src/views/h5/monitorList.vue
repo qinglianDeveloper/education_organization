@@ -29,7 +29,7 @@ export default {
   methods: {
     getHealthList(){
       healthList({
-        organizationId:this.userInfo.id,
+        //organizationId:this.userInfo.id,
         //id:'',//健康日报信息表ID
       }).then(res=>{
         if(res.code === 200){

@@ -11,7 +11,7 @@
     <Row>
       <div class="header" ref="header">
         <div class="title">
-          <span>每日健康列表</span>
+          <span>健康日报列表</span>
         </div>
       </div>
       <Divider style="margin:10px 0" />
