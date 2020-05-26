@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-25 22:11:41
+ * @LastEditTime: 2020-05-26 10:06:24
 --> 
 <template>
   <div class="trainlist">
@@ -76,7 +76,7 @@
 </template>
 <script>
 import { getEveryDayInfoList } from "@/api";
-import { dateFormat } from "@/utils/current";
+// import { dateFormat } from "@/utils/current";
 export default {
   data() {
     return {
@@ -187,11 +187,11 @@ export default {
     getTableInfo() {
       getEveryDayInfoList(this.searchForm).then(res => {
         if (res.code == 200) {
-          res.result.content.forEach(item => {
-            if (item.creationDate) {
-              item.creationDate = dateFormat(item.creationDate);
-            }
-          });
+          // res.result.content.forEach(item => {
+          //   if (item.creationDate) {
+          //     item.creationDate = dateFormat(item.creationDate);
+          //   }
+          // });
           this.data = res.result.content;
           this.total = res.result.totalElements;
           this.loading = false;
