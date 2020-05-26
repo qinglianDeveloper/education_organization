@@ -7,8 +7,8 @@
         </FormItem>
     </Form>
     <div class="button-ground">
-      <Button class="Button" type="primary">重新申请</Button>
-      <Button class="Button" type="default">返回</Button>
+      <Button class="Button" type="primary" @click.native="$router.push('h5-organizationApply')">重新申请</Button>
+      <Button class="Button" type="default" @click.native="$router.go(-1)">返回</Button>
     </div>
   </div>
 </template>

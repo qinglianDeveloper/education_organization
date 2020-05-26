@@ -30,7 +30,7 @@ export default {
     getHealthList(){
       healthList({
         organizationId:this.userInfo.id,
-        //id:'',//每日健康信息表ID
+        //id:'',//健康日报信息表ID
       }).then(res=>{
         if(res.code === 200){
           this.arr = res.result || [];

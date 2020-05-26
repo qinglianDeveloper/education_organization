@@ -6,10 +6,10 @@
         <p>机构复学申报</p>
       </router-link>
       <router-link class="li" :to="`/h5-monitorDetails?date=${day}`" tag="div" v-if="isCheck === true">
-        <p>每日健康监测</p>
+        <p>健康日报监测</p>
       </router-link>
       <div class="li unable" v-if="isCheck === false">
-        <p>每日健康监测</p>
+        <p>健康日报监测</p>
         <p>请在复学审批通过后使用此功能<!-- 机构复学申报未通过 --></p>
     </div>
     </div>
@@ -27,7 +27,7 @@
         <p>人员健康申报</p>
       </router-link>
       <router-link class="li" to="/h5-healthyReport" tag="div">
-        <p>每日健康监测</p>
+        <p>健康日报监测</p>
       </router-link>
     </div>
 
