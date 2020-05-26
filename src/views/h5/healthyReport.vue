@@ -1,6 +1,6 @@
 <template>
   <div class="healthyReport  main-width padding-lr">
-    <div class="big-title f18 bold text-center">健康上报（{{MM}}月{{DD}}日）</div>
+    <div class="big-title f18 bold text-center">健康申报（{{MM}}月{{DD}}日）</div>
     <Form :model="form" label-position="top">
         <FormItem label="姓名" required>
             <Input v-model="form.userName" disabled placeholder="请输入姓名"></Input>

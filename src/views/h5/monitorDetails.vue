@@ -177,7 +177,6 @@ export default {
     },
     save(){
       //保存
-      console.log(this.arr);
       let list = this.arr.map(item=>{
         return {
           id: item.id,
@@ -195,10 +194,26 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
-@import "./common.scss";
+<style lang="scss">
+.monitorDetails {
+  .ivu-table-cell{
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+  .ivu-tag{
+    margin: 0;
+  }
+  input{
+    text-align: center;
+    border: none;
+    outline: none;
+    box-shadow:none;
+  }
+}
 </style>
 <style lang="scss" scoped>
+@import "./common.scss";
 .monitorDetails {
   padding: 20px 0px;
   .big-title {
