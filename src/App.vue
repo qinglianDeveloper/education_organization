@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <div class="copyright">
+      <div class="copyright-box">
+        <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">粤ICP备20027211号-1</a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,6 +55,30 @@ body {
 }
 #app {
   height: 100%;
+  position: relative;
+}
+.copyright{
+  $h:28px;
+  height: $h;
+  z-index: 1;
+  .copyright-box{
+    height: $h;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 300;
+    background: rgba($color: #fff, $alpha: 0.2);
+    display: flex;
+    justify-content: center;
+    a{
+      height: 100%;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 // 全局滚动条样式
