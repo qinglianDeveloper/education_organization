@@ -21,6 +21,12 @@
               <Radio :label="2">黄码</Radio>
             </RadioGroup>
         </FormItem>
+        <FormItem label="请假">
+            <RadioGroup v-model="form.cough">
+              <Radio :label="0">病假</Radio>
+              <Radio :label="1">事假</Radio>
+            </RadioGroup>
+        </FormItem>
     </Form>
     <div class="button-ground">
       <Button type="primary" @click.native="submit">提交</Button>

@@ -41,7 +41,7 @@ export default {
           status = '已提交';
           break;
         case 1:
-          status = '通过';
+          status = '查收资料';//通过
           break;
         case 2:
           status = '未通过';

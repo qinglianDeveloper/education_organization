@@ -67,6 +67,12 @@ export const routers = [
         component: () =>
             import("@/views/h5/monitorList"),
     },
+    {
+        path: '/h5-applyWork',
+        name: 'h5-applyWork',
+        component: () =>
+            import("@/views/h5/applyWork"),
+    },
     //h5路由end
 
 
