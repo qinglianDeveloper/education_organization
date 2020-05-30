@@ -71,16 +71,13 @@
           <FormItem label="角色" prop="type">
             <RadioGroup v-model="form.type">
               <Radio label="ORGPRINCIPAL">培训机构负责人</Radio>
+              <Radio label="TRUSTEESHIPORGPRINCIPAL">托管机构负责人</Radio>
               <Radio label="TEACHER">教师</Radio>
               <Radio label="STUDENT">学生</Radio>
             </RadioGroup>
           </FormItem>
 
-          <FormItem
-            label="培训机构"
-            prop="orgId"
-            v-show="form.type !== 'ORGPRINCIPAL' && form.type !== ''"
-          >
+          <FormItem label="培训机构" prop="orgId" v-show="form.type=='TEACHER'||form.type=='STUDENT'">
             <Select
               placeholder="请选择你所在的培训机构"
               v-model="form.orgId"

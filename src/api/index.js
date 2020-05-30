@@ -1467,23 +1467,23 @@ export const getDateList = (params) => {
 
 // 学生提交健康日报信息表
 export const studentHealth = (params) => {
-    return postRequest('/common/dailyHealth/insert' , params)
+    return postRequest('/common/dailyHealth/insert', params)
 }
 
 // 获取有健康日报信息的日期列表
 export const healthList = (params) => {
-    return getRequest('/common/dailyHealth/dateList',params)
+    return getRequest('/common/dailyHealth/dateList', params)
 }
 
 // 教师批量编辑学生的健康日报信息表
 export const saveTemperature = (params) => {
-    return postFormData('/common/dailyHealth/batchEdit' , params)
+    return postFormData('/common/dailyHealth/batchEdit', params)
 }
 
 
 // 条件搜索健康日报信息列表
 export const healthDetails = (params) => {
-    return getRequest('/common/dailyHealth/searchList',params)
+    return getRequest('/common/dailyHealth/searchList', params)
 }
 
 
@@ -1506,8 +1506,15 @@ export const deleteOrg = (params) => {
     return postRequest('/org/delete', params)
 }
 
+// 托管机构列表
+export const getNurserylist = (params) => {
+    return getRequest('/common/nurseryApprove/searchList', params)
+}
 
-
+// 托管机构查收申请
+export const putNuersery = (params) => {
+    return postRequest('/common/nurseryApprove/audit', params)
+}
 
 
 

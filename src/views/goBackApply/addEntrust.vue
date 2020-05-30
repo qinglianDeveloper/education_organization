@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 16:39:11
+ * @LastEditTime: 2020-05-30 16:56:54
 --> 
 <template>
   <div class="add-entrust">
@@ -17,7 +17,7 @@
       <Divider style="margin:10px 0" />
     </Row>
     <div class="form">
-      <Form :model="form" label-position="top" :rules="ruleValidate">
+      <Form ref="form" :model="form" label-position="top" :rules="ruleValidate">
         <div class="big-title f18 bold">证照情况</div>
         <FormItem :label="`1.是否按规定办理《民办非企业登记证》《工商营业执照》《食品经营许可证》以及取得消防验收合格证明材料，并在显眼处公示。`" required>
           <RadioGroup v-model="form.gender">
@@ -251,8 +251,8 @@
     </div>
     <Divider />
     <div class="button-ground">
-      <Button type="primary" @click.native="submit('formValidate')" style="margin-right:6px">申请</Button>
-      <Button type="default" @click.native="goBack('formValidate')">返回列表</Button>
+      <Button type="primary" @click.native="submit('form')" style="margin-right:6px">申请</Button>
+      <Button type="default" @click.native="goBack('form')">返回列表</Button>
     </div>
   </div>
 </template>
@@ -268,26 +268,24 @@ export default {
     };
   },
   created() {},
-  methods: {}
+  methods: {
+    submit(name) {
+      this.$refs[name].validate(valid => {
+        console.log(valid);
+      });
+    },
+    goBack() {
+      this.$router.push({ name: "EntrustApplyList" });
+    }
+  }
 };
 </script>
-<style lang="scss" scoped>
-.big-title {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-bottom: 10px;
-  &::before {
-    content: "";
-    display: block;
-    width: 5px;
-    height: 18px;
-    background: #2d8cf0;
-    margin-right: 5px;
-  }
-}
+<style lang="scss">
 .add-entrust {
   padding: 16px;
+  label {
+    text-align: left !important;
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -305,6 +303,20 @@ export default {
   }
   .button-ground {
     text-align: center;
+  }
+  .big-title {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    &::before {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 18px;
+      background: #2d8cf0;
+      margin-right: 5px;
+    }
   }
 }
 </style>

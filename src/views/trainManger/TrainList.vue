@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-25 23:11:16
+ * @LastEditTime: 2020-05-30 18:07:49
 --> 
 <template>
   <div class="trainlist">
@@ -33,6 +33,17 @@
           </FormItem>
           <FormItem label="负责人姓名">
             <Input v-model="searchForm.principalName" placeholder="请输入负责人姓名" />
+          </FormItem>
+          <FormItem label="省市区">
+            <Cascader
+              @on-visible-change="clickAreaSearch"
+              ref="cascader"
+              :data="addressDataSearch"
+              :value="areaId"
+              @on-change="changeAreaSearch"
+              :load-data="loadDataSearch"
+              transfer
+            ></Cascader>
           </FormItem>
         </Form>
         <div style="float:right;margin:11px 0">
@@ -211,7 +222,8 @@ export default {
       tableHeight: 0,
       searchForm: {
         pageNumber: 1,
-        pageSize: 10
+        pageSize: 10,
+        type: "EDUCATION"
       },
       total: 0,
       modalTitle: "",
@@ -249,7 +261,10 @@ export default {
       },
       dateStatus: false,
       dateForm: { date: "", id: "" },
-      dateList: []
+      dateList: [],
+      addressDataSearch: [],
+      area: [],
+      areaId: []
     };
   },
   created() {
@@ -269,6 +284,40 @@ export default {
     })
   },
   methods: {
+    clickAreaSearch(val) {
+      console.log(val, this.addressData, "点击了");
+      if (val && !this.addressData[0]) {
+        this.getAddresslist();
+      }
+    },
+    changeAreaSearch(v, item) {
+      let area = [];
+      item.map(val => {
+        area.push(val.label);
+      });
+      let areaId = [];
+      v.map(val => {
+        areaId.push(val * 1);
+      });
+      this.area = area;
+      this.areaId = areaId;
+    },
+    loadDataSearch(item, callback) {
+      item.loading = true;
+      getAddresslist({ pid: item.id }).then(res => {
+        if (res.code == 200) {
+          item.loading = false;
+          item.children = res.result;
+          if (item.level < 2) {
+            item.children.forEach(it => {
+              it.loading = false;
+              it.children = [];
+            });
+          }
+          callback();
+        }
+      });
+    },
     getTableInfo() {
       getOrgList(this.searchForm).then(res => {
         if (res.code == 200) {
@@ -340,14 +389,20 @@ export default {
       });
     },
     handleSearch() {
+      delete this.searchForm.area;
+      this.searchForm.areaId = this.areaId.join(",");
       this.searchForm.pageNumber = 1;
       this.searchForm.pageSize = 10;
       this.getTableInfo();
     },
     handleReset() {
+      this.areaId = [];
+      this.area = [];
       this.searchForm = {
         pageNumber: 1,
         pageSize: 10,
+        type: "EDUCATION",
+        areaId: "",
         orgName: "",
         principalName: ""
       };
@@ -434,6 +489,7 @@ export default {
       if (this.isEdit == "add") {
         getAddresslist({ level: 1 }).then(res => {
           this.addressData = res.result;
+          this.addressDataSearch = res.result;
           this.addressData.forEach(item => {
             item.children = [];
             item.loading = false;

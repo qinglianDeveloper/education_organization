@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 15:32:32
+ * @LastEditTime: 2020-05-30 20:27:24
 --> 
 <template>
   <div class="trainlist">
@@ -14,7 +14,12 @@
           <span>托管机构列表</span>
         </div>
         <div class="export-btn">
-          <Button v-if="menuBtns.indexOf('add:org')>-1" type="primary" icon="md-add" @click="add">新建</Button>
+          <Button
+            v-if="menuBtns.indexOf('add:entrust')>-1"
+            type="primary"
+            icon="md-add"
+            @click="add"
+          >新建</Button>
         </div>
       </div>
       <Divider style="margin:10px 0" />
@@ -33,6 +38,17 @@
           </FormItem>
           <FormItem label="负责人姓名">
             <Input v-model="searchForm.principalName" placeholder="请输入负责人姓名" />
+          </FormItem>
+          <FormItem label="省市区">
+            <Cascader
+              @on-visible-change="clickAreaSearch"
+              ref="cascader"
+              :data="addressDataSearch"
+              :value="areaId"
+              @on-change="changeAreaSearch"
+              :load-data="loadDataSearch"
+              transfer
+            ></Cascader>
           </FormItem>
         </Form>
         <div style="float:right;margin:11px 0">
@@ -75,7 +91,7 @@
             type="error"
             size="small"
             @click="handleDelete(row,index)"
-            v-if="menuBtns.indexOf('delete:org')>-1"
+            v-if="menuBtns.indexOf('delete:entrust')>-1"
           >删除</Button>
         </template>
       </Table>
@@ -211,7 +227,8 @@ export default {
       tableHeight: 0,
       searchForm: {
         pageNumber: 1,
-        pageSize: 10
+        pageSize: 10,
+        type: "TRUSTEESHIP"
       },
       total: 0,
       modalTitle: "",
@@ -249,7 +266,10 @@ export default {
       },
       dateStatus: false,
       dateForm: { date: "", id: "" },
-      dateList: []
+      dateList: [],
+      addressDataSearch: [],
+      area: [],
+      areaId: []
     };
   },
   created() {
@@ -269,6 +289,40 @@ export default {
     })
   },
   methods: {
+    clickAreaSearch(val) {
+      console.log(val, this.addressData, "点击了");
+      if (val && !this.addressData[0]) {
+        this.getAddresslist();
+      }
+    },
+    changeAreaSearch(v, item) {
+      let area = [];
+      item.map(val => {
+        area.push(val.label);
+      });
+      let areaId = [];
+      v.map(val => {
+        areaId.push(val * 1);
+      });
+      this.area = area;
+      this.areaId = areaId;
+    },
+    loadDataSearch(item, callback) {
+      item.loading = true;
+      getAddresslist({ pid: item.id }).then(res => {
+        if (res.code == 200) {
+          item.loading = false;
+          item.children = res.result;
+          if (item.level < 2) {
+            item.children.forEach(it => {
+              it.loading = false;
+              it.children = [];
+            });
+          }
+          callback();
+        }
+      });
+    },
     getTableInfo() {
       getOrgList(this.searchForm).then(res => {
         if (res.code == 200) {
@@ -302,7 +356,7 @@ export default {
       this.tableHeight = pageHeight - headerHeight - footerHeight - 123;
     },
     add() {
-      this.modalTitle = "新增培训机构";
+      this.modalTitle = "新增托管机构";
       this.isEdit = "add";
       this.modalStatus = true;
       this.$refs["formItem"].resetFields();
@@ -340,14 +394,19 @@ export default {
       });
     },
     handleSearch() {
+      this.searchForm.areaId = this.areaId.join(",");
       this.searchForm.pageNumber = 1;
       this.searchForm.pageSize = 10;
       this.getTableInfo();
     },
     handleReset() {
+      this.areaId = [];
+      this.area = [];
       this.searchForm = {
         pageNumber: 1,
         pageSize: 10,
+        type: "TRUSTEESHIP",
+        areaId: "",
         orgName: "",
         principalName: ""
       };
@@ -387,7 +446,7 @@ export default {
       });
     },
     handleEdit(row, index) {
-      this.modalTitle = "编辑培训机构";
+      this.modalTitle = "编辑托管机构";
       this.isEdit = "edit";
       this.modalStatus = true;
       this.$refs["formItem"].resetFields();
@@ -395,12 +454,7 @@ export default {
       this.formItem.id = obj.id;
       this.formItem.orgName = obj.orgName;
       let arr = obj.areaId.split(",");
-      // for (let i = 0, leng = arr.length; i < leng; i++) {
-      //   arr[i] = arr[i] * 1;
-      // }
       this.regroupAddress(arr);
-
-      // this.formItem.area = obj.area;
       this.formItem.areaDetail = obj.areaDetail;
     },
 
@@ -434,6 +488,7 @@ export default {
       if (this.isEdit == "add") {
         getAddresslist({ level: 1 }).then(res => {
           this.addressData = res.result;
+          this.addressDataSearch = res.result;
           this.addressData.forEach(item => {
             item.children = [];
             item.loading = false;

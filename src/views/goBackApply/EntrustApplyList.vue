@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 16:24:22
+ * @LastEditTime: 2020-05-30 20:24:05
 --> 
 <template>
   <div class="trainlist">
@@ -32,8 +32,7 @@
           <FormItem label="状态">
             <Select v-model="searchForm.status" transfer>
               <Option :value="0">已提交</Option>
-              <Option :value="1">通过</Option>
-              <Option :value="2">未通过</Option>
+              <Option :value="1">已查收</Option>
             </Select>
           </FormItem>
         </Form>
@@ -66,7 +65,7 @@
             size="small"
             v-if="menuBtns.indexOf('entrust:check:apply')>-1"
             :disabled="!row.status==0"
-          >审核</Button>
+          >查收资料</Button>
         </template>
       </Table>
     </Row>
@@ -86,41 +85,11 @@
         ></Page>
       </div>
     </Row>
-    <!-- 审核弹框 -->
-    <Modal v-model="checkStatus" title="复学审批">
-      <Form ref="formItem" :model="checkForm" :mask-closable="false">
-        <FormItem
-          label="状态:"
-          :label-width="90"
-          prop="status"
-          :rules="{required: true, message: '请选择状态', trigger: 'change',type:'number'}"
-        >
-          <RadioGroup v-model="checkForm.status">
-            <Radio :label="1" style="margin-right:20px">通过</Radio>
-            <Radio :label="2">未通过</Radio>
-          </RadioGroup>
-        </FormItem>
-        <FormItem
-          v-if="checkForm.status==2"
-          key="auditReasonContent"
-          label="拒绝原因:"
-          :label-width="90"
-          prop="auditReason"
-          :rules="{required: true, message: '请输入拒绝原因', trigger: 'blur',}"
-        >
-          <Input type="textarea" :autosize="true" v-model="checkForm.auditReason" />
-        </FormItem>
-      </Form>
-      <div slot="footer">
-        <Button type="default" @click="checkStatus=false">取消</Button>
-        <Button type="primary" @click="handleSubmit">确定</Button>
-      </div>
-    </Modal>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
-import { getAuditlist, deletApprove, applyList, exportData } from "@/api";
+import { getNurserylist, putNuersery, exportData } from "@/api";
 export default {
   data() {
     return {
@@ -159,7 +128,7 @@ export default {
           title: "操作",
           slot: "action",
           align: "center",
-          width: 150,
+          width: 160,
           fixed: "right"
         }
       ],
@@ -171,7 +140,6 @@ export default {
         pageSize: 10
       },
       total: 0,
-      checkStatus: false,
       checkForm: {
         status: "",
         auditReason: ""
@@ -195,10 +163,7 @@ export default {
           return "已提交";
           break;
         case 1:
-          return "通过";
-          break;
-        case 2:
-          return "未通过";
+          return "已查收";
           break;
       }
     }
@@ -209,6 +174,7 @@ export default {
     })
   },
   methods: {
+    change() {},
     exportData() {
       let link = document.createElement("a");
       let state = process.env.NODE_ENV === "production";
@@ -228,13 +194,10 @@ export default {
         case 1:
           return "green";
           break;
-        case 2:
-          return "red";
-          break;
       }
     },
     getTableInfo() {
-      getAuditlist(this.searchForm).then(res => {
+      getNurserylist(this.searchForm).then(res => {
         if (res.code == 200) {
           this.data = res.result.content;
           this.total = res.result.totalElements;
@@ -278,33 +241,14 @@ export default {
     handleDetail(row) {
       this.$router.push({ name: "detailApprove", query: { id: row.id } });
     },
-    handleDelete(row) {
-      this.$Modal.confirm({
-        title: "确认删除",
-        content: "确认删除这条复学审批?",
-        onOk: () => {
-          deletApprove({ id: row.id }).then(res => {
-            if (res.code == 200) {
-              this.$Message.success("删除成功!");
-              this.getTableInfo();
-            }
-          });
-        }
-      });
-    },
     handleCheck(row) {
-      this.checkStatus = true;
-      this.$refs["formItem"].resetFields();
-      this.checkForm.id = row.id;
-    },
-    handleSubmit() {
-      this.$refs["formItem"].validate(valid => {
-        if (valid) {
-          applyList(this.checkForm).then(res => {
+      this.$Modal.confirm({
+        title: "确认查收资料",
+        content: "您确认查收这份资料吗?",
+        onOk: () => {
+          putNuersery({ id: row.id }).then(res => {
             if (res.code == 200) {
-              this.$Message.success("状态修改成功!");
-              this.checkStatus = false;
-              this.getTableInfo();
+              this.$Message.success("申请资料查收成功!");
             }
           });
         }
