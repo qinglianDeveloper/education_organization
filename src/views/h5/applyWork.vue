@@ -1,7 +1,7 @@
 <template>
   <div class="applyWork  main-width padding-lr">
     <Form :model="form" label-position="top">
-      <FormItem label="所在培训机构" required>
+      <FormItem label="所在托管机构" required>
           <Select v-model="form.gender">
             <Option v-for="(item,index) in options" :value="item.id" :key="index">{{ item.orgName }}</Option>
           </Select>
