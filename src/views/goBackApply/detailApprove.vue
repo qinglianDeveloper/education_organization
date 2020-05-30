@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-25 20:08:41
+ * @LastEditTime: 2020-05-30 16:16:15
 --> 
 <template>
   <div class="add">
@@ -341,7 +341,7 @@ export default {
     }
   }
   .form {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 300px);
     overflow: auto;
     padding: 0 20px;
   }

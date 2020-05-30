@@ -3,7 +3,11 @@
     <router-view></router-view>
     <div class="copyright">
       <div class="copyright-box">
-        <a href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">粤ICP备20027211号-1</a>
+        <a
+          href="http://www.beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >粤ICP备20027211号-1</a>
       </div>
     </div>
   </div>
@@ -29,15 +33,12 @@ export default {
     // })
   },
   watch: {},
-  created(){
-    let userInfo = localStorage.getItem('h5_userInfo');
-    if(userInfo !== null){
+  created() {
+    let userInfo = localStorage.getItem("h5_userInfo");
+    if (userInfo !== null) {
       userInfo = JSON.parse(userInfo);
       this.$store.commit("h5_saveUserInfo", userInfo);
     }
-
-
-    
   },
   methods: {
     ...mapActions("menu", ["getMenuList"])
@@ -57,21 +58,21 @@ body {
   height: 100%;
   position: relative;
 }
-.copyright{
-  $h:28px;
+.copyright {
+  $h: 28px;
   height: $h;
   z-index: 1;
-  .copyright-box{
+  .copyright-box {
     height: $h;
     position: fixed;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: 200px;
     z-index: 300;
     background: rgba($color: #fff, $alpha: 0.2);
     display: flex;
     justify-content: center;
-    a{
+    a {
       height: 100%;
       color: #666;
       display: flex;
