@@ -200,6 +200,9 @@
               <Radio :label="0">否</Radio>
             </RadioGroup>
         </FormItem>
+        <FormItem :label="`机构自评意见（是否具备开展托管服务条件）`">
+            <Input v-model="value5" type="textarea" placeholder="自评意见"  :rows="6"/>
+        </FormItem>
         
     </Form>
     
