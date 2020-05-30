@@ -435,7 +435,7 @@ export default {
   }
   .single-page-con {
     min-width: 710px;
-    padding: 10px;
+    padding: 10px 10px 30px;
 
     position: absolute;
     top: 100px;

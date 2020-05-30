@@ -231,7 +231,7 @@ export const routers = [
             path: "/TrainList",
             name: "TrainList",
             meta: {
-                parent: "培训机构管理",
+                parent: "机构管理",
                 parentName: 'trainManger',
                 title: '培训机构列表',
             },
@@ -242,23 +242,45 @@ export const routers = [
             path: "/everyDay",
             name: "everyDay",
             meta: {
-                parent: "培训机构管理",
+                parent: "机构管理",
                 parentName: 'person',
                 title: '健康信息列表',
             },
             component: () =>
                 import("@/views/trainManger/everyDay")
         }, {
-            /* 复学申请列表 */
+            /* 托管机构列表 */
+            path: "/EntrustList",
+            name: "EntrustList",
+            meta: {
+                parent: "机构管理",
+                parentName: 'trainManger',
+                title: '托管机构列表',
+            },
+            component: () =>
+                import("@/views/trainManger/EntrustList")
+        }, {
+            /* 培训复学申请列表 */
             path: "/goBackList",
             name: "goBackList",
             meta: {
                 parent: "复学申请管理",
                 parentName: 'goBackApply',
-                title: '复学申请列表',
+                title: '培训复学申请列表',
             },
             component: () =>
                 import("@/views/goBackApply/goBackList")
+        }, {
+            /* 托管复学申请列表 */
+            path: "/EntrustApplyList",
+            name: "EntrustApplyList",
+            meta: {
+                parent: "复学申请管理",
+                parentName: 'goBackApply',
+                title: '托管复学申请列表',
+            },
+            component: () =>
+                import("@/views/goBackApply/EntrustApplyList")
         }, {
             /* 学生&教师 */
             path: "/personInfo",
@@ -271,16 +293,27 @@ export const routers = [
             component: () =>
                 import("@/views/person/personInfo")
         }, {
-            /* 新增审批 */
+            /* 新增培训机构审批 */
             path: "/addApprove",
             name: "addApprove",
             meta: {
                 parent: "复学申请管理",
                 parentName: 'goBackApply',
-                title: '新增复学审批',
+                title: '新增培训机构复学审批',
             },
             component: () =>
                 import("@/views/goBackApply/addApprove")
+        }, {
+            /* 新增托管机构审批 */
+            path: "/addEntrust",
+            name: "addEntrust",
+            meta: {
+                parent: "复学申请管理",
+                parentName: 'goBackApply',
+                title: '新增托管机构复学审批',
+            },
+            component: () =>
+                import("@/views/goBackApply/addEntrust")
         }, {
             /* 详情审批 */
             path: "/detailApprove",
