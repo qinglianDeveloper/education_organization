@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 16:37:26
+ * @LastEditTime: 2020-05-30 21:51:49
 --> 
 <template>
   <div class="add">
@@ -549,7 +549,7 @@ export default {
   },
   methods: {
     getOrgList() {
-      orgList({ principalId: this.userId }).then(res => {
+      orgList({ principalId: this.userId, type: "EDUCATION" }).then(res => {
         if (res.code == 200) {
           this.orgList = res.result;
         }

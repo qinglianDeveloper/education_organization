@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 18:07:49
+ * @LastEditTime: 2020-05-30 23:11:17
 --> 
 <template>
   <div class="trainlist">
@@ -367,6 +367,7 @@ export default {
         if (valid) {
           let obj = JSON.parse(JSON.stringify(this.formItem));
           obj.areaId = this.formItem.areaId.join(",");
+          obj.type = "EDUCATION";
           console.log(valid, obj);
           if (this.isEdit == "add") {
             addOrg(obj).then(res => {
@@ -379,7 +380,7 @@ export default {
           } else if (this.isEdit == "edit") {
             editOrg(obj).then(res => {
               if (res.code == 200) {
-                this.$Message.success("新增机构成功!");
+                this.$Message.success("编辑机构成功!");
                 this.getTableInfo();
                 this.modalStatus = false;
               }
@@ -415,9 +416,9 @@ export default {
       this.dateForm.con = row.principalName;
       this.dateForm.phone = row.principalMobile;
       this.dateForm.id = row.id;
-      getDateList({ id: row.id }).then(res => {
+      getDateList({ organizationId: row.id }).then(res => {
         if (res.code == 200) {
-          if (res.result[0]) {
+          if (res.result && res.result[0]) {
             this.dateStatus = true;
             this.dateList = res.result;
           } else {

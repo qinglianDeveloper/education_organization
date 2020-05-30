@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-26 10:06:24
+ * @LastEditTime: 2020-05-30 23:50:17
 --> 
 <template>
   <div class="trainlist">
@@ -13,23 +13,45 @@
         <div class="title">
           <span>健康日报列表</span>
         </div>
+        <div style="display:flex" :label-width="100">
+          <div style="margin-right:30px">
+            <span style="margin-right:6px">教育机构名称:</span>
+            <span>{{orgInfo.orgName}}</span>
+          </div>
+          <div style="margin-right:30px">
+            <span style="margin-right:6px">联系人:</span>
+            <span>{{orgInfo.con}}</span>
+          </div>
+          <div>
+            <span style="margin-right:6px">联系电话:</span>
+            <span>{{orgInfo.phone}}</span>
+          </div>
+        </div>
       </div>
       <Divider style="margin:10px 0" />
     </Row>
     <!-- 搜索 -->
     <Row>
       <div class="search">
-        <Form :model="orgInfo" style="display:flex;float:left" :label-width="100">
-          <FormItem label="教育机构名称:">
-            <span>{{orgInfo.orgName}}</span>
+        <Form :model="orgInfo" style="display:flex;float:left" :label-width="60">
+          <FormItem label="体温">
+            <Select v-model="searchForm.isGtTemperatureThreshold" transfer style="width:120px">
+              <Option :value="0">小于37.3℃</Option>
+              <Option :value="1">大于37.3℃</Option>
+            </Select>
           </FormItem>
-          <FormItem label="联系人:">
-            <span>{{orgInfo.con}}</span>
-          </FormItem>
-          <FormItem label="联系电话:">
-            <span>{{orgInfo.phone}}</span>
+          <FormItem label="考勤">
+            <Select v-model="searchForm.attendance" transfer>
+              <Option :value="0">正常</Option>
+              <Option :value="1">病假</Option>
+              <Option :value="2">事假</Option>
+            </Select>
           </FormItem>
         </Form>
+        <div style="float:right;margin:11px 0">
+          <Button type="primary" @click="handleSearch">搜索</Button>
+          <Button @click="handleReset" style="margin-left:6px">重置</Button>
+        </div>
       </div>
     </Row>
     <!-- 表格 -->
@@ -45,6 +67,9 @@
       >
         <template slot-scope="{row}" slot="temperatureHome">
           <Tag :color="changeTemp(row.temperatureHome)">{{row.temperatureHome }}℃</Tag>
+        </template>
+        <template slot-scope="{row}" slot="attendance">
+          <Tag :color="changeAtt(row.attendance)">{{row.attendance | changeAttendance}}</Tag>
         </template>
         <template slot-scope="{row}" slot="cough">
           <Tag :color="row.cough==1?'red':'green'">{{row.cough==1?'是':'否'}}</Tag>
@@ -99,6 +124,12 @@ export default {
           key: "creationDate",
           align: "center",
           minWidth: 180
+        },
+        {
+          title: "考勤",
+          slot: "attendance",
+          align: "center",
+          minWidth: 100
         },
         {
           title: "居家测温",
@@ -161,6 +192,22 @@ export default {
           return "黄码";
           break;
       }
+    },
+    changeAttendance(msg) {
+      switch (msg) {
+        case 0:
+          return "正常";
+          break;
+        case 1:
+          return "病假";
+          break;
+        case 2:
+          return "事假";
+          break;
+        default:
+          return "-";
+          break;
+      }
     }
   },
   methods: {
@@ -184,14 +231,25 @@ export default {
           break;
       }
     },
+    changeAtt(msg) {
+      switch (msg) {
+        case 0:
+          return "blue";
+          break;
+        case 1:
+          return "orange";
+          break;
+        case 2:
+          return "orange";
+          break;
+        default:
+          return "default";
+          break;
+      }
+    },
     getTableInfo() {
       getEveryDayInfoList(this.searchForm).then(res => {
         if (res.code == 200) {
-          // res.result.content.forEach(item => {
-          //   if (item.creationDate) {
-          //     item.creationDate = dateFormat(item.creationDate);
-          //   }
-          // });
           this.data = res.result.content;
           this.total = res.result.totalElements;
           this.loading = false;
@@ -215,6 +273,18 @@ export default {
       let headerHeight = this.$refs.header.clientHeight;
       let footerHeight = this.$refs.footer.clientHeight;
       this.tableHeight = pageHeight - headerHeight - footerHeight - 123;
+    },
+    handleSearch() {
+      this.searchForm.pageNumber = 1;
+      this.searchForm.pageSize = 10;
+      this.getTableInfo();
+    },
+    handleReset() {
+      this.searchForm.pageNumber = 1;
+      this.searchForm.pageSize = 10;
+      this.searchForm.isGtTemperatureThreshold = "";
+      this.searchForm.attendance = "";
+      this.getTableInfo();
     },
     changeSelect() {},
     changePage(e) {

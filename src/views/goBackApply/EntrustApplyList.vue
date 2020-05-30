@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 20:24:05
+ * @LastEditTime: 2020-05-30 22:14:51
 --> 
 <template>
   <div class="trainlist">
@@ -239,7 +239,7 @@ export default {
     },
     changeSelect() {},
     handleDetail(row) {
-      this.$router.push({ name: "detailApprove", query: { id: row.id } });
+      this.$router.push({ name: "detailEntrust", query: { id: row.id } });
     },
     handleCheck(row) {
       this.$Modal.confirm({
@@ -249,6 +249,7 @@ export default {
           putNuersery({ id: row.id }).then(res => {
             if (res.code == 200) {
               this.$Message.success("申请资料查收成功!");
+              this.getTableInfo();
             }
           });
         }

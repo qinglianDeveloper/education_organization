@@ -321,16 +321,27 @@ export const routers = [
             component: () =>
                 import("@/views/goBackApply/addEntrust")
         }, {
-            /* 详情审批 */
+            /* 培训详情审批 */
             path: "/detailApprove",
             name: "detailApprove",
             meta: {
                 parent: "复学申请管理",
                 parentName: 'goBackApply',
-                title: '复学审批详情',
+                title: '培训机构复学审批详情',
             },
             component: () =>
                 import("@/views/goBackApply/detailApprove")
+        }, {
+            /* 托管详情审批 */
+            path: "/detailEntrust",
+            name: "detailEntrust",
+            meta: {
+                parent: "复学申请管理",
+                parentName: 'goBackApply',
+                title: '托管机构复学审批详情',
+            },
+            component: () =>
+                import("@/views/goBackApply/detailEntrust")
         },
         ]
     },
