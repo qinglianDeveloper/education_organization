@@ -6,6 +6,9 @@
             <Option v-for="(item,index) in options" :value="item.id" :key="index">{{ item.orgName }}</Option>
           </Select>
       </FormItem>
+      <FormItem label="机构所在镇区" required>
+        <Input v-model="form.organizationTown" placeholder="请输入" disabled></Input>
+      </FormItem>
       <FormItem label="机构负责人" required>
         <Input v-model="form.orgHead" placeholder="请输入机构负责人"></Input>
       </FormItem>
