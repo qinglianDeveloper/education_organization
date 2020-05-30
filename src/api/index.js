@@ -1486,7 +1486,10 @@ export const healthDetails = (params) => {
     return getRequest('/common/dailyHealth/searchList', params)
 }
 
-
+ //托管机构新增
+export const trusteeshipAdd = (params) => {
+    return postRequest('/common/nurseryApprove/insert' , params)
+}
 
 
 
