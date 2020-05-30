@@ -22,9 +22,10 @@
             </RadioGroup>
         </FormItem>
         <FormItem label="请假">
-            <RadioGroup v-model="form.cough">
-              <Radio :label="0">病假</Radio>
-              <Radio :label="1">事假</Radio>
+            <RadioGroup v-model="form.attendance">
+              <Radio :label="0">正常</Radio>
+              <Radio :label="1">病假</Radio>
+              <Radio :label="2">事假</Radio>
             </RadioGroup>
         </FormItem>
     </Form>
@@ -49,6 +50,7 @@ export default {
         temperatureHome:'',//居家体温
         cough:null,//是否咳嗽，0否，1是
         healthCode:null,//健康码，0绿，1红，2黄
+        attendance:'',//0正常，1病假，2事假
       }
     };
   },
@@ -68,6 +70,8 @@ export default {
       if(this.form.temperatureHome === '')return this.$Message.error('居家体温不能为空');
       if(this.form.cough === null)return this.$Message.error('不能为空');
       if(this.form.healthCode === null)return this.$Message.error('不能为空');
+      if(this.form.attendance === '')this.form.attendance = 0;
+      
       studentHealth(this.form).then(res=>{
         if(res.code === 200){
           this.$Message.success("保存成功");

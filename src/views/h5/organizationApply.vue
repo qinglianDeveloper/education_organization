@@ -391,8 +391,8 @@ export default {
     
   },
   methods: {
-    getOrgList() {//{ principalId: this.userInfo.id }
-      orgList({ principalId: this.userInfo.id }).then(res => {
+    getOrgList() {//{ principalId: this.userInfo.id } 
+      orgList({ principalId: this.userInfo.id,type:'EDUCATION' }).then(res => {
         if (res.code == 200) {
           this.options = res.result;
         }

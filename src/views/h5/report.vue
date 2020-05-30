@@ -1,4 +1,11 @@
 <template>
+<!-- ORDINARY("ORDINARY", "普通用户"),
+STUDENT("STUDENT", "学生"),
+TEACHER("TEACHER","教师"),
+ORGPRINCIPAL("ORGPRINCIPAL", "培训机构负责人"),
+TRUSTEESHIPORGPRINCIPAL("TRUSTEESHIPORGPRINCIPAL", "托管机构负责人"),
+TOWNPRINCIPAL("TOWNPRINCIPAL", "镇区机构负责人"),
+EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人"); -->
   <div class="report  main-width padding-lr">
     <div class="ul" v-if="userInfo.type === 'ORGPRINCIPAL'">
       <!-- 机构负责人 -->
@@ -14,7 +21,7 @@
     </div>
     </div>
 
-    <div class="ul" v-if="userInfo.type === 'TEACHER'">
+    <div class="ul" v-if="userInfo.type === 'TRUSTEESHIPORGPRINCIPAL'">
       <!-- 托管机构复工申请 -->
       <router-link class="li" to="/h5-applyWork" tag="div">
         <p>复工申请</p>

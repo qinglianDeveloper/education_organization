@@ -15,13 +15,12 @@
         <FormItem label="角色" prop="type">
             <RadioGroup v-model="form.type">
               <Radio label="ORGPRINCIPAL">培训机构负责人</Radio><br/>
-              <Radio label="ORGPRINCIPAL">托管机构负责人</Radio><br/>
+              <Radio label="TRUSTEESHIPORGPRINCIPAL">托管机构负责人</Radio><br/>
               <Radio label="TEACHER">教师</Radio><br/>
               <Radio label="STUDENT">学生</Radio>
           </RadioGroup>
         </FormItem>
-        <!-- <FormItem label="培训机构" v-show="form.type !== 'ORGPRINCIPAL' && form.type !== ''" prop="orgId"> -->
-        <FormItem label="培训机构" prop="orgId" v-show="form.type !== 'ORGPRINCIPAL' && form.type !== ''">
+        <FormItem label="培训机构" prop="orgId" v-show="form.type === 'TEACHER' || form.type === 'STUDENT'">
             <Select 
               placeholder="请输入你所在的培训机构"
               v-model="form.orgId"
@@ -62,7 +61,7 @@ export default {
       form:{
         mobile:'',
         validator:'',
-        type:'',//学生 STUDENT 老师 TEACHER 培训机构负责人 ORGPRINCIPAL
+        type:'',//学生 STUDENT 老师 TEACHER 培训机构负责人 ORGPRINCIPAL  托管机构负责人 : TRUSTEESHIPORGPRINCIPAL
         userName:'',
         password:'',
         password2:'',
@@ -176,8 +175,8 @@ export default {
       this.$refs[name].validate((valid) => {
           if (valid) { 
             if(password !== password2)return this.$Message.error('两次密码不一致!');
-            if(type !== 'ORGPRINCIPAL' && orgId === '')return this.$Message.error('培训机构不能为空!');
-            if(type === 'ORGPRINCIPAL') orgId = '';
+            if((type === 'STUDENT' || type !== 'TEACHER') && orgId === '')return this.$Message.error('培训机构不能为空!');
+            if(type === 'ORGPRINCIPAL' || type === 'TRUSTEESHIPORGPRINCIPAL') orgId = '';
             register({mobile,validator,type,userName,password,orgId}).then(res=>{
               if(res.code === 200){
                 this.$Message.success(res.result);

@@ -25,6 +25,13 @@
         <template slot-scope="{row}" slot="cough">
           <Tag :color="row.cough==1?'red':'green'">{{row.cough==1?'是':'否'}}</Tag>
         </template>
+        <template slot-scope="{row}" slot="attendance">
+          <Tag>{{row.attendance | changeAttendance}}</Tag>
+          <!-- <i-switch v-model="row.attendance" :true-value="1" :false-value="0">
+            <span slot="open">是</span>
+            <span slot="close">否</span>
+          </i-switch> -->
+        </template>
         <template slot-scope="{row}" slot="healthCode">
           <Tag :color="codeColor(row.healthCode)">{{row.healthCode | changeCode}}</Tag>
         </template>
@@ -44,7 +51,16 @@ export default {
 
       loading: false,
       options:[],
-      arr: [],
+      arr: [
+        /* {
+          userName:'小明',
+          temperatureHome:36,
+          cough:1,
+          healthCode:1,
+          temperatureOrg:36,
+          attendance:0
+        } */
+      ],
       columns: [
         {
           title: "姓名",
@@ -70,6 +86,12 @@ export default {
           slot: "healthCode"
         },
         {
+          title: "是否请假",
+          key: "attendance",
+          align: 'center',
+          slot: "attendance"
+        },
+        {
           title: "机构测温",
           key: "temperatureOrg",
           align: 'center',
@@ -88,7 +110,7 @@ export default {
               },
             })
           }
-        }
+        },
       ],
     };
   },
@@ -97,13 +119,21 @@ export default {
       switch (msg) {
         case 0:
           return "绿码";
-          break;
         case 1:
           return "红码";
-          break;
         case 2:
           return "黄码";
-          break;
+      }
+    },
+    changeAttendance(msg){
+      //病假，事假，正常
+      switch (msg) {
+        case 0:
+          return "正常";
+        case 1:
+          return "病假";
+        case 2:
+          return "事假";
       }
     }
   },
@@ -145,6 +175,7 @@ export default {
       //获取机构列表
       let obj = {
         orgName:query,//教育机构名称
+        type:'EDUCATION', //EDUCATION: 教育机构 TRUSTEESHIP:托管机构
         pageNumber:1,
         pageSize:100,
         isAllowResume:1,//是否允许复学
