@@ -15,9 +15,7 @@
 <script>
 import { applyDetailById } from "@/api";
 export default {
-  components: { 
-    
-  },
+  components: { },
   data() {
     return {
       info:{}
