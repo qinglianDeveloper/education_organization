@@ -14,8 +14,9 @@
         </FormItem>
         <FormItem label="角色" prop="type">
             <RadioGroup v-model="form.type">
-              <Radio label="ORGPRINCIPAL">培训机构负责人</Radio>
-              <Radio label="TEACHER">教师</Radio>
+              <Radio label="ORGPRINCIPAL">培训机构负责人</Radio><br/>
+              <Radio label="ORGPRINCIPAL">托管机构负责人</Radio><br/>
+              <Radio label="TEACHER">教师</Radio><br/>
               <Radio label="STUDENT">学生</Radio>
           </RadioGroup>
         </FormItem>

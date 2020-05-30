@@ -15,6 +15,13 @@
     </div>
 
     <div class="ul" v-if="userInfo.type === 'TEACHER'">
+      <!-- 托管机构复工申请 -->
+      <router-link class="li" to="/h5-applyWork" tag="div">
+        <p>复工申请</p>
+      </router-link>
+    </div>
+
+    <div class="ul" v-if="userInfo.type === 'TEACHER'">
       <!-- 老师 -->
       <router-link class="li" to="/h5-healthyWrite" tag="div">
         <p>人员健康申报</p>
