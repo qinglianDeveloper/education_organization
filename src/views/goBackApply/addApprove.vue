@@ -4,14 +4,14 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 15:26:05
+ * @LastEditTime: 2020-05-30 16:37:26
 --> 
 <template>
   <div class="add">
     <Row>
       <div class="header" ref="header">
         <div class="title">
-          <span>新增复学审批</span>
+          <span>新增培训机构复学审批</span>
         </div>
       </div>
       <Divider style="margin:10px 0" />
