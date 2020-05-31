@@ -64,11 +64,11 @@ export default {
         this.$Message.success("请耐心等待");
       }
       if(status === 1){
-        this.$Message.success("审核已通过");
+        this.$Message.success("已查收资料");
       }
-      if(status === 2){
+      /* if(status === 2){
         this.$router.push(`/h5-applyFail/${id}`);
-      }
+      } */
     },
     getAuditlists(){
       //条件搜索复学审批表列表

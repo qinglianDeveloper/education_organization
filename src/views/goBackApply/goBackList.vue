@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 21:22:38
+ * @LastEditTime: 2020-05-31 10:23:53
 --> 
 <template>
   <div class="trainlist">
@@ -58,7 +58,7 @@
           <Tag :color="tagClor(row.status)">{{row.status | statusChange}}</Tag>
         </template>
         <template slot-scope="{row}" slot="action">
-          <Button type="primary" @click="handleDetail(row)" style="margin-right:6px" size="small">查看</Button>
+          <Button type="success" @click="handleDetail(row)" style="margin-right:6px" size="small">查看</Button>
           <Button type="error" @click="handleDelete(row)" style="margin-right:6px" size="small">删除</Button>
           <Button
             type="primary"
@@ -66,7 +66,7 @@
             size="small"
             v-if="menuBtns.indexOf('admin:check:apply')>-1"
             :disabled="!row.status==0"
-          >审核</Button>
+          >查收资料</Button>
         </template>
       </Table>
     </Row>
@@ -87,7 +87,7 @@
       </div>
     </Row>
     <!-- 审核弹框 -->
-    <Modal v-model="checkStatus" title="复学审批">
+    <!-- <Modal v-model="checkStatus" title="复学审批">
       <Form ref="formItem" :model="checkForm" :mask-closable="false">
         <FormItem
           label="状态:"
@@ -115,7 +115,7 @@
         <Button type="default" @click="checkStatus=false">取消</Button>
         <Button type="primary" @click="handleSubmit">确定</Button>
       </div>
-    </Modal>
+    </Modal>-->
   </div>
 </template>
 <script>
@@ -159,7 +159,7 @@ export default {
           title: "操作",
           slot: "action",
           align: "center",
-          width: 200,
+          width: 220,
           fixed: "right"
         }
       ],
@@ -195,7 +195,7 @@ export default {
           return "已提交";
           break;
         case 1:
-          return "通过";
+          return "已查收";
           break;
         case 2:
           return "未通过";
@@ -293,9 +293,21 @@ export default {
       });
     },
     handleCheck(row) {
-      this.checkStatus = true;
-      this.$refs["formItem"].resetFields();
-      this.checkForm.id = row.id;
+      // this.checkStatus = true;
+      // this.$refs["formItem"].resetFields();
+      // this.checkForm.id = row.id;
+      this.$Modal.confirm({
+        title: "确认查收资料",
+        content: "您确认查收这份资料吗?",
+        onOk: () => {
+          applyList({ id: row.id }).then(res => {
+            if (res.code == 200) {
+              this.$Message.success("申请资料查收成功!");
+              this.getTableInfo();
+            }
+          });
+        }
+      });
     },
     handleSubmit() {
       this.$refs["formItem"].validate(valid => {
