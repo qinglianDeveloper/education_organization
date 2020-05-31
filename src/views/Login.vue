@@ -270,7 +270,10 @@ export default {
         if (valid) {
           if (password !== password2)
             return this.$Message.error("两次密码不一致!");
-          if (type !== "ORGPRINCIPAL" && orgId === "")
+          if (
+            (type !== "ORGPRINCIPAL" || type !== "TRUSTEESHIPORGPRINCIPAL") &&
+            orgId === ""
+          )
             return this.$Message.error("培训机构不能为空!");
           if (type === "ORGPRINCIPAL") orgId = "";
           register({ mobile, validator, type, userName, password, orgId }).then(
