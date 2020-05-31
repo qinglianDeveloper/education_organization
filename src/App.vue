@@ -3,12 +3,11 @@
     <router-view></router-view>
     <div class="copyright">
       <div class="copyright-box">
-        <!-- <a
+        <a
           href="http://www.beian.miit.gov.cn/"
           target="_blank"
           rel="noopener noreferrer"
-        >粤ICP备20027211号-1</a>
-        <span>—</span> -->
+        >粤ICP备20027211号-1 &nbsp;&nbsp;&nbsp;</a>
         <a
           href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44200002444192"
           target="_blank"
@@ -61,29 +60,48 @@ body {
   // user-select: none;
 }
 #app {
-  height: 100%;
+  min-height: 100vh;
   position: relative;
+  >div:not(.copyright){
+    min-height: 100vh;
+  }
+}
+@media screen and (min-width: 900px)  {
+  .copyright {
+    $h: 20px;
+    height: 0px;
+    .copyright-box {
+      height: $h !important;
+      position: fixed;
+      left: 50%;
+      margin-left: 150px;
+    }
+  }
 }
 .copyright {
-  $h: 28px;
+  $h: 42px;
   height: $h;
   z-index: 1;
   .copyright-box {
     height: $h;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 0;
-    left: 200px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 300;
     background: rgba($color: #fff, $alpha: 0.2);
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     a {
-      height: 100%;
       color: #666;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0px 5px;
+      font-size: 12px;
     }
   }
 }
