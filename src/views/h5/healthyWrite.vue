@@ -185,6 +185,7 @@ export default {
       let obj = {
         //principalId:this.userInfo.id,
         //type:'EDUCATION', //EDUCATION: 教育机构 TRUSTEESHIP:托管机构
+        //isAllowResume:1,
         pageNumber:1,
         pageSize:100,
       }

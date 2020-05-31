@@ -18,7 +18,7 @@ EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人"); -->
       <div class="li unable" v-if="isCheck === false">
         <p>健康日报监测</p>
         <p>请在复学审批通过后使用此功能<!-- 机构复学申报未通过 --></p>
-    </div>
+      </div>
     </div>
 
     <div class="ul" v-if="userInfo.type === 'TRUSTEESHIPORGPRINCIPAL'">
@@ -43,9 +43,13 @@ EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人"); -->
       <router-link class="li" to="/h5-healthyWrite" tag="div">
         <p>人员健康申报</p>
       </router-link>
-      <router-link class="li" to="/h5-healthyReport" tag="div">
+      <router-link class="li" to="/h5-healthyReport" tag="div" v-if="isAllowStudent === true">
         <p>健康日报监测</p>
       </router-link>
+      <div class="li unable" v-if="isAllowStudent === false">
+        <p>健康日报监测</p>
+        <p>请在机构复学审批通过后使用此功能<!-- 机构复学申报未通过 --></p>
+      </div>
     </div>
 
     <navigations :num="0"/>
@@ -53,7 +57,7 @@ EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人"); -->
 </template>
 <script>
 import navigations from "./components/navigations";
-import { getAuditlist } from "@/api";
+import { getAuditlist ,getOrgList} from "@/api";
 export default {
   components: { 
     navigations
@@ -63,6 +67,7 @@ export default {
       day:'',
       userInfo:{},
       isCheck:null,
+      isAllowStudent:null,
     };
   },
   created() {
@@ -71,6 +76,7 @@ export default {
   },
   mounted() {
     this.getAuditlists();
+    this.getOrgLists();
   },
   methods: {
     setDate(){
@@ -80,6 +86,23 @@ export default {
       let DD = d.getDate() ;
       let add0 = (n) => n < 10 ? '0' + n : n;
       this.day = `${YY}-${add0(MM)}-${add0(DD)}`
+    },
+    getOrgLists(){
+      //所在的机构
+      let obj = {
+        //principalId:this.userInfo.id,
+        //type:'EDUCATION', //EDUCATION: 教育机构 TRUSTEESHIP:托管机构
+        //isAllowResume:1,
+        pageNumber:1,
+        pageSize:100,
+      }
+      getOrgList(obj).then(res=>{
+        if(res.result.content.length === 0){
+          this.isAllowStudent = false;
+        }else{
+          this.isAllowStudent = true;
+        }
+      });
     },
     getAuditlists(){
       //条件搜索复学审批表列表

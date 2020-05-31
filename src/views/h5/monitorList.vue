@@ -2,7 +2,7 @@
   <div class="monitorList main-width">
     <div class="text-center c666" style="padding:20px;" v-if="arr.length === 0">暂时没数据</div>
     <CellGroup v-if="arr.length > 0">
-        <Cell :title="`${item}记录`" :to="`h5-monitorDetails?date=${item}`" v-for="(item,index) in arr" :key="index"/>
+        <Cell :title="`${item}记录`" :to="`h5-monitorDetails?date=${item}&type=${type}`" v-for="(item,index) in arr" :key="index"/>
         <!-- <Cell title="5月22记录" to="h5-applyList" />
         <Cell title="5月22记录" to="h5-applyList" /> -->
     </CellGroup>
@@ -17,11 +17,13 @@ export default {
   data() {
     return {
       userInfo:{},
+      type:'',
       arr:[]
     };
   },
   created() {
     this.userInfo = this.$store.state.h5_user.h5_userInfo;
+    this.type = this.userInfo === 'ORGPRINCIPAL'?'EDUCATION':'TRUSTEESHIP';
   },
   mounted() {
     this.getHealthList();
