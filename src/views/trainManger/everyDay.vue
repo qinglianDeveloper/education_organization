@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 23:50:17
+ * @LastEditTime: 2020-05-31 09:07:48
 --> 
 <template>
   <div class="trainlist">
@@ -33,11 +33,11 @@
     <!-- 搜索 -->
     <Row>
       <div class="search">
-        <Form :model="orgInfo" style="display:flex;float:left" :label-width="60">
-          <FormItem label="体温">
-            <Select v-model="searchForm.isGtTemperatureThreshold" transfer style="width:120px">
+        <Form :model="orgInfo" style="display:flex;float:left" :label-width="80">
+          <FormItem label="机构测温">
+            <Select v-model="searchForm.isGtTemperatureThreshold" transfer style="width:136px">
               <Option :value="0">小于37.3℃</Option>
-              <Option :value="1">大于37.3℃</Option>
+              <Option :value="1">大于等于37.3℃</Option>
             </Select>
           </FormItem>
           <FormItem label="考勤">

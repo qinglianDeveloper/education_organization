@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-05-23 14:14:30
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 22:14:51
+ * @LastEditTime: 2020-05-31 09:12:08
 --> 
 <template>
   <div class="trainlist">
@@ -179,9 +179,9 @@ export default {
       let link = document.createElement("a");
       let state = process.env.NODE_ENV === "production";
       if (state) {
-        link.href = `/HealthReport-admin/admin/common/resumeApprove/export`;
+        link.href = `/HealthReport-admin/admin/common/nurseryApprove/export`;
       } else {
-        link.href = `/admin/common/resumeApprove/export`;
+        link.href = `/admin/common/nurseryApprove/export`;
       }
       link.target = "_self";
       link.click();
