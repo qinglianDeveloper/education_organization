@@ -12,7 +12,7 @@ EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人"); -->
       <router-link class="li" to="/h5-organizationApply" tag="div">
         <p>机构复学申报</p>
       </router-link>
-      <router-link class="li" :to="`/h5-monitorDetails?date=${day}`" tag="div" v-if="isCheck === true">
+      <router-link class="li" :to="`/h5-monitorDetails?date=${day}&type=EDUCATION`" tag="div" v-if="isCheck === true">
         <p>健康日报监测</p>
       </router-link>
       <div class="li unable" v-if="isCheck === false">
@@ -25,6 +25,9 @@ EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人"); -->
       <!-- 托管机构复工申请 -->
       <router-link class="li" to="/h5-applyWork" tag="div">
         <p>复工申请</p>
+      </router-link>
+      <router-link class="li" :to="`/h5-monitorDetails?date=${day}&type=TRUSTEESHIP`" tag="div">
+        <p>健康日报监测</p>
       </router-link>
     </div>
 

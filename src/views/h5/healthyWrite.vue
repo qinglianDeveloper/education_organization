@@ -184,7 +184,7 @@ export default {
       //所在的机构
       let obj = {
         //principalId:this.userInfo.id,
-        type:'EDUCATION', //EDUCATION: 教育机构 TRUSTEESHIP:托管机构
+        //type:'EDUCATION', //EDUCATION: 教育机构 TRUSTEESHIP:托管机构
         pageNumber:1,
         pageSize:100,
       }

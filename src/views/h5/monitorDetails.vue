@@ -48,6 +48,7 @@ export default {
       DD:'',
       organizationId:'',
       creationDate:'',
+      type:'EDUCATION',//EDUCATION: 教育机构 TRUSTEESHIP:托管机构
 
       loading: false,
       options:[],
@@ -138,6 +139,8 @@ export default {
     }
   },
   created() {
+    let {type} = this.$route.query;
+    this.type = type;
     this.setDate();
     this.remoteMethod();
   },
@@ -175,7 +178,7 @@ export default {
       //获取机构列表
       let obj = {
         orgName:query,//教育机构名称
-        type:'EDUCATION', //EDUCATION: 教育机构 TRUSTEESHIP:托管机构
+        type:this.type, //EDUCATION: 教育机构 TRUSTEESHIP:托管机构
         pageNumber:1,
         pageSize:100,
         isAllowResume:1,//是否允许复学
