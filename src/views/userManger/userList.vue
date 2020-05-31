@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2020-02-17 21:35:19
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-24 17:50:51
+ * @LastEditTime: 2020-05-31 10:49:55
 --> 
 <template>
   <div class="user">
@@ -267,6 +267,9 @@ export default {
           break;
         case "ORGPRINCIPAL":
           return "培训机构负责人";
+          break;
+        case "TRUSTEESHIPORGPRINCIPAL":
+          return "托管机构负责人";
           break;
       }
     }
