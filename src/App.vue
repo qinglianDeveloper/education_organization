@@ -3,12 +3,12 @@
     <router-view></router-view>
     <div class="copyright">
       <div class="copyright-box">
-        <a
+        <!-- <a
           href="http://www.beian.miit.gov.cn/"
           target="_blank"
           rel="noopener noreferrer"
         >粤ICP备20027211号-1</a>
-        <span>—</span>
+        <span>—</span> -->
         <a
           href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44200002444192"
           target="_blank"

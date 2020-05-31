@@ -7,6 +7,7 @@
     <CellGroup>
         <Cell title="健康日报监测记录" v-if="userInfo.type === 'ORGPRINCIPAL'" to="h5-monitorList" />
         <Cell title="机构复学申报记录" v-if="userInfo.type === 'ORGPRINCIPAL'" to="h5-applyList" />
+        <Cell title="托管机构复学申报记录" v-if="userInfo.type === 'TRUSTEESHIPORGPRINCIPAL'" to="h5-applyListTrusteeship" />
     </CellGroup>
     <navigations :num="1"/>
   </div>
@@ -24,9 +25,11 @@ export default {
   },
   created() {
     /* 
+    ORDINARY("ORDINARY", "普通用户"),
     STUDENT("STUDENT", "学生"),
     TEACHER("TEACHER","教师"),
     ORGPRINCIPAL("ORGPRINCIPAL", "培训机构负责人"),
+    TRUSTEESHIPORGPRINCIPAL("TRUSTEESHIPORGPRINCIPAL", "托管机构负责人"),
     TOWNPRINCIPAL("TOWNPRINCIPAL", "镇区机构负责人"),
     EDUCATIONPRINCIPAL("EDUCATIONPRINCIPAL", "教育局负责人");
     */
