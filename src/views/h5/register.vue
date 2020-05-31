@@ -175,7 +175,7 @@ export default {
       this.$refs[name].validate((valid) => {
           if (valid) { 
             if(password !== password2)return this.$Message.error('两次密码不一致!');
-            if((type === 'STUDENT' || type !== 'TEACHER') && orgId === '')return this.$Message.error('培训机构不能为空!');
+            if((type === 'STUDENT' || type === 'TEACHER') && orgId === '')return this.$Message.error('培训机构不能为空!');
             if(type === 'ORGPRINCIPAL' || type === 'TRUSTEESHIPORGPRINCIPAL') orgId = '';
             register({mobile,validator,type,userName,password,orgId}).then(res=>{
               if(res.code === 200){
