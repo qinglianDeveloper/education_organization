@@ -7,7 +7,7 @@
           href="http://www.beian.miit.gov.cn/"
           target="_blank"
           rel="noopener noreferrer"
-        >粤ICP备20027211号-1</a>
+        >粤ICP备44200002444192号</a>
       </div>
     </div>
   </div>

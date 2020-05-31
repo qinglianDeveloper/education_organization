@@ -1,0 +1,9 @@
+
+IP:47.102.104.2
+
+端口:22
+
+用户名: root
+
+密码: Aliyuncode
+路径：/usr/local/application/web/dist

@@ -73,6 +73,12 @@ export const routers = [
         component: () =>
             import("@/views/h5/applyWork"),
     },
+    {
+        path: '/h5-applyListTrusteeship',
+        name: 'h5-applyListTrusteeship',
+        component: () =>
+            import("@/views/h5/applyListTrusteeship"),
+    },
     //h5路由end
 
 
