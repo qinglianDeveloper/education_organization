@@ -4,14 +4,14 @@
  * @Author: sueRimn
  * @Date: 2020-05-24 11:03:46
  * @LastEditors: sueRimn
- * @LastEditTime: 2020-05-30 22:33:28
+ * @LastEditTime: 2020-05-31 10:31:46
 --> 
 <template>
   <div class="detail-entrust">
     <Row>
       <div class="header" ref="header">
         <div class="title">
-          <span>新增托管机构复学审批</span>
+          <span>托管机构复学审批</span>
         </div>
       </div>
       <Divider style="margin:10px 0" />
@@ -25,7 +25,7 @@
           <span class="item">{{form.organizationTown}}</span>
         </FormItem>
         <FormItem label="详细地址" prop="areaDetail">
-          <span class="item">{{form.areaDetail}}</span>
+          <span class="item">{{form.address}}</span>
         </FormItem>
         <FormItem label="机构负责人" prop="orgHead">
           <span class="item">{{form.orgHead}}</span>
@@ -185,7 +185,7 @@
     </div>
     <Divider />
     <div class="button-ground">
-      <Button type="primary" @click.native="submit('form')" style="margin-right:6px">申请</Button>
+      <!-- <Button type="primary" @click.native="submit('form')" style="margin-right:6px">申请</Button> -->
       <Button type="default" @click.native="goBack('form')">返回列表</Button>
     </div>
   </div>
